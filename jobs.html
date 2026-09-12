@@ -67,19 +67,20 @@ a {
 }
 
 .navbar {
-    max-width:1380px;
+    max-width:1450px;
     margin:auto;
-    padding:9px 28px;
+    padding:9px 22px;
     display:flex;
     align-items:center;
     justify-content:space-between;
-    gap:25px;
+    gap:20px;
 }
 
 .nav-logo {
     display:flex;
     align-items:center;
     text-decoration:none;
+    min-width:250px;
 }
 
 .nav-logo img {
@@ -116,16 +117,17 @@ a {
 .nav-links {
     display:flex;
     align-items:center;
-    gap:22px;
+    gap:15px;
 }
 
 .nav-links a {
     text-decoration:none;
     color:var(--navy);
-    font-size:13px;
+    font-size:12px;
     font-weight:bold;
     padding:25px 0 22px;
     border-bottom:3px solid transparent;
+    white-space:nowrap;
 }
 
 .nav-links a:hover,
@@ -137,7 +139,7 @@ a {
 .nav-contact {
     background:var(--navy);
     color:white !important;
-    padding:12px 20px !important;
+    padding:12px 18px !important;
     border-radius:7px;
     border-bottom:none !important;
 }
@@ -421,6 +423,10 @@ a {
 .button-red {
     background:var(--red);
     color:white;
+}
+
+.button-red:hover {
+    background:#aa0d16;
 }
 
 
@@ -744,9 +750,12 @@ footer {
 
 .footer-links a:hover {
     text-decoration:underline;
+    color:white;
 }
 
 .footer-email {
+    display:inline-block;
+    margin-top:8px;
     color:white;
     text-decoration:none;
     font-weight:bold;
@@ -767,6 +776,27 @@ footer {
    RESPONSIVE
 ========================================================= */
 
+@media (max-width:1180px) {
+
+    .navbar {
+        flex-direction:column;
+        padding-bottom:15px;
+    }
+
+    .nav-logo {
+        min-width:auto;
+    }
+
+    .nav-links {
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .nav-links a {
+        padding:5px 0;
+    }
+}
+
 @media (max-width:1050px) {
 
     .quick-grid,
@@ -785,19 +815,6 @@ footer {
 }
 
 @media (max-width:900px) {
-
-    .navbar {
-        flex-direction:column;
-    }
-
-    .nav-links {
-        flex-wrap:wrap;
-        justify-content:center;
-    }
-
-    .nav-links a {
-        padding:5px 0;
-    }
 
     .footer-grid {
         grid-template-columns:1fr;
@@ -885,6 +902,10 @@ Local Businesses
 Things to Do
 </a>
 
+<a href="animals.html">
+Animals & Pets
+</a>
+
 <a href="jobs.html"
    class="active">
 Jobs
@@ -894,8 +915,8 @@ Jobs
 Community
 </a>
 
-<a href="about.html">
-About
+<a href="sitemap.html">
+Site Map
 </a>
 
 <a href="contact.html"
@@ -1273,8 +1294,6 @@ a local job search.
 
 
 
-<!-- CONNECTING COLORADO -->
-
 <article class="resource-card">
 
 <div class="resource-icon">
@@ -1324,8 +1343,6 @@ Search Jobs
 </article>
 
 
-
-<!-- CHAMBER -->
 
 <article class="resource-card">
 
@@ -1384,8 +1401,6 @@ Chamber Website
 
 
 
-<!-- LONGMONT EDP -->
-
 <article class="resource-card">
 
 <div class="resource-icon">
@@ -1435,8 +1450,6 @@ Explore Longmont Jobs
 </article>
 
 
-
-<!-- CITY -->
 
 <article class="resource-card">
 
@@ -1488,8 +1501,6 @@ City Careers
 
 
 
-<!-- BOULDER COUNTY -->
-
 <article class="resource-card">
 
 <div class="resource-icon">
@@ -1538,8 +1549,6 @@ Boulder County Careers
 </article>
 
 
-
-<!-- LIBRARY -->
 
 <article class="resource-card">
 
@@ -1633,8 +1642,6 @@ There is normally no fee to the job seeker.
 
 
 
-<!-- EXPRESS -->
-
 <article class="resource-card">
 
 <div class="resource-icon">
@@ -1690,8 +1697,6 @@ View Jobs
 
 
 
-<!-- ELWOOD -->
-
 <article class="resource-card">
 
 <div class="resource-icon">
@@ -1735,10 +1740,10 @@ longmont.co@elwoodstaffing.com
 <div class="button-row">
 
 <a class="button button-primary"
-href="https://www.elwoodstaffing.com/contact-us-and-locations/CO/Colorado-Tradesmen"
+href="https://www.elwoodstaffing.com/"
 target="_blank"
 rel="noopener">
-Elwood Longmont
+Elwood Staffing
 </a>
 
 </div>
@@ -1746,8 +1751,6 @@ Elwood Longmont
 </article>
 
 
-
-<!-- RESOURCEMFG -->
 
 <article class="resource-card">
 
@@ -1765,8 +1768,8 @@ ResourceMFG
 
 <p>
 A staffing company focused heavily on manufacturing,
-production and industrial jobs. ResourceMFG maintains
-Longmont locations and job opportunities.
+production and industrial jobs. Search current openings
+and nearby staffing locations directly through ResourceMFG.
 </p>
 
 <div class="resource-details">
@@ -1784,7 +1787,7 @@ Manufacturing, production, warehouse and skilled work
 href="https://www.resourcemfg.com/locations/"
 target="_blank"
 rel="noopener">
-Find Longmont Office & Jobs
+Find Office & Jobs
 </a>
 
 </div>
@@ -1792,8 +1795,6 @@ Find Longmont Office & Jobs
 </article>
 
 
-
-<!-- LABORMAX -->
 
 <article class="resource-card">
 
@@ -1810,7 +1811,7 @@ LaborMAX Staffing
 </h3>
 
 <p>
-A local staffing option for people seeking temporary,
+A staffing option for people seeking temporary,
 general labor, construction, warehouse and similar work.
 </p>
 
@@ -1843,8 +1844,6 @@ Visit LaborMAX
 </article>
 
 
-
-<!-- LABOR SYSTEMS -->
 
 <article class="resource-card">
 
@@ -1894,8 +1893,6 @@ View Location
 </article>
 
 
-
-<!-- ADDITIONAL STAFFING -->
 
 <article class="resource-card">
 
@@ -2645,8 +2642,12 @@ Local Businesses
 Things to Do
 </a>
 
+<a href="animals.html">
+Animals & Pets
+</a>
+
 <a href="jobs.html">
-Jobs
+Jobs & Work
 </a>
 
 <a href="community.html">
@@ -2654,11 +2655,15 @@ Community
 </a>
 
 <a href="about.html">
-About
+About Loving Longmont
 </a>
 
 <a href="contact.html">
 Contact
+</a>
+
+<a href="sitemap.html">
+<strong>Site Map →</strong>
 </a>
 
 </div>
@@ -2674,7 +2679,7 @@ Connect With Us
 </div>
 
 <p class="footer-contact">
-Have an event, business, photo, story or resource
+Have an event, business, photo, story or community resource
 around Longmont you'd like us to know about?
 </p>
 
