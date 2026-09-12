@@ -63,20 +63,20 @@ a {
 }
 
 .navbar {
-    max-width: 1380px;
+    max-width: 1450px;
     margin: auto;
-    padding: 9px 28px;
+    padding: 9px 22px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 25px;
+    gap: 20px;
 }
 
 .nav-logo {
     display: flex;
     align-items: center;
     text-decoration: none;
-    min-width: 280px;
+    min-width: 250px;
 }
 
 .nav-logo img {
@@ -113,16 +113,17 @@ a {
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 23px;
+    gap: 15px;
 }
 
 .nav-links a {
     text-decoration: none;
     color: var(--navy);
-    font-size: 13px;
+    font-size: 12px;
     font-weight: bold;
     padding: 25px 0 22px;
     border-bottom: 3px solid transparent;
+    white-space: nowrap;
 }
 
 .nav-links a:hover,
@@ -135,7 +136,7 @@ a {
     background: var(--navy);
     color: white !important;
     border-radius: 7px;
-    padding: 12px 20px !important;
+    padding: 12px 18px !important;
     border-bottom: none !important;
 }
 
@@ -769,16 +770,7 @@ footer {
    RESPONSIVE
 ======================================== */
 
-@media (max-width: 1050px) {
-
-    .category-grid,
-    .board-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-}
-
-@media (max-width: 900px) {
+@media (max-width: 1180px) {
 
     .navbar {
         flex-direction: column;
@@ -797,6 +789,18 @@ footer {
     .nav-links a {
         padding: 5px 0;
     }
+}
+
+@media (max-width: 1050px) {
+
+    .category-grid,
+    .board-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 900px) {
 
     .spotlight-grid,
     .photo-grid,
@@ -897,6 +901,10 @@ footer {
         Things to Do
     </a>
 
+    <a href="animals.html">
+        Animals & Pets
+    </a>
+
     <a href="jobs.html">
         Jobs
     </a>
@@ -906,8 +914,8 @@ footer {
         Community
     </a>
 
-    <a href="about.html">
-        About
+    <a href="sitemap.html">
+        Site Map
     </a>
 
     <a href="contact.html"
@@ -1127,7 +1135,8 @@ footer {
      COMMUNITY SPOTLIGHT
 ======================================== -->
 
-<section class="spotlight-section">
+<section class="spotlight-section"
+         id="neighbors">
 
 <div class="spotlight-grid">
 
@@ -1141,12 +1150,12 @@ footer {
         </span>
 
         <strong>
-            Community Spotlight Photo
+            Community Spotlight
         </strong>
 
-        Add your original photograph
-        of a Longmont resident,
-        organization or community story here.
+        Celebrating people,
+        organizations and stories
+        from around Longmont.
 
     </div>
 
@@ -1188,7 +1197,8 @@ footer {
 
     </p>
 
-    <a href="contact.html"
+    <a
+       href="mailto:hello.lovinglongmont@gmail.com?subject=Longmont%20Community%20Spotlight%20Nomination&body=Hi%20Loving%20Longmont%2C%0A%0AI%27d%20like%20to%20nominate%20someone%20for%20a%20Community%20Spotlight.%0A%0AName%3A%0AWhy%20I%27m%20nominating%20them%3A%0AContact%20information%20if%20available%3A%0A"
        class="button button-red">
 
         Nominate Someone →
@@ -1208,7 +1218,8 @@ footer {
      COMMUNITY BOARD
 ======================================== -->
 
-<section class="community-board">
+<section class="community-board"
+         id="recommendations">
 
 <div class="container">
 
@@ -1256,7 +1267,8 @@ footer {
 
     </p>
 
-    <a href="contact.html"
+    <a
+       href="mailto:hello.lovinglongmont@gmail.com?subject=Ask%20Loving%20Longmont&body=Hi%20Loving%20Longmont%2C%0A%0AMy%20question%20is%3A%0A%0A"
        class="board-link">
 
         Ask Loving Longmont →
@@ -1267,7 +1279,8 @@ footer {
 
 
 
-<article class="board-card">
+<article class="board-card"
+         id="stories">
 
     <div class="board-type">
         Good News
@@ -1286,7 +1299,8 @@ footer {
 
     </p>
 
-    <a href="contact.html"
+    <a
+       href="mailto:hello.lovinglongmont@gmail.com?subject=Longmont%20Community%20Story&body=Hi%20Loving%20Longmont%2C%0A%0AI%27d%20like%20to%20share%20this%20community%20story%3A%0A%0A"
        class="board-link">
 
         Share a Story →
@@ -1317,7 +1331,8 @@ footer {
 
     </p>
 
-    <a href="contact.html"
+    <a
+       href="mailto:hello.lovinglongmont@gmail.com?subject=Longmont%20Recommendation&body=Hi%20Loving%20Longmont%2C%0A%0AI%27d%20like%20to%20recommend%3A%0A%0AName%3A%0AWebsite%20if%20available%3A%0AWhy%20I%20recommend%20it%3A%0A"
        class="board-link">
 
         Send a Recommendation →
@@ -1371,7 +1386,8 @@ footer {
 
     </p>
 
-    <a href="contact.html"
+    <a
+       href="mailto:hello.lovinglongmont@gmail.com?subject=Ask%20Loving%20Longmont&body=Hi%20Loving%20Longmont%2C%0A%0AMy%20Longmont%20question%20is%3A%0A%0A"
        class="button button-red">
 
         Ask a Question →
@@ -1408,7 +1424,7 @@ footer {
 
         Loving Longmont can become a visual record
         of our community using photographs
-        taken by you and submitted by local residents.
+        taken by local residents and shared with the community.
 
     </p>
 
@@ -1484,7 +1500,8 @@ footer {
      GET INVOLVED
 ======================================== -->
 
-<section class="get-involved">
+<section class="get-involved"
+         id="resources">
 
 <div class="container">
 
@@ -1532,6 +1549,14 @@ footer {
 
     </p>
 
+    <a
+       href="mailto:hello.lovinglongmont@gmail.com?subject=Longmont%20Photo%20Submission&body=Hi%20Loving%20Longmont%2C%0A%0AI%27d%20like%20to%20submit%20a%20photo.%0A%0APhoto%20location%20or%20description%3A%0APhoto%20credit%2Fbyline%3A%0A"
+       class="board-link">
+
+        Submit a Photo →
+
+    </a>
+
 </div>
 
 
@@ -1555,6 +1580,14 @@ footer {
 
     </p>
 
+    <a
+       href="mailto:hello.lovinglongmont@gmail.com?subject=Longmont%20Story%20Submission&body=Hi%20Loving%20Longmont%2C%0A%0AI%27d%20like%20to%20share%20this%20Longmont%20story%3A%0A%0A"
+       class="board-link">
+
+        Share a Story →
+
+    </a>
+
 </div>
 
 
@@ -1577,6 +1610,14 @@ footer {
         the community should know?
 
     </p>
+
+    <a
+       href="mailto:hello.lovinglongmont@gmail.com?subject=Loving%20Longmont%20Idea&body=Hi%20Loving%20Longmont%2C%0A%0AI%27d%20like%20to%20suggest%3A%0A%0A"
+       class="board-link">
+
+        Send an Idea →
+
+    </a>
 
 </div>
 
@@ -1708,7 +1749,8 @@ footer {
 
     </p>
 
-    <a href="contact.html"
+    <a
+       href="mailto:hello.lovinglongmont@gmail.com?subject=Loving%20Longmont%20Community%20Submission&body=Hi%20Loving%20Longmont%2C%0A%0AI%27d%20like%20to%20share%3A%0A%0A"
        class="button button-light">
 
         Contact Loving Longmont →
@@ -1798,8 +1840,12 @@ footer {
             Things to Do
         </a>
 
+        <a href="animals.html">
+            Animals & Pets
+        </a>
+
         <a href="jobs.html">
-            Jobs
+            Jobs & Work
         </a>
 
         <a href="community.html">
@@ -1807,11 +1853,15 @@ footer {
         </a>
 
         <a href="about.html">
-            About
+            About Loving Longmont
         </a>
 
         <a href="contact.html">
             Contact
+        </a>
+
+        <a href="sitemap.html">
+            <strong>Site Map →</strong>
         </a>
 
     </div>
