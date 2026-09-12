@@ -63,20 +63,20 @@ a {
 }
 
 .navbar {
-    max-width: 1380px;
+    max-width: 1450px;
     margin: auto;
-    padding: 9px 28px;
+    padding: 9px 22px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 25px;
+    gap: 20px;
 }
 
 .nav-logo {
     display: flex;
     align-items: center;
     text-decoration: none;
-    min-width: 280px;
+    min-width: 250px;
 }
 
 .nav-logo img {
@@ -113,16 +113,17 @@ a {
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 23px;
+    gap: 15px;
 }
 
 .nav-links a {
     text-decoration: none;
     color: var(--navy);
-    font-size: 13px;
+    font-size: 12px;
     font-weight: bold;
     padding: 25px 0 22px;
     border-bottom: 3px solid transparent;
+    white-space: nowrap;
 }
 
 .nav-links a:hover,
@@ -135,7 +136,7 @@ a {
     background: var(--navy);
     color: white !important;
     border-radius: 7px;
-    padding: 12px 20px !important;
+    padding: 12px 18px !important;
     border-bottom: none !important;
 }
 
@@ -165,18 +166,15 @@ a {
 .hero-overlay {
     position: absolute;
     inset: 0;
-
     display: flex;
     align-items: flex-end;
     justify-content: center;
-
     background:
         linear-gradient(
             to top,
             rgba(3,35,62,.76),
             rgba(3,35,62,.05) 55%
         );
-
     padding: 40px 25px;
 }
 
@@ -255,13 +253,10 @@ a {
 .notice-box {
     max-width: 1000px;
     margin: auto;
-
     background: white;
     border-left: 5px solid var(--red);
     border-radius: 12px;
-
     padding: 23px 27px;
-
     box-shadow: 0 5px 18px rgba(0,0,0,.05);
 }
 
@@ -290,7 +285,6 @@ a {
 .category-grid {
     max-width: 1050px;
     margin: auto;
-
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 14px;
@@ -300,12 +294,9 @@ a {
     background: var(--light-blue);
     border: 1px solid #dfe8e8;
     border-radius: 13px;
-
     text-align: center;
     text-decoration: none;
-
     padding: 22px 12px;
-
     transition: .2s ease;
 }
 
@@ -339,7 +330,6 @@ a {
 .featured-grid {
     max-width: 1100px;
     margin: auto;
-
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 45px;
@@ -349,9 +339,7 @@ a {
 .featured-image {
     border-radius: 18px;
     overflow: hidden;
-
-    box-shadow:
-        0 10px 30px rgba(0,0,0,.10);
+    box-shadow: 0 10px 30px rgba(0,0,0,.10);
 }
 
 .featured-image img {
@@ -394,7 +382,6 @@ a {
 .business-grid {
     max-width: 1180px;
     margin: 45px auto 0;
-
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 28px;
@@ -402,16 +389,10 @@ a {
 
 .business-card {
     background: var(--cream);
-
     border: 1px solid #e8e3d9;
-
     border-radius: 17px;
-
     overflow: hidden;
-
-    box-shadow:
-        0 7px 22px rgba(0,0,0,.055);
-
+    box-shadow: 0 7px 22px rgba(0,0,0,.055);
     display: flex;
     flex-direction: column;
 }
@@ -426,9 +407,7 @@ a {
     width: 100%;
     height: 100%;
     object-fit: cover;
-
-    transition:
-        transform .35s ease;
+    transition: transform .35s ease;
 }
 
 .business-card:hover .business-image img {
@@ -437,22 +416,17 @@ a {
 
 .business-placeholder {
     height: 100%;
-
     background:
         linear-gradient(
             135deg,
             #dce9e7,
             #eef5f5
         );
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     text-align: center;
-
     padding: 30px;
-
     color: var(--navy);
 }
 
@@ -470,7 +444,6 @@ a {
 
 .business-body {
     padding: 27px;
-
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -478,30 +451,23 @@ a {
 
 .business-category {
     color: var(--red);
-
     font-size: 10px;
     letter-spacing: 2px;
-
     text-transform: uppercase;
     font-weight: bold;
 }
 
 .business-body h3 {
     font-family: Georgia, serif;
-
     color: var(--navy);
-
     font-size: 27px;
-
     margin: 6px 0 12px;
 }
 
 .business-description {
     color: var(--gray);
     font-size: 14px;
-
     flex-grow: 1;
-
     margin-bottom: 17px;
 }
 
@@ -512,21 +478,16 @@ a {
 
 .business-details {
     padding: 14px 0;
-
     border-top: 1px solid #e5e0d7;
     border-bottom: 1px solid #e5e0d7;
-
     margin-bottom: 18px;
 }
 
 .business-detail {
     display: grid;
     grid-template-columns: 24px 1fr;
-
     gap: 7px;
-
     margin: 7px 0;
-
     font-size: 13px;
 }
 
@@ -547,19 +508,13 @@ a {
 
 .business-button {
     display: inline-block;
-
     background: var(--navy);
     color: white;
-
     text-decoration: none;
-
     border-radius: 7px;
-
     padding: 10px 16px;
-
     font-size: 12px;
     font-weight: bold;
-
     transition: .2s ease;
 }
 
@@ -570,7 +525,6 @@ a {
 .business-button.secondary {
     background: white;
     color: var(--navy);
-
     border: 1px solid #cfd7d8;
 }
 
@@ -593,17 +547,12 @@ a {
 .creative-card {
     max-width: 1050px;
     margin: 40px auto 0;
-
     display: grid;
     grid-template-columns: .9fr 1.1fr;
-
     background: white;
-
     border-radius: 18px;
     overflow: hidden;
-
-    box-shadow:
-        0 8px 25px rgba(0,0,0,.07);
+    box-shadow: 0 8px 25px rgba(0,0,0,.07);
 }
 
 .creative-photo {
@@ -616,7 +565,6 @@ a {
     width: 100%;
     height: 100%;
     min-height: 470px;
-
     object-fit: cover;
     object-position: center 18%;
 }
@@ -628,9 +576,7 @@ a {
 .creative-content h3 {
     color: var(--navy);
     font-family: Georgia, serif;
-
     font-size: 32px;
-
     margin: 5px 0 13px;
 }
 
@@ -651,7 +597,6 @@ a {
 .support-grid {
     max-width: 1050px;
     margin: 40px auto 0;
-
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
@@ -660,9 +605,7 @@ a {
 .support-card {
     background: white;
     border-radius: 14px;
-
     padding: 28px 23px;
-
     text-align: center;
 }
 
@@ -673,7 +616,6 @@ a {
 .support-card h3 {
     color: var(--navy);
     font-family: Georgia, serif;
-
     margin: 8px 0;
 }
 
@@ -694,11 +636,8 @@ a {
             var(--navy),
             #0a4a77
         );
-
     color: white;
-
     text-align: center;
-
     padding: 75px 25px;
 }
 
@@ -709,29 +648,22 @@ a {
 .cta-section h2 {
     font-family: Georgia, serif;
     font-size: 42px;
-
     margin: 5px 0 15px;
 }
 
 .cta-section p {
     max-width: 740px;
     margin: 0 auto 25px;
-
     color: #dce9f0;
 }
 
 .button-light {
     display: inline-block;
-
     background: white;
     color: var(--navy);
-
     text-decoration: none;
-
     border-radius: 7px;
-
     padding: 13px 25px;
-
     font-weight: bold;
 }
 
@@ -747,21 +679,15 @@ footer {
             #03233e,
             #063b62
         );
-
     color: white;
-
-    padding:
-        55px 25px 20px;
+    padding: 55px 25px 20px;
 }
 
 .footer-grid {
     max-width: 1150px;
     margin: auto;
-
     display: grid;
-    grid-template-columns:
-        1.5fr .8fr 1.2fr;
-
+    grid-template-columns: 1.5fr .8fr 1.2fr;
     gap: 60px;
 }
 
@@ -804,11 +730,8 @@ footer {
 .footer-links a {
     display: block;
     text-decoration: none;
-
     color: #e1ebf0;
-
     font-size: 14px;
-
     margin: 7px 0;
 }
 
@@ -825,7 +748,6 @@ footer {
 .footer-email {
     display: inline-block;
     margin-top: 8px;
-
     color: white;
     text-decoration: none;
     font-weight: bold;
@@ -833,17 +755,11 @@ footer {
 
 .footer-bottom {
     max-width: 1150px;
-
     margin: 40px auto 0;
     padding-top: 20px;
-
-    border-top:
-        1px solid rgba(255,255,255,.2);
-
+    border-top: 1px solid rgba(255,255,255,.2);
     text-align: center;
-
     color: #c5d5df;
-
     font-size: 12px;
 }
 
@@ -852,16 +768,7 @@ footer {
    RESPONSIVE
 ======================================== */
 
-@media (max-width: 1050px) {
-
-    .category-grid {
-        grid-template-columns:
-            repeat(3, 1fr);
-    }
-
-}
-
-@media (max-width: 900px) {
+@media (max-width: 1180px) {
 
     .navbar {
         flex-direction: column;
@@ -880,6 +787,17 @@ footer {
     .nav-links a {
         padding: 5px 0;
     }
+}
+
+@media (max-width: 1050px) {
+
+    .category-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+@media (max-width: 900px) {
 
     .featured-grid,
     .business-grid,
@@ -908,8 +826,7 @@ footer {
     }
 
     .category-grid {
-        grid-template-columns:
-            repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .hero img {
@@ -955,8 +872,7 @@ footer {
 
 <nav class="navbar">
 
-<a href="index.html"
-   class="nav-logo">
+<a href="index.html" class="nav-logo">
 
     <img
         src="1b.png"
@@ -969,15 +885,11 @@ footer {
         </strong>
 
         <small>
-
             PEOPLE
             <span class="red-heart">♥</span>
-
             PLACES
             <span class="red-heart">♥</span>
-
             POSSIBILITIES
-
         </small>
 
     </div>
@@ -995,13 +907,16 @@ footer {
         Events
     </a>
 
-    <a href="businesses.html"
-       class="active">
+    <a href="businesses.html" class="active">
         Local Businesses
     </a>
 
     <a href="things-to-do.html">
         Things to Do
+    </a>
+
+    <a href="animals.html">
+        Animals & Pets
     </a>
 
     <a href="jobs.html">
@@ -1012,12 +927,11 @@ footer {
         Community
     </a>
 
-    <a href="about.html">
-        About
+    <a href="sitemap.html">
+        Site Map
     </a>
 
-    <a href="contact.html"
-       class="nav-contact">
+    <a href="contact.html" class="nav-contact">
         Contact
     </a>
 
@@ -1076,15 +990,10 @@ footer {
     </h2>
 
     <p class="section-description">
-
         This isn't a list of every business in town.
-
-        Loving Longmont highlights
-        independent shops, makers,
-        bookstores, boutiques,
-        specialty markets and creative places
+        Loving Longmont highlights independent shops, makers,
+        bookstores, boutiques, specialty markets and creative places
         that give Longmont its personality.
-
     </p>
 
 </div>
@@ -1106,13 +1015,9 @@ footer {
     </strong>
 
     <p>
-
-        Small-business hours, inventory
-        and contact information can change.
-
-        Please visit the business's official website
-        or social media before making a special trip.
-
+        Small-business hours, inventory and contact information can change.
+        Please visit the business's official website or social media before
+        making a special trip.
     </p>
 
 </div>
@@ -1129,63 +1034,29 @@ footer {
 
 <div class="category-grid">
 
-<a href="#gifts"
-   class="category-card">
-
+<a href="#gifts" class="category-card">
     <span>🎁</span>
-
-    <strong>
-        Gifts & Curiosities
-    </strong>
-
+    <strong>Gifts & Curiosities</strong>
 </a>
 
-
-<a href="#makers"
-   class="category-card">
-
+<a href="#makers" class="category-card">
     <span>🎨</span>
-
-    <strong>
-        Art & Makers
-    </strong>
-
+    <strong>Art & Makers</strong>
 </a>
 
-
-<a href="#books"
-   class="category-card">
-
+<a href="#books" class="category-card">
     <span>📚</span>
-
-    <strong>
-        Books & Paper
-    </strong>
-
+    <strong>Books & Paper</strong>
 </a>
 
-
-<a href="#specialty"
-   class="category-card">
-
+<a href="#specialty" class="category-card">
     <span>🧀</span>
-
-    <strong>
-        Specialty Shops
-    </strong>
-
+    <strong>Specialty Shops</strong>
 </a>
 
-
-<a href="#creative"
-   class="category-card">
-
+<a href="#creative" class="category-card">
     <span>📷</span>
-
-    <strong>
-        Local Creative
-    </strong>
-
+    <strong>Local Creative</strong>
 </a>
 
 </div>
@@ -1198,8 +1069,7 @@ footer {
      FEATURED BUSINESS - WOLF & WREN
 ======================================== -->
 
-<section class="featured-section"
-         id="gifts">
+<section class="featured-section" id="gifts">
 
 <div class="featured-grid">
 
@@ -1225,27 +1095,15 @@ footer {
     </h2>
 
     <p>
-
-        One of downtown Longmont's
-        most colorful little shops.
-
-        Wolf & Wren specializes in
-        clever letterpress greeting cards,
-        stationery, notebooks,
-        writing tools and
-        thoughtfully curated gifts.
-
+        One of downtown Longmont's most colorful little shops.
+        Wolf & Wren specializes in clever letterpress greeting cards,
+        stationery, notebooks, writing tools and thoughtfully curated gifts.
     </p>
 
     <p>
-
-        Their award-winning cards
-        are designed and printed
-        using vintage letterpress equipment,
-        making this a particularly fun stop
-        when you're searching for
-        something different.
-
+        Their award-winning cards are designed and printed using vintage
+        letterpress equipment, making this a particularly fun stop when
+        you're searching for something different.
     </p>
 
 
@@ -1269,9 +1127,7 @@ footer {
             target="_blank"
             rel="noopener noreferrer"
             class="business-button">
-
             Visit Website →
-
         </a>
 
         <a
@@ -1279,15 +1135,12 @@ footer {
             target="_blank"
             rel="noopener noreferrer"
             class="business-button secondary">
-
             Facebook
-
         </a>
 
     </div>
 
 </div>
-
 
 </div>
 
@@ -1299,8 +1152,7 @@ footer {
      BUSINESS DIRECTORY
 ======================================== -->
 
-<section class="directory-section"
-         id="makers">
+<section class="directory-section" id="makers">
 
 <div class="container">
 
@@ -1316,12 +1168,8 @@ footer {
     </h2>
 
     <p class="section-description">
-
-        A growing collection of independent
-        stores and specialty businesses
-        you may not discover
-        unless someone tells you they're there.
-
+        A growing collection of independent stores and specialty businesses
+        you may not discover unless someone tells you they're there.
     </p>
 
 </div>
@@ -1332,9 +1180,7 @@ footer {
 
 
 
-<!-- ========================================
-     TUMBLEWEED ART COLLECTIVE
-======================================== -->
+<!-- TUMBLEWEED ART COLLECTIVE -->
 
 <article class="business-card">
 
@@ -1359,20 +1205,11 @@ footer {
     </h3>
 
     <p class="business-description">
-
-        Part boutique, part gallery
-        and part creative community.
-
-        Tumbleweed features handmade art
-        and goods created by local artists
-        and makers, including work
-        for the home and garden.
-
-        It's the kind of place
-        where the inventory changes
-        depending on what local artists
+        Part boutique, part gallery and part creative community.
+        Tumbleweed features handmade art and goods created by local artists
+        and makers, including work for the home and garden. It's the kind
+        of place where the inventory changes depending on what local artists
         are creating.
-
     </p>
 
 
@@ -1403,9 +1240,7 @@ footer {
             target="_blank"
             rel="noopener noreferrer"
             class="business-button">
-
             Visit Website →
-
         </a>
 
         <a
@@ -1413,9 +1248,7 @@ footer {
             target="_blank"
             rel="noopener noreferrer"
             class="business-button secondary">
-
             Local Listing
-
         </a>
 
     </div>
@@ -1426,9 +1259,7 @@ footer {
 
 
 
-<!-- ========================================
-     ADORN
-======================================== -->
+<!-- ADORN -->
 
 <article class="business-card">
 
@@ -1453,18 +1284,10 @@ footer {
     </h3>
 
     <p class="business-description">
-
-        A longtime downtown gift shop
-        filled with home décor,
-        jewelry, accessories
-        and unusual gifts.
-
-        Adorn is a good place
-        to browse when you know
-        you need a gift
-        but don't yet know
+        A longtime downtown gift shop filled with home décor,
+        jewelry, accessories and unusual gifts. Adorn is a good place
+        to browse when you know you need a gift but don't yet know
         exactly what you're looking for.
-
     </p>
 
 
@@ -1495,9 +1318,7 @@ footer {
             target="_blank"
             rel="noopener noreferrer"
             class="business-button">
-
             Visit Website →
-
         </a>
 
         <a
@@ -1505,9 +1326,7 @@ footer {
             target="_blank"
             rel="noopener noreferrer"
             class="business-button secondary">
-
             Downtown Listing
-
         </a>
 
     </div>
@@ -1518,9 +1337,7 @@ footer {
 
 
 
-<!-- ========================================
-     MAGIC FAIRY CANDLES
-======================================== -->
+<!-- MAGIC FAIRY CANDLES -->
 
 <article class="business-card">
 
@@ -1545,19 +1362,9 @@ footer {
     </h3>
 
     <p class="business-description">
-
-        Much more than a candle shop.
-
-        Magic Fairy Candles carries
-        handmade candles,
-        aromatherapy,
-        crystals,
-        incense,
-        natural perfumes,
-        ritual items,
-        apothecary goods
-        and plenty of unexpected finds.
-
+        Much more than a candle shop. Magic Fairy Candles carries handmade
+        candles, aromatherapy, crystals, incense, natural perfumes, ritual
+        items, apothecary goods and plenty of unexpected finds.
     </p>
 
 
@@ -1588,9 +1395,7 @@ footer {
             target="_blank"
             rel="noopener noreferrer"
             class="business-button">
-
             Visit Website →
-
         </a>
 
         <a
@@ -1598,9 +1403,7 @@ footer {
             target="_blank"
             rel="noopener noreferrer"
             class="business-button secondary">
-
             Facebook
-
         </a>
 
     </div>
@@ -1611,9 +1414,7 @@ footer {
 
 
 
-<!-- ========================================
-     MAKER GENERAL
-======================================== -->
+<!-- MAKER GENERAL -->
 
 <article class="business-card">
 
@@ -1622,15 +1423,9 @@ footer {
     <div class="business-placeholder">
 
         <div>
-
             <span>🧵</span>
-
-            <strong>
-                Maker General
-            </strong>
-
+            <strong>Maker General</strong>
             Textiles • Fiber • Creative Goods
-
         </div>
 
     </div>
@@ -1649,19 +1444,10 @@ footer {
     </h3>
 
     <p class="business-description">
-
-        A general store built
-        specifically for makers.
-
-        Maker General specializes
-        in thoughtfully selected
-        textile and fiber supplies,
-        handmade goods
-        and creative materials.
-
-        They also host sewing,
+        A general store built specifically for makers. Maker General
+        specializes in thoughtfully selected textile and fiber supplies,
+        handmade goods and creative materials. They also host sewing,
         mending and maker workshops.
-
     </p>
 
 
@@ -1692,9 +1478,7 @@ footer {
             target="_blank"
             rel="noopener noreferrer"
             class="business-button">
-
             Visit Website →
-
         </a>
 
         <a
@@ -1702,9 +1486,7 @@ footer {
             target="_blank"
             rel="noopener noreferrer"
             class="business-button secondary">
-
             Downtown Listing
-
         </a>
 
     </div>
@@ -1715,12 +1497,9 @@ footer {
 
 
 
-<!-- ========================================
-     BARBED WIRE BOOKS
-======================================== -->
+<!-- BARBED WIRE BOOKS -->
 
-<article class="business-card"
-         id="books">
+<article class="business-card" id="books">
 
 <div class="business-image">
 
@@ -1743,17 +1522,9 @@ footer {
     </h3>
 
     <p class="business-description">
-
-        An independently owned
-        downtown bookstore
-        selling new and used books.
-
-        Browse Colorado and local-interest titles,
-        hard-to-find books,
-        maps and guides,
-        plus work from local authors
-        and craftspeople.
-
+        An independently owned downtown bookstore selling new and used books.
+        Browse Colorado and local-interest titles, hard-to-find books,
+        maps and guides, plus work from local authors and craftspeople.
     </p>
 
 
@@ -1784,9 +1555,7 @@ footer {
             target="_blank"
             rel="noopener noreferrer"
             class="business-button">
-
             Visit Website →
-
         </a>
 
         <a
@@ -1794,9 +1563,7 @@ footer {
             target="_blank"
             rel="noopener noreferrer"
             class="business-button secondary">
-
             Downtown Listing
-
         </a>
 
     </div>
@@ -1807,15 +1574,11 @@ footer {
 
 
 
-<!-- ========================================
-     CHEESE IMPORTERS
-======================================== -->
+<!-- CHEESE IMPORTERS -->
 
-<article class="business-card"
-         id="specialty">
+<article class="business-card" id="specialty">
 
-<div class="business-image"
-     style="background:#f6f0e7;">
+<div class="business-image" style="background:#f6f0e7;">
 
     <img
         src="https://i0.wp.com/cheeseimporters.com/wp-content/uploads/2025/12/Cheese-Importer-Logo-cropped.png?fit=800%2C251&ssl=1"
@@ -1837,20 +1600,10 @@ footer {
     </h3>
 
     <p class="business-description">
-
-        One of Longmont's true
-        destination specialty stores.
-
-        Wander through a huge selection
-        of international and local cheeses,
-        charcuterie,
-        olive oils,
-        spices and specialty foods,
-        then explore imported textiles,
-        kitchen goods,
-        soaps,
-        gifts and European market finds.
-
+        One of Longmont's true destination specialty stores. Wander through
+        a huge selection of international and local cheeses, charcuterie,
+        olive oils, spices and specialty foods, then explore imported
+        textiles, kitchen goods, soaps, gifts and European market finds.
     </p>
 
 
@@ -1881,9 +1634,7 @@ footer {
             target="_blank"
             rel="noopener noreferrer"
             class="business-button">
-
             Visit Website →
-
         </a>
 
         <a
@@ -1891,9 +1642,7 @@ footer {
             target="_blank"
             rel="noopener noreferrer"
             class="business-button secondary">
-
             Downtown Listing
-
         </a>
 
     </div>
@@ -1904,9 +1653,7 @@ footer {
 
 
 
-<!-- ========================================
-     JUNIPER GOODS
-======================================== -->
+<!-- JUNIPER GOODS -->
 
 <article class="business-card">
 
@@ -1915,15 +1662,9 @@ footer {
     <div class="business-placeholder">
 
         <div>
-
             <span>🛍️</span>
-
-            <strong>
-                Juniper Goods
-            </strong>
-
+            <strong>Juniper Goods</strong>
             Small • Slow • Considered
-
         </div>
 
     </div>
@@ -1942,21 +1683,10 @@ footer {
     </h3>
 
     <p class="business-description">
-
-        A women-owned lifestyle boutique
-        built around small,
-        independent and maker-led brands.
-
-        Browse apparel,
-        home goods,
-        jewelry,
-        ceramics and pantry items,
-        including products from
-        Colorado makers.
-
-        There's also coffee,
-        brunch and a zero-proof bar.
-
+        A women-owned lifestyle boutique built around small,
+        independent and maker-led brands. Browse apparel, home goods,
+        jewelry, ceramics and pantry items, including products from
+        Colorado makers. There's also coffee, brunch and a zero-proof bar.
     </p>
 
 
@@ -1987,9 +1717,7 @@ footer {
             target="_blank"
             rel="noopener noreferrer"
             class="business-button">
-
             Visit Website →
-
         </a>
 
         <a
@@ -1997,9 +1725,7 @@ footer {
             target="_blank"
             rel="noopener noreferrer"
             class="business-button secondary">
-
             Instagram
-
         </a>
 
     </div>
@@ -2010,9 +1736,7 @@ footer {
 
 
 
-<!-- ========================================
-     MOROCCAN RUGS & GIFTS
-======================================== -->
+<!-- MOROCCAN RUGS & GIFTS -->
 
 <article class="business-card">
 
@@ -2021,15 +1745,9 @@ footer {
     <div class="business-placeholder">
 
         <div>
-
             <span>🪬</span>
-
-            <strong>
-                Moroccan Rugs & Gifts
-            </strong>
-
+            <strong>Moroccan Rugs & Gifts</strong>
             Textiles • Artisan Imports
-
         </div>
 
     </div>
@@ -2048,20 +1766,11 @@ footer {
     </h3>
 
     <p class="business-description">
-
-        A specialty shop filled with
-        authentic Moroccan textiles
-        and artisan goods.
-
-        The store is particularly known
-        for Berber and tribal rugs,
-        along with leather goods,
-        pillows, ceramics
-        and distinctive décor.
-
-        Definitely one of Longmont's
-        more unexpected places to browse.
-
+        A specialty shop filled with authentic Moroccan textiles and
+        artisan goods. The store is particularly known for Berber and
+        tribal rugs, along with leather goods, pillows, ceramics and
+        distinctive décor. Definitely one of Longmont's more unexpected
+        places to browse.
     </p>
 
 
@@ -2092,9 +1801,7 @@ footer {
             target="_blank"
             rel="noopener noreferrer"
             class="business-button">
-
             Find Current Information →
-
         </a>
 
     </div>
@@ -2116,8 +1823,7 @@ footer {
      BOULDER COUNTY PHOTOGRAPHY
 ======================================== -->
 
-<section class="creative-section"
-         id="creative">
+<section class="creative-section" id="creative">
 
 <div class="container">
 
@@ -2159,34 +1865,21 @@ footer {
     </h3>
 
     <p>
-
-        I believe some of the best photographs happen
-        when people are comfortable enough
-        to simply be themselves.
-
+        I believe some of the best photographs happen when people are
+        comfortable enough to simply be themselves.
     </p>
 
     <p>
-
-        Whether we are capturing a senior milestone,
-        celebrating an engagement,
-        photographing your family,
-        welcoming a new baby
-        or simply documenting this chapter of your life,
-        my goal is to create photographs
-        that feel genuine and worth keeping.
-
+        Whether we are capturing a senior milestone, celebrating an engagement,
+        photographing your family, welcoming a new baby or simply documenting
+        this chapter of your life, my goal is to create photographs that feel
+        genuine and worth keeping.
     </p>
 
     <p>
-
-        Boulder County Photography serves
-        Longmont and the surrounding Boulder County area
-        with relaxed portrait sessions
-        designed around real people,
-        real relationships
-        and meaningful moments.
-
+        Boulder County Photography serves Longmont and the surrounding
+        Boulder County area with relaxed portrait sessions designed around
+        real people, real relationships and meaningful moments.
     </p>
 
 
@@ -2197,9 +1890,7 @@ footer {
             target="_blank"
             rel="noopener noreferrer"
             class="business-button">
-
             Visit Website →
-
         </a>
 
         <a
@@ -2207,23 +1898,18 @@ footer {
             target="_blank"
             rel="noopener noreferrer"
             class="business-button secondary">
-
             Facebook
-
         </a>
 
         <a
             href="mailto:hello@BoulderCountyPhotography.com"
             class="business-button secondary">
-
             Email →
-
         </a>
 
     </div>
 
 </div>
-
 
 </div>
 
@@ -2260,22 +1946,15 @@ footer {
 
 <div class="support-card">
 
-    <span>
-        ❤️
-    </span>
+    <span>❤️</span>
 
     <h3>
         Discover Something Different
     </h3>
 
     <p>
-
-        Independent shops
-        often carry products,
-        artwork and gifts
-        you won't find
-        at national chains.
-
+        Independent shops often carry products, artwork and gifts
+        you won't find at national chains.
     </p>
 
 </div>
@@ -2284,22 +1963,15 @@ footer {
 
 <div class="support-card">
 
-    <span>
-        👋
-    </span>
+    <span>👋</span>
 
     <h3>
         Know Your Neighbors
     </h3>
 
     <p>
-
-        Local businesses
-        are run by real people
-        who live, work
-        and invest in
-        our community.
-
+        Local businesses are run by real people who live, work
+        and invest in our community.
     </p>
 
 </div>
@@ -2308,22 +1980,15 @@ footer {
 
 <div class="support-card">
 
-    <span>
-        📍
-    </span>
+    <span>📍</span>
 
     <h3>
         Keep Longmont Unique
     </h3>
 
     <p>
-
-        The places we choose
-        to support help shape
-        what downtown
-        and the rest of Longmont
-        will look like tomorrow.
-
+        The places we choose to support help shape what downtown
+        and the rest of Longmont will look like tomorrow.
     </p>
 
 </div>
@@ -2354,22 +2019,15 @@ footer {
     </h2>
 
     <p>
-
-        Know an independent Longmont shop,
-        maker, specialty store
-        or small business
-        that deserves to be discovered?
-
+        Know an independent Longmont shop, maker, specialty store
+        or small business that deserves to be discovered?
         Send it our way.
-
     </p>
 
     <a
-        href="contact.html"
+        href="mailto:hello.lovinglongmont@gmail.com?subject=Longmont%20Business%20Submission&body=Hi%20Loving%20Longmont%2C%0A%0AI%27d%20like%20to%20suggest%20a%20Longmont%20business.%0A%0ABusiness%20Name%3A%0AWebsite%3A%0AAddress%3A%0AWhat%20makes%20it%20special%3A%0A"
         class="button-light">
-
         Recommend a Local Business →
-
     </a>
 
 </div>
@@ -2402,15 +2060,11 @@ footer {
             </h2>
 
             <small>
-
                 PEOPLE
                 <span class="red-heart">♥</span>
-
                 PLACES
                 <span class="red-heart">♥</span>
-
                 POSSIBILITIES
-
             </small>
 
         </div>
@@ -2419,12 +2073,8 @@ footer {
 
 
     <p class="footer-about">
-
-        Celebrating the people,
-        businesses, events and places
-        that make Longmont, Colorado
-        a community worth loving.
-
+        Celebrating the people, businesses, events and places
+        that make Longmont, Colorado a community worth loving.
     </p>
 
 </div>
@@ -2455,8 +2105,12 @@ footer {
             Things to Do
         </a>
 
+        <a href="animals.html">
+            Animals & Pets
+        </a>
+
         <a href="jobs.html">
-            Jobs
+            Jobs & Work
         </a>
 
         <a href="community.html">
@@ -2464,11 +2118,15 @@ footer {
         </a>
 
         <a href="about.html">
-            About
+            About Loving Longmont
         </a>
 
         <a href="contact.html">
             Contact
+        </a>
+
+        <a href="sitemap.html">
+            <strong>Site Map →</strong>
         </a>
 
     </div>
@@ -2484,21 +2142,14 @@ footer {
     </div>
 
     <p class="footer-contact">
-
-        Have an event,
-        business, photo,
-        story or something
-        happening around Longmont
-        you'd like us to know about?
-
+        Have a business, event, photo, story or community
+        resource you'd like Loving Longmont to know about?
     </p>
 
     <a
         href="mailto:hello.lovinglongmont@gmail.com"
         class="footer-email">
-
         ✉ hello.lovinglongmont@gmail.com
-
     </a>
 
 </div>
