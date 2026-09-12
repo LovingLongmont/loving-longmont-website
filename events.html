@@ -63,21 +63,21 @@ a {
 }
 
 .navbar {
-    max-width: 1380px;
+    max-width: 1450px;
     margin: auto;
-    padding: 9px 28px;
+    padding: 9px 22px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 25px;
+    gap: 20px;
 }
 
 .nav-logo {
     display: flex;
     align-items: center;
     text-decoration: none;
-    min-width: 280px;
+    min-width: 250px;
 }
 
 .nav-logo img {
@@ -114,16 +114,17 @@ a {
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 23px;
+    gap: 15px;
 }
 
 .nav-links a {
     text-decoration: none;
     color: var(--navy);
-    font-size: 13px;
+    font-size: 12px;
     font-weight: bold;
     padding: 25px 0 22px;
     border-bottom: 3px solid transparent;
+    white-space: nowrap;
 }
 
 .nav-links a:hover,
@@ -136,7 +137,7 @@ a {
     background: var(--navy);
     color: white !important;
     border-radius: 7px;
-    padding: 12px 20px !important;
+    padding: 12px 18px !important;
     border-bottom: none !important;
 }
 
@@ -693,7 +694,7 @@ footer {
    RESPONSIVE
 ======================================== */
 
-@media (max-width: 900px) {
+@media (max-width: 1180px) {
 
     .navbar {
         flex-direction: column;
@@ -712,6 +713,10 @@ footer {
     .nav-links a {
         padding: 5px 0;
     }
+
+}
+
+@media (max-width: 900px) {
 
     .event-grid {
         grid-template-columns: 1fr;
@@ -810,6 +815,10 @@ footer {
         Things to Do
     </a>
 
+    <a href="animals.html">
+        Animals & Pets
+    </a>
+
     <a href="jobs.html">
         Jobs
     </a>
@@ -818,8 +827,8 @@ footer {
         Community
     </a>
 
-    <a href="about.html">
-        About
+    <a href="sitemap.html">
+        Site Map
     </a>
 
     <a href="contact.html"
@@ -2043,8 +2052,12 @@ footer {
             Things to Do
         </a>
 
+        <a href="animals.html">
+            Animals & Pets
+        </a>
+
         <a href="jobs.html">
-            Jobs
+            Jobs & Work
         </a>
 
         <a href="community.html">
@@ -2052,11 +2065,15 @@ footer {
         </a>
 
         <a href="about.html">
-            About
+            About Loving Longmont
         </a>
 
         <a href="contact.html">
             Contact
+        </a>
+
+        <a href="sitemap.html">
+            <strong>Site Map →</strong>
         </a>
 
     </div>
@@ -2075,9 +2092,9 @@ footer {
 
         Have an event,
         business, photo,
-        story or something
-        happening around Longmont
-        you'd like us to know about?
+        story or community resource
+        you'd like Loving Longmont
+        to know about?
 
     </p>
 
