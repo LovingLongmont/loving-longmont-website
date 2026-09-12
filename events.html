@@ -8,7 +8,7 @@
 <title>Events in Longmont | Loving Longmont</title>
 
 <meta name="description"
-content="Find events happening in Longmont, Colorado including festivals, markets, live music, family activities, community gatherings and more.">
+content="Discover events happening in Longmont, Colorado during September and October 2026 including ArtWalk, Oktoberfest, Restaurant Week, Day of the Dead, Halloween and more.">
 
 <style>
 
@@ -146,8 +146,7 @@ a {
 
 
 /* ========================================
-   LARGE IMAGE HERO
-   SAME AS OTHER PAGES
+   HERO
 ======================================== */
 
 .hero {
@@ -175,7 +174,7 @@ a {
     background:
         linear-gradient(
             to top,
-            rgba(3,35,62,.72),
+            rgba(3,35,62,.75),
             rgba(3,35,62,.05) 55%
         );
 
@@ -183,8 +182,8 @@ a {
 }
 
 .hero-title {
-    text-align: center;
     color: white;
+    text-align: center;
 }
 
 .hero-title h1 {
@@ -241,227 +240,294 @@ a {
 .page-intro {
     background: var(--cream);
     text-align: center;
-    padding: 55px 25px 35px;
+    padding: 60px 25px 45px;
 }
 
 
 /* ========================================
-   EVENT CATEGORIES
+   IMPORTANT UPDATE NOTICE
 ======================================== */
 
-.categories {
-    padding: 10px 25px 70px;
+.update-section {
     background: var(--cream);
+    padding: 0 25px 65px;
 }
 
-.category-grid {
-    max-width: 1100px;
-    margin: auto;
-
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 15px;
-}
-
-.category-card {
-    background: var(--light-blue);
-    border: 1px solid #dfe8e8;
-    border-radius: 14px;
-
-    text-align: center;
-    padding: 24px 14px;
-
-    text-decoration: none;
-    transition: .2s;
-}
-
-.category-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0,0,0,.08);
-}
-
-.category-card span {
-    display: block;
-    font-size: 32px;
-    margin-bottom: 8px;
-}
-
-.category-card strong {
-    color: var(--navy);
-    font-family: Georgia, serif;
-}
-
-
-/* ========================================
-   THIS WEEK
-======================================== */
-
-.this-week {
-    background: white;
-    padding: 75px 25px;
-}
-
-.section-heading {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.event-grid {
-    max-width: 1100px;
-    margin: auto;
-
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-}
-
-.event-card {
-    background: var(--cream);
-    border-radius: 15px;
-    overflow: hidden;
-
-    border: 1px solid #ece8df;
-
-    box-shadow:
-        0 6px 20px rgba(0,0,0,.05);
-}
-
-.event-photo-placeholder {
-    min-height: 220px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #edf4f3,
-            #dce9e7
-        );
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
-    padding: 20px;
-
-    color: var(--gray);
-}
-
-.event-photo-placeholder span {
-    display: block;
-    font-size: 43px;
-    margin-bottom: 8px;
-}
-
-.event-content {
-    padding: 25px;
-}
-
-.event-type {
-    color: var(--red);
-
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: bold;
-}
-
-.event-content h3 {
-    font-family: Georgia, serif;
-    color: var(--navy);
-    font-size: 22px;
-    margin: 6px 0 8px;
-}
-
-.event-date {
-    color: var(--navy);
-    font-weight: bold;
-    font-size: 14px;
-    margin-bottom: 8px;
-}
-
-.event-content p {
-    color: var(--gray);
-    font-size: 14px;
-}
-
-
-/* ========================================
-   EVENT TYPES
-======================================== */
-
-.event-types {
-    background: var(--sage);
-    padding: 75px 25px;
-}
-
-.type-grid {
-    max-width: 1050px;
-    margin: 40px auto 0;
-
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-}
-
-.type-card {
-    background: white;
-    border-radius: 14px;
-    padding: 27px;
-}
-
-.type-card span {
-    font-size: 30px;
-}
-
-.type-card h3 {
-    font-family: Georgia, serif;
-    color: var(--navy);
-    font-size: 21px;
-    margin: 8px 0 6px;
-}
-
-.type-card p {
-    color: var(--gray);
-    font-size: 14px;
-    margin: 0;
-}
-
-
-/* ========================================
-   CALENDAR
-======================================== */
-
-.calendar-section {
-    background: white;
-    padding: 75px 25px;
-}
-
-.calendar-box {
+.update-box {
     max-width: 1000px;
     margin: auto;
 
-    background: var(--light-blue);
-    border-radius: 18px;
+    background: white;
+    border-left: 5px solid var(--red);
+    border-radius: 12px;
 
-    padding: 45px;
+    padding: 24px 28px;
+
+    box-shadow: 0 5px 18px rgba(0,0,0,.05);
+}
+
+.update-box strong {
+    display: block;
+    color: var(--navy);
+    font-size: 17px;
+    margin-bottom: 5px;
+}
+
+.update-box p {
+    margin: 0;
+    color: var(--gray);
+    font-size: 14px;
+}
+
+.last-checked {
+    display: block;
+    margin-top: 10px;
+
+    color: var(--red);
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+/* ========================================
+   MONTH NAVIGATION
+======================================== */
+
+.month-nav {
+    background: white;
+    padding: 35px 25px;
     text-align: center;
 }
 
-.calendar-box span {
-    font-size: 55px;
+.month-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
-.calendar-box h2 {
+.month-button {
+    background: var(--navy);
+    color: white;
+
+    text-decoration: none;
+    font-weight: bold;
+
+    padding: 12px 25px;
+    border-radius: 7px;
+
+    transition: .2s ease;
+}
+
+.month-button:hover {
+    background: var(--red);
+    transform: translateY(-2px);
+}
+
+
+/* ========================================
+   EVENT MONTH
+======================================== */
+
+.event-month {
+    padding: 75px 25px;
+}
+
+.event-month.september {
+    background: white;
+}
+
+.event-month.october {
+    background: var(--cream);
+}
+
+.month-heading {
+    text-align: center;
+    margin-bottom: 42px;
+}
+
+.event-grid {
+    max-width: 1150px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+}
+
+
+/* ========================================
+   EVENT CARD
+======================================== */
+
+.event-card {
+    background: white;
+
+    border: 1px solid #e8e5df;
+    border-radius: 17px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 7px 24px rgba(0,0,0,.07);
+
+    display: flex;
+    flex-direction: column;
+}
+
+.event-image {
+    height: 285px;
+    overflow: hidden;
+
+    background: var(--light-blue);
+}
+
+.event-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform .35s ease;
+}
+
+.event-card:hover .event-image img {
+    transform: scale(1.025);
+}
+
+.event-body {
+    padding: 28px;
+
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.event-category {
+    color: var(--red);
+
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.event-body h3 {
     font-family: Georgia, serif;
+
     color: var(--navy);
-    font-size: 35px;
-    margin: 10px 0 12px;
+
+    font-size: 27px;
+    line-height: 1.15;
+
+    margin: 7px 0 18px;
 }
 
-.calendar-box p {
+
+/* ========================================
+   EVENT DETAILS
+======================================== */
+
+.event-details {
+    border-top: 1px solid #e6e3dd;
+    border-bottom: 1px solid #e6e3dd;
+
+    padding: 15px 0;
+    margin-bottom: 18px;
+}
+
+.event-detail {
+    display: grid;
+    grid-template-columns: 25px 1fr;
+
+    gap: 7px;
+
+    margin: 7px 0;
+
+    font-size: 14px;
+}
+
+.event-detail strong {
+    color: var(--navy);
+}
+
+.event-description {
     color: var(--gray);
-    max-width: 700px;
-    margin: 0 auto 22px;
+    font-size: 14px;
+    margin: 0 0 20px;
+    flex-grow: 1;
+}
+
+
+/* ========================================
+   OFFICIAL WEBSITE NOTE
+======================================== */
+
+.official-note {
+    background: var(--light-blue);
+
+    border-radius: 8px;
+
+    padding: 11px 13px;
+    margin-bottom: 16px;
+
+    color: #50666e;
+    font-size: 12px;
+}
+
+.official-note strong {
+    color: var(--navy);
+}
+
+
+/* ========================================
+   BUTTON
+======================================== */
+
+.event-button {
+    display: inline-block;
+
+    align-self: flex-start;
+
+    background: var(--red);
+    color: white;
+
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 13px;
+
+    padding: 12px 20px;
+
+    border-radius: 7px;
+
+    transition: .2s ease;
+}
+
+.event-button:hover {
+    background: #a80c16;
+    transform: translateY(-2px);
+}
+
+
+/* ========================================
+   FREE BADGE
+======================================== */
+
+.cost-free {
+    display: inline-block;
+
+    background: #e8f5e9;
+    color: #276b35;
+
+    padding: 3px 9px;
+    border-radius: 20px;
+
+    font-size: 12px;
+    font-weight: bold;
 }
 
 
@@ -479,51 +545,43 @@ a {
 
     color: white;
 
-    padding: 70px 25px;
+    padding: 75px 25px;
+
     text-align: center;
+}
+
+.submit-event .eyebrow {
+    color: #ffb9be;
 }
 
 .submit-event h2 {
     font-family: Georgia, serif;
+
     font-size: 42px;
+
     margin: 5px 0 15px;
 }
 
 .submit-event p {
     max-width: 740px;
+
     margin: 0 auto 25px;
+
     color: #dce9f0;
 }
 
-
-/* ========================================
-   BUTTONS
-======================================== */
-
-.button {
-    display: inline-block;
-    text-decoration: none;
-
-    padding: 13px 25px;
-    border-radius: 7px;
-
-    font-weight: bold;
-    transition: .2s;
-}
-
-.button-red {
-    background: var(--red);
-    color: white;
-}
-
-.button-red:hover {
-    background: #aa0d16;
-    transform: translateY(-2px);
-}
-
 .button-light {
+    display: inline-block;
+
     background: white;
     color: var(--navy);
+
+    text-decoration: none;
+    font-weight: bold;
+
+    padding: 13px 25px;
+
+    border-radius: 7px;
 }
 
 
@@ -609,6 +667,7 @@ footer {
 .footer-email {
     display: inline-block;
     margin-top: 8px;
+
     color: white;
     text-decoration: none;
     font-weight: bold;
@@ -616,6 +675,7 @@ footer {
 
 .footer-bottom {
     max-width: 1150px;
+
     margin: 40px auto 0;
     padding-top: 20px;
 
@@ -623,6 +683,7 @@ footer {
         1px solid rgba(255,255,255,.2);
 
     text-align: center;
+
     color: #c5d5df;
     font-size: 12px;
 }
@@ -631,14 +692,6 @@ footer {
 /* ========================================
    RESPONSIVE
 ======================================== */
-
-@media (max-width: 1100px) {
-
-    .category-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-}
 
 @media (max-width: 900px) {
 
@@ -660,8 +713,7 @@ footer {
         padding: 5px 0;
     }
 
-    .event-grid,
-    .type-grid {
+    .event-grid {
         grid-template-columns: 1fr;
     }
 
@@ -671,14 +723,10 @@ footer {
 
 }
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
 
     .nav-brand-text {
         display: none;
-    }
-
-    .category-grid {
-        grid-template-columns: repeat(2, 1fr);
     }
 
     .hero img {
@@ -686,8 +734,12 @@ footer {
         object-fit: cover;
     }
 
-    .calendar-box {
-        padding: 30px 20px;
+    .event-image {
+        height: 230px;
+    }
+
+    .event-body {
+        padding: 22px;
     }
 
 }
@@ -695,6 +747,7 @@ footer {
 </style>
 
 </head>
+
 
 <body>
 
@@ -706,6 +759,7 @@ footer {
 <header class="site-header">
 
 <nav class="navbar">
+
 
 <a href="index.html"
    class="nav-logo">
@@ -782,8 +836,7 @@ footer {
 
 
 <!-- ========================================
-     LARGE HEADER IMAGE
-     SAME 2.png AS OTHER PAGES
+     HERO
 ======================================== -->
 
 <section class="hero">
@@ -821,20 +874,21 @@ footer {
 <div class="container">
 
     <div class="eyebrow">
-        What's Happening Around Town
+        September & October 2026
     </div>
 
     <h2 class="section-title">
-        There's Always Something Happening
+        Fall in Longmont
     </h2>
 
     <p class="section-description">
 
-        Discover festivals, markets,
-        concerts, family activities,
-        community gatherings,
-        arts, outdoor activities
-        and more happening throughout Longmont.
+        Art, food, music, culture,
+        community celebrations and fall traditions
+        fill the next two months in Longmont.
+
+        Here are some events worth adding
+        to your calendar.
 
     </p>
 
@@ -845,85 +899,33 @@ footer {
 
 
 <!-- ========================================
-     EVENT CATEGORIES
+     IMPORTANT EVENT NOTICE
 ======================================== -->
 
-<section class="categories">
+<section class="update-section">
 
-<div class="category-grid">
-
-
-<a href="#community-events"
-   class="category-card">
-
-    <span>🎉</span>
+<div class="update-box">
 
     <strong>
-        Community
+        📌 Please check the official event website before you go.
     </strong>
 
-</a>
+    <p>
 
+        Loving Longmont researches event information
+        from official organizers and community sources,
+        but schedules, ticket prices, parking information,
+        weather plans and availability can change.
 
-<a href="#music"
-   class="category-card">
+        Each event below includes a link to its
+        official website so you can confirm
+        the latest information directly with the organizer.
 
-    <span>🎵</span>
+    </p>
 
-    <strong>
-        Live Music
-    </strong>
-
-</a>
-
-
-<a href="#markets"
-   class="category-card">
-
-    <span>🛍️</span>
-
-    <strong>
-        Markets
-    </strong>
-
-</a>
-
-
-<a href="#family"
-   class="category-card">
-
-    <span>👨‍👩‍👧</span>
-
-    <strong>
-        Family
-    </strong>
-
-</a>
-
-
-<a href="#arts"
-   class="category-card">
-
-    <span>🎨</span>
-
-    <strong>
-        Arts & Culture
-    </strong>
-
-</a>
-
-
-<a href="#outdoors"
-   class="category-card">
-
-    <span>🌲</span>
-
-    <strong>
-        Outdoors
-    </strong>
-
-</a>
-
+    <span class="last-checked">
+        Event information researched September 11, 2026
+    </span>
 
 </div>
 
@@ -932,29 +934,54 @@ footer {
 
 
 <!-- ========================================
-     THIS WEEK
+     MONTH LINKS
 ======================================== -->
 
-<section class="this-week">
+<section class="month-nav">
+
+<div class="month-buttons">
+
+    <a href="#september"
+       class="month-button">
+        September Events ↓
+    </a>
+
+    <a href="#october"
+       class="month-button">
+        October Events ↓
+    </a>
+
+</div>
+
+</section>
+
+
+
+<!-- ========================================
+     SEPTEMBER
+======================================== -->
+
+<section
+    class="event-month september"
+    id="september">
 
 <div class="container">
 
 
-<div class="section-heading">
+<div class="month-heading">
 
     <div class="eyebrow">
-        Around Longmont
+        September 2026
     </div>
 
     <h2 class="section-title">
-        This Week in Longmont
+        September in Longmont
     </h2>
 
     <p class="section-description">
 
-        This is where we'll feature
-        current events happening
-        throughout the Longmont community.
+        Art, creativity and Oktoberfest
+        help welcome fall to Longmont.
 
     </p>
 
@@ -965,41 +992,108 @@ footer {
 <div class="event-grid">
 
 
-<!-- EVENT 1 -->
+<!-- ========================================
+     ARTWALK
+======================================== -->
 
 <article class="event-card">
 
-    <div class="event-photo-placeholder">
+    <div class="event-image">
 
-        <div>
-
-            <span>📷</span>
-
-            Add Your Event Photo
-
-        </div>
+        <img
+            src="https://img.ctykit.com/cdn/co-longmont/images/tr:w-1800/final-artwalk-2025-poster-letter-1920-x-1080-px-1.jpg"
+            alt="ArtWalk on Main 2026 promotional image"
+            loading="lazy">
 
     </div>
 
 
-    <div class="event-content">
+    <div class="event-body">
 
-        <div class="event-type">
-            Community Event
+        <div class="event-category">
+            Art • Music • Community
         </div>
 
         <h3>
-            Event Name
+            ArtWalk on Main
         </h3>
 
-        <div class="event-date">
-            Date • Time
+
+        <div class="event-details">
+
+            <div class="event-detail">
+                <span>📅</span>
+                <div>
+                    <strong>Date:</strong>
+                    Saturday, September 12, 2026
+                </div>
+            </div>
+
+            <div class="event-detail">
+                <span>🕓</span>
+                <div>
+                    <strong>Time:</strong>
+                    4:00 PM – 8:00 PM
+                </div>
+            </div>
+
+            <div class="event-detail">
+                <span>📍</span>
+                <div>
+                    <strong>Location:</strong>
+                    Main Street between 3rd Avenue
+                    and Longs Peak Avenue
+                </div>
+            </div>
+
+            <div class="event-detail">
+                <span>💵</span>
+                <div>
+                    <strong>Cost:</strong>
+                    Check official event page
+                </div>
+            </div>
+
         </div>
 
-        <p>
-            Add the event location
-            and a short description here.
+
+        <p class="event-description">
+
+            Downtown Main Street closes to traffic
+            for an evening celebrating art,
+            culture and community.
+
+            Enjoy an art market,
+            live music on multiple stages,
+            performers, food trucks
+            and family-friendly activities.
+
+            ArtWalk is presented by
+            Firehouse Art Center.
+
         </p>
+
+
+        <div class="official-note">
+
+            <strong>Before you go:</strong>
+            Check the official Downtown Longmont
+            page for current schedules,
+            performers, parking information
+            and event updates.
+
+        </div>
+
+
+        <a
+            href="https://www.downtownlongmont.com/do/artwalk"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="event-button">
+
+            Official Event Website →
+
+        </a>
 
     </div>
 
@@ -1007,41 +1101,110 @@ footer {
 
 
 
-<!-- EVENT 2 -->
+<!-- ========================================
+     LONGMONT ARTS WEEK
+======================================== -->
 
 <article class="event-card">
 
-    <div class="event-photo-placeholder">
+    <div class="event-image">
 
-        <div>
-
-            <span>📷</span>
-
-            Add Your Event Photo
-
-        </div>
+        <img
+            src="https://img.ctykit.com/cdn/co-longmont/images/tr:w-1800/bbz-3257-v1.jpg"
+            alt="Art and creativity in Downtown Longmont"
+            loading="lazy">
 
     </div>
 
 
-    <div class="event-content">
+    <div class="event-body">
 
-        <div class="event-type">
-            Local Event
+        <div class="event-category">
+            Arts • Culture • Downtown
         </div>
 
         <h3>
-            Event Name
+            Longmont Arts Week
         </h3>
 
-        <div class="event-date">
-            Date • Time
+
+        <div class="event-details">
+
+            <div class="event-detail">
+                <span>📅</span>
+                <div>
+                    <strong>Dates:</strong>
+                    September 12–19, 2026
+                </div>
+            </div>
+
+            <div class="event-detail">
+                <span>🕓</span>
+                <div>
+                    <strong>Time:</strong>
+                    Events throughout the week
+                </div>
+            </div>
+
+            <div class="event-detail">
+                <span>📍</span>
+                <div>
+                    <strong>Location:</strong>
+                    Longmont Creative District
+                    and participating locations
+                </div>
+            </div>
+
+            <div class="event-detail">
+                <span>💵</span>
+                <div>
+                    <strong>Cost:</strong>
+                    <span class="cost-free">
+                        FREE
+                    </span>
+                </div>
+            </div>
+
         </div>
 
-        <p>
-            Add the event location
-            and a short description here.
+
+        <p class="event-description">
+
+            A week-long showcase celebrating
+            Longmont's creative community.
+
+            Featured events include
+            ArtWalk on Main,
+            TasteAbout Downtown,
+            Downtown Ink!,
+            Wanderlust Art Fair
+            and dozens of arts,
+            music and creative events
+            happening throughout the district.
+
         </p>
+
+
+        <div class="official-note">
+
+            <strong>Before you go:</strong>
+            Individual activities within Arts Week
+            may have their own schedules,
+            registrations or costs.
+            Check the official calendar for details.
+
+        </div>
+
+
+        <a
+            href="https://www.downtownlongmont.com/who-we-are/creative-district/longmont-arts-week"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="event-button">
+
+            Official Arts Week Calendar →
+
+        </a>
 
     </div>
 
@@ -1049,41 +1212,108 @@ footer {
 
 
 
-<!-- EVENT 3 -->
+<!-- ========================================
+     LEFT HAND OKTOBERFEST
+======================================== -->
 
 <article class="event-card">
 
-    <div class="event-photo-placeholder">
+    <div class="event-image">
 
-        <div>
-
-            <span>📷</span>
-
-            Add Your Event Photo
-
-        </div>
+        <img
+            src="https://9e1f107ab36932bd7899-c167113948c837617fb235faa4253299.ssl.cf2.rackcdn.com/uploads/images/full/312787c632aeb68ba004fa69e39bc5b6.jpg"
+            alt="Left Hand Oktoberfest 2026 promotional poster"
+            loading="lazy">
 
     </div>
 
 
-    <div class="event-content">
+    <div class="event-body">
 
-        <div class="event-type">
-            Things to Do
+        <div class="event-category">
+            Festival • Food • Family
         </div>
 
         <h3>
-            Event Name
+            Left Hand Oktoberfest
         </h3>
 
-        <div class="event-date">
-            Date • Time
+
+        <div class="event-details">
+
+            <div class="event-detail">
+                <span>📅</span>
+                <div>
+                    <strong>Date:</strong>
+                    Saturday, September 26, 2026
+                </div>
+            </div>
+
+            <div class="event-detail">
+                <span>🕓</span>
+                <div>
+                    <strong>Time:</strong>
+                    11:00 AM – 9:00 PM
+                </div>
+            </div>
+
+            <div class="event-detail">
+                <span>📍</span>
+                <div>
+                    <strong>Location:</strong>
+                    The Garden at Left Hand Brewing<br>
+                    1245 Boston Ave., Longmont
+                </div>
+            </div>
+
+            <div class="event-detail">
+                <span>💵</span>
+                <div>
+                    <strong>Tickets:</strong>
+                    $5<br>
+                    Kids 12 & under FREE
+                </div>
+            </div>
+
         </div>
 
-        <p>
-            Add the event location
-            and a short description here.
+
+        <p class="event-description">
+
+            Left Hand's traditional all-day
+            Oktoberfest features live music,
+            stein holding,
+            brat-eating competitions,
+            a costume contest,
+            children's activities,
+            bounce houses and slides,
+            a 30+ vendor craft market
+            and local food trucks.
+
         </p>
+
+
+        <div class="official-note">
+
+            <strong>Also note:</strong>
+            Left Hand currently lists
+            $5 parking in the dirt lot
+            across from the brewery.
+            Check the official site for
+            ticket availability and policies.
+
+        </div>
+
+
+        <a
+            href="https://lefthandbrewing.com/event/left-hand-oktoberfest-2026-1"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="event-button">
+
+            Official Event Website →
+
+        </a>
 
     </div>
 
@@ -1099,191 +1329,591 @@ footer {
 
 
 <!-- ========================================
-     FIND YOUR KIND OF EVENT
+     OCTOBER
 ======================================== -->
 
-<section class="event-types">
+<section
+    class="event-month october"
+    id="october">
 
 <div class="container">
 
 
-<div style="text-align:center;">
+<div class="month-heading">
 
     <div class="eyebrow">
-        Find Your Kind of Fun
+        October 2026
     </div>
 
     <h2 class="section-title">
-        What Sounds Good Today?
+        October in Longmont
     </h2>
 
     <p class="section-description">
 
-        From community celebrations
-        to a quiet afternoon at a local market,
-        there's more than one way
-        to experience Longmont.
+        Food, culture, art
+        and some of Longmont's favorite
+        fall traditions fill October.
 
     </p>
 
 </div>
 
 
-<div class="type-grid">
+
+<div class="event-grid">
 
 
-<div class="type-card"
-     id="community-events">
+<!-- ========================================
+     RESTAURANT WEEK
+======================================== -->
 
-    <span>🎉</span>
+<article class="event-card">
 
-    <h3>
-        Community Events
-    </h3>
+    <div class="event-image">
 
-    <p>
-        Festivals, neighborhood gatherings,
-        celebrations and community activities.
-    </p>
+        <img
+            src="https://static.wixstatic.com/media/7bbd27_28eafdffbabe41bd9bf0e12a2f926215~mv2.png/v1/fill/w_261,h_294,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/7bbd27_28eafdffbabe41bd9bf0e12a2f926215~mv2.png"
+            alt="Longmont Restaurant Week logo"
+            loading="lazy">
 
-</div>
-
+    </div>
 
 
-<div class="type-card"
-     id="music">
+    <div class="event-body">
 
-    <span>🎵</span>
+        <div class="event-category">
+            Food • Restaurants • Local Business
+        </div>
 
-    <h3>
-        Music & Entertainment
-    </h3>
-
-    <p>
-        Concerts, live music,
-        performances and entertainment
-        around Longmont.
-    </p>
-
-</div>
+        <h3>
+            Longmont Restaurant Week
+        </h3>
 
 
+        <div class="event-details">
 
-<div class="type-card"
-     id="markets">
+            <div class="event-detail">
+                <span>📅</span>
+                <div>
+                    <strong>Dates:</strong>
+                    October 2–11, 2026
+                </div>
+            </div>
 
-    <span>🛍️</span>
+            <div class="event-detail">
+                <span>🕓</span>
+                <div>
+                    <strong>Time:</strong>
+                    Restaurant hours vary
+                </div>
+            </div>
 
-    <h3>
-        Markets & Shopping Events
-    </h3>
+            <div class="event-detail">
+                <span>📍</span>
+                <div>
+                    <strong>Location:</strong>
+                    Participating restaurants
+                    throughout Longmont
+                </div>
+            </div>
 
-    <p>
-        Farmers markets,
-        maker markets,
-        pop-ups and special shopping events.
-    </p>
+            <div class="event-detail">
+                <span>💵</span>
+                <div>
+                    <strong>Cost:</strong>
+                    Varies by restaurant
+                    and menu
+                </div>
+            </div>
 
-</div>
-
-
-
-<div class="type-card"
-     id="family">
-
-    <span>👨‍👩‍👧</span>
-
-    <h3>
-        Family Activities
-    </h3>
-
-    <p>
-        Events and activities
-        for kids, parents,
-        grandparents and families.
-    </p>
-
-</div>
-
-
-
-<div class="type-card"
-     id="arts">
-
-    <span>🎨</span>
-
-    <h3>
-        Arts & Culture
-    </h3>
-
-    <p>
-        Art shows, exhibits,
-        workshops, cultural events
-        and creative experiences.
-    </p>
-
-</div>
+        </div>
 
 
+        <p class="event-description">
 
-<div class="type-card"
-     id="outdoors">
+            Let your appetite lead the way
+            during Longmont Restaurant Week.
 
-    <span>🌲</span>
+            Participating local restaurants
+            offer special limited-time menus
+            and dining experiences,
+            giving residents a reason
+            to try somewhere new
+            or revisit a favorite.
 
-    <h3>
-        Outdoor Events
-    </h3>
-
-    <p>
-        Outdoor activities,
-        recreation, nature events
-        and opportunities to enjoy Colorado.
-    </p>
-
-</div>
+        </p>
 
 
-</div>
+        <div class="official-note">
 
-</div>
+            <strong>Menus are still being announced.</strong>
+            The official Restaurant Week site currently
+            says menus are coming soon.
+            Check back before the event
+            for participating restaurants,
+            menus, prices and reservation information.
 
-</section>
+        </div>
+
+
+        <a
+            href="https://www.longmontrestaurantweek.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="event-button">
+
+            Official Restaurant Week Website →
+
+        </a>
+
+    </div>
+
+</article>
 
 
 
 <!-- ========================================
-     CALENDAR
+     MUSEUM GRAND REOPENING
 ======================================== -->
 
-<section class="calendar-section">
+<article class="event-card">
 
-<div class="calendar-box">
+    <div class="event-image">
 
-    <span>
-        📅
-    </span>
+        <img
+            src="https://longmontcolorado.gov/wp-content/uploads/2026/07/Frida.jpg"
+            alt="Longmont Museum exhibition associated with its expanded 2026 reopening"
+            loading="lazy">
 
-    <h2>
-        Longmont Community Calendar
-    </h2>
+    </div>
 
-    <p>
 
-        As Loving Longmont grows,
-        this section can become
-        a full community calendar
-        organized by date
-        and event category.
+    <div class="event-body">
 
-    </p>
+        <div class="event-category">
+            Museum • Art • Family
+        </div>
 
-    <a href="contact.html"
-       class="button button-red">
+        <h3>
+            Longmont Museum Grand Reopening
+        </h3>
 
-        Submit an Event →
 
-    </a>
+        <div class="event-details">
+
+            <div class="event-detail">
+                <span>📅</span>
+                <div>
+                    <strong>Date:</strong>
+                    Saturday, October 17, 2026
+                </div>
+            </div>
+
+            <div class="event-detail">
+                <span>🕘</span>
+                <div>
+                    <strong>Time:</strong>
+                    9:00 AM – 5:00 PM
+                </div>
+            </div>
+
+            <div class="event-detail">
+                <span>📍</span>
+                <div>
+                    <strong>Location:</strong>
+                    Longmont Museum<br>
+                    400 Quail Rd., Longmont
+                </div>
+            </div>
+
+            <div class="event-detail">
+                <span>💵</span>
+                <div>
+                    <strong>Cost:</strong>
+                    <span class="cost-free">
+                        FREE
+                    </span>
+                </div>
+            </div>
+
+        </div>
+
+
+        <p class="event-description">
+
+            Celebrate a new chapter
+            for the Longmont Museum
+            as the expanded museum reopens.
+
+            The day begins with a
+            9:00 AM ribbon cutting
+            and includes new galleries,
+            special programs,
+            tours and the new DreamLab
+            children's experience.
+
+        </p>
+
+
+        <div class="official-note">
+
+            <strong>Before you go:</strong>
+            Visit the City of Longmont's
+            official event page for the latest
+            program schedule and reopening information.
+
+        </div>
+
+
+        <a
+            href="https://longmontcolorado.gov/event/grand-reopening-celebration/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="event-button">
+
+            Official City Event Page →
+
+        </a>
+
+    </div>
+
+</article>
+
+
+
+<!-- ========================================
+     DAY OF THE DEAD
+======================================== -->
+
+<article class="event-card">
+
+    <div class="event-image">
+
+        <img
+            src="https://img.ctykit.com/cdn/co-longmont/images/lamonarca-bianca-gigantes.jpg"
+            alt="Longmont Day of the Dead Gigantes"
+            loading="lazy">
+
+    </div>
+
+
+    <div class="event-body">
+
+        <div class="event-category">
+            Culture • Family • Festival
+        </div>
+
+        <h3>
+            Day of the Dead Family Celebration
+        </h3>
+
+
+        <div class="event-details">
+
+            <div class="event-detail">
+                <span>📅</span>
+                <div>
+                    <strong>Date:</strong>
+                    Saturday, October 24, 2026
+                </div>
+            </div>
+
+            <div class="event-detail">
+                <span>🕚</span>
+                <div>
+                    <strong>Time:</strong>
+                    11:00 AM – 3:00 PM
+                </div>
+            </div>
+
+            <div class="event-detail">
+                <span>📍</span>
+                <div>
+                    <strong>Location:</strong>
+                    Downtown Longmont<br>
+                    4th Avenue & Kimbark Street
+                </div>
+            </div>
+
+            <div class="event-detail">
+                <span>💵</span>
+                <div>
+                    <strong>Cost:</strong>
+                    <span class="cost-free">
+                        FREE
+                    </span>
+                </div>
+            </div>
+
+        </div>
+
+
+        <p class="event-description">
+
+            Longmont celebrates the
+            26th anniversary of Colorado's
+            longest-running public
+            Day of the Dead celebration.
+
+            The outdoor street festival includes
+            traditional live music and dance,
+            face painting,
+            sugar skull decorating,
+            crafts, food trucks,
+            a children's play zone,
+            vendors and the Gigantes Procession.
+
+        </p>
+
+
+        <div class="official-note">
+
+            <strong>Before you go:</strong>
+            Check the official Longmont Museum
+            and Day of the Dead information
+            for current schedules and updates.
+
+        </div>
+
+
+        <a
+            href="https://longmontcolorado.gov/museum/events-performances/day-of-the-dead/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="event-button">
+
+            Official Event Information →
+
+        </a>
+
+    </div>
+
+</article>
+
+
+
+<!-- ========================================
+     NOCHE DE MUSEO
+======================================== -->
+
+<article class="event-card">
+
+    <div class="event-image">
+
+        <img
+            src="https://img.ctykit.com/cdn/co-longmont/images/lamonarca-bianca-gigantes.jpg"
+            alt="Longmont Day of the Dead celebration"
+            loading="lazy">
+
+    </div>
+
+
+    <div class="event-body">
+
+        <div class="event-category">
+            Performance • Culture • Music
+        </div>
+
+        <h3>
+            Noche de Museo:
+            Celebrating Day of the Dead
+        </h3>
+
+
+        <div class="event-details">
+
+            <div class="event-detail">
+                <span>📅</span>
+                <div>
+                    <strong>Date:</strong>
+                    Friday, October 30, 2026
+                </div>
+            </div>
+
+            <div class="event-detail">
+                <span>🕖</span>
+                <div>
+                    <strong>Time:</strong>
+                    7:00 PM
+                </div>
+            </div>
+
+            <div class="event-detail">
+                <span>📍</span>
+                <div>
+                    <strong>Location:</strong>
+                    Stewart Auditorium,
+                    Longmont Museum<br>
+                    400 Quail Rd.
+                </div>
+            </div>
+
+            <div class="event-detail">
+                <span>💵</span>
+                <div>
+                    <strong>Reserved seating:</strong>
+                    $23<br>
+                    $20 Museum members
+                </div>
+            </div>
+
+        </div>
+
+
+        <p class="event-description">
+
+            An evening of live performance
+            celebrating Día de Muertos,
+            curated by and featuring iZCALLi.
+
+            The program spans traditions
+            from Aztecan dance
+            with Grupo Azteca Tlahuitzcalli
+            to iZCALLi's genre-bending
+            rock and roll.
+
+        </p>
+
+
+        <div class="official-note">
+
+            <strong>Tickets required.</strong>
+            Check the official Museum page
+            for current ticket availability,
+            seating and performance details.
+
+        </div>
+
+
+        <a
+            href="https://longmontcolorado.gov/museum/events-performances/day-of-the-dead/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="event-button">
+
+            Official Event & Ticket Information →
+
+        </a>
+
+    </div>
+
+</article>
+
+
+
+<!-- ========================================
+     HALLOWEEN PARADE
+======================================== -->
+
+<article class="event-card">
+
+    <div class="event-image">
+
+        <img
+            src="https://longmontcolorado.gov/wp-content/uploads/2026/07/Halloween-Parade-web.gif"
+            alt="Longmont Halloween Costume Parade"
+            loading="lazy">
+
+    </div>
+
+
+    <div class="event-body">
+
+        <div class="event-category">
+            Halloween • Family • Downtown
+        </div>
+
+        <h3>
+            Halloween Costume Parade
+        </h3>
+
+
+        <div class="event-details">
+
+            <div class="event-detail">
+                <span>📅</span>
+                <div>
+                    <strong>Date:</strong>
+                    Saturday, October 31, 2026
+                </div>
+            </div>
+
+            <div class="event-detail">
+                <span>🕤</span>
+                <div>
+                    <strong>Time:</strong>
+                    9:30 AM – 11:30 AM
+                </div>
+            </div>
+
+            <div class="event-detail">
+                <span>📍</span>
+                <div>
+                    <strong>Starting Location:</strong>
+                    Roosevelt Park<br>
+                    700 Longs Peak Ave., Longmont
+                </div>
+            </div>
+
+            <div class="event-detail">
+                <span>💵</span>
+                <div>
+                    <strong>Cost:</strong>
+                    <span class="cost-free">
+                        FREE
+                    </span>
+                </div>
+            </div>
+
+        </div>
+
+
+        <p class="event-description">
+
+            Dress up and join Longmont's
+            annual costume foot parade.
+
+            Kids and adults of all ages
+            are welcome.
+
+            After the parade,
+            head downtown for
+            Trick-or-Treat Street
+            at participating businesses.
+
+            No registration is required.
+
+        </p>
+
+
+        <div class="official-note">
+
+            <strong>Parade reminders:</strong>
+            The City says dogs must be leashed,
+            no large animals are allowed
+            and motorized vehicles
+            are not permitted in the parade.
+
+        </div>
+
+
+        <a
+            href="https://longmontcolorado.gov/event/halloween-costume-parade/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="event-button">
+
+            Official City Event Page →
+
+        </a>
+
+    </div>
+
+</article>
+
+
+</div>
 
 </div>
 
@@ -1299,31 +1929,34 @@ footer {
 
 <div class="container">
 
-    <div class="eyebrow"
-         style="color:#ffb9be;">
-
-        Share What's Happening
-
+    <div class="eyebrow">
+        What's Happening in Longmont?
     </div>
 
     <h2>
-        Have an Event in Longmont?
+        Have an Event We Should Add?
     </h2>
 
     <p>
 
-        Community organizations,
-        local businesses,
-        nonprofits and residents
-        are welcome to submit events
-        for consideration.
+        Local businesses,
+        nonprofits,
+        community organizations
+        and residents can send us
+        upcoming Longmont events.
+
+        Include the date,
+        time, location,
+        cost, official website
+        and an event image if available.
 
     </p>
 
-    <a href="contact.html"
-       class="button button-light">
+    <a
+        href="contact.html"
+        class="button-light">
 
-        Submit Your Event →
+        Submit an Event →
 
     </a>
 
