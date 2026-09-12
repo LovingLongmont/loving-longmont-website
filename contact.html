@@ -263,6 +263,11 @@ a {
     gap: 20px;
 }
 
+/*
+   Each card is now an <a> tag,
+   so the entire card is clickable.
+*/
+
 .option-card {
     background: white;
     border: 1px solid #e7e7e0;
@@ -271,9 +276,32 @@ a {
     padding: 30px 24px;
 
     text-align: center;
+    text-decoration: none;
+    color: inherit;
 
     box-shadow:
         0 6px 20px rgba(0,0,0,.04);
+
+    display: block;
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        border-color .2s ease;
+}
+
+.option-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 12px 28px rgba(0,0,0,.10);
+
+    border-color: rgba(200,16,30,.30);
+}
+
+.option-card:focus {
+    outline: 3px solid rgba(200,16,30,.20);
+    outline-offset: 3px;
 }
 
 .option-card span {
@@ -291,6 +319,20 @@ a {
     color: var(--gray);
     font-size: 14px;
     margin: 0;
+}
+
+.option-action {
+    display: inline-block;
+
+    margin-top: 14px;
+
+    color: var(--red);
+
+    font-size: 12px;
+    font-weight: bold;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 
@@ -937,7 +979,7 @@ footer {
 
 
 <!-- ========================================
-     CONTACT OPTIONS
+     CLICKABLE CONTACT OPTIONS
 ======================================== -->
 
 <section class="contact-options">
@@ -945,7 +987,11 @@ footer {
 <div class="option-grid">
 
 
-<div class="option-card">
+<!-- EVENT -->
+
+<a
+    href="mailto:hello.lovinglongmont@gmail.com?subject=Longmont%20Event%20Submission"
+    class="option-card">
 
     <span>
         📅
@@ -957,17 +1003,25 @@ footer {
 
     <p>
 
-        Tell us about
-        an upcoming Longmont event,
+        Tell us about an upcoming
+        Longmont event,
         activity or community gathering.
 
     </p>
 
-</div>
+    <div class="option-action">
+        Email Event →
+    </div>
+
+</a>
 
 
 
-<div class="option-card">
+<!-- BUSINESS -->
+
+<a
+    href="mailto:hello.lovinglongmont@gmail.com?subject=Longmont%20Business%20Submission"
+    class="option-card">
 
     <span>
         🏪
@@ -985,11 +1039,19 @@ footer {
 
     </p>
 
-</div>
+    <div class="option-action">
+        Email Business →
+    </div>
+
+</a>
 
 
 
-<div class="option-card">
+<!-- JOB -->
+
+<a
+    href="mailto:hello.lovinglongmont@gmail.com?subject=Longmont%20Job%20Submission"
+    class="option-card">
 
     <span>
         💼
@@ -1007,11 +1069,19 @@ footer {
 
     </p>
 
-</div>
+    <div class="option-action">
+        Email Job →
+    </div>
+
+</a>
 
 
 
-<div class="option-card">
+<!-- PHOTO -->
+
+<a
+    href="mailto:hello.lovinglongmont@gmail.com?subject=Longmont%20Photo%20Submission"
+    class="option-card">
 
     <span>
         📷
@@ -1029,11 +1099,19 @@ footer {
 
     </p>
 
-</div>
+    <div class="option-action">
+        Email Photo →
+    </div>
+
+</a>
 
 
 
-<div class="option-card">
+<!-- STORY -->
+
+<a
+    href="mailto:hello.lovinglongmont@gmail.com?subject=Longmont%20Community%20Story%20Submission"
+    class="option-card">
 
     <span>
         ❤️
@@ -1046,16 +1124,26 @@ footer {
     <p>
 
         Tell us about
-        a neighbor, organization,
-        accomplishment or positive story.
+        a neighbor,
+        organization,
+        accomplishment
+        or positive story.
 
     </p>
 
-</div>
+    <div class="option-action">
+        Email Story →
+    </div>
+
+</a>
 
 
 
-<div class="option-card">
+<!-- QUESTION -->
+
+<a
+    href="mailto:hello.lovinglongmont@gmail.com?subject=Ask%20Loving%20Longmont"
+    class="option-card">
 
     <span>
         💬
@@ -1073,7 +1161,11 @@ footer {
 
     </p>
 
-</div>
+    <div class="option-action">
+        Ask Us →
+    </div>
+
+</a>
 
 
 </div>
@@ -1213,39 +1305,39 @@ footer {
                     Choose one
                 </option>
 
-                <option>
+                <option value="Longmont Event Submission">
                     Submit an Event
                 </option>
 
-                <option>
+                <option value="Longmont Business Submission">
                     Submit a Local Business
                 </option>
 
-                <option>
+                <option value="Longmont Job Submission">
                     Submit a Job Opening
                 </option>
 
-                <option>
+                <option value="Longmont Photo Submission">
                     Submit a Photo
                 </option>
 
-                <option>
+                <option value="Longmont Community Story Submission">
                     Share a Community Story
                 </option>
 
-                <option>
+                <option value="Longmont Local Recommendation">
                     Recommend Something Local
                 </option>
 
-                <option>
+                <option value="Ask Loving Longmont">
                     Ask Loving Longmont
                 </option>
 
-                <option>
+                <option value="Loving Longmont Website Suggestion">
                     Website Suggestion
                 </option>
 
-                <option>
+                <option value="Loving Longmont General Question">
                     General Question
                 </option>
 
@@ -1475,7 +1567,7 @@ footer {
     </p>
 
     <a
-        href="mailto:hello.lovinglongmont@gmail.com?subject=Loving%20Longmont%20Photo%20Submission"
+        href="mailto:hello.lovinglongmont@gmail.com?subject=Longmont%20Photo%20Submission"
         class="button button-red">
 
         Email a Photo →
@@ -1517,7 +1609,7 @@ footer {
     </p>
 
     <a
-        href="mailto:hello.lovinglongmont@gmail.com"
+        href="mailto:hello.lovinglongmont@gmail.com?subject=Loving%20Longmont%20Submission"
         class="button button-light">
 
         Email Loving Longmont →
@@ -1701,9 +1793,7 @@ function sendEmail(event) {
 
 
     const subject =
-        encodeURIComponent(
-            "Loving Longmont - " + topic
-        );
+        encodeURIComponent(topic);
 
 
     const body =
@@ -1714,7 +1804,7 @@ function sendEmail(event) {
             "Email: " + email +
             "\n\n" +
 
-            "Topic: " + topic +
+            "Submission Type: " + topic +
             "\n\n" +
 
             "Message:\n" + message
