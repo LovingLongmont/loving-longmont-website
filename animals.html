@@ -67,19 +67,20 @@ a {
 }
 
 .navbar {
-    max-width:1400px;
+    max-width:1450px;
     margin:auto;
     padding:9px 22px;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    gap:22px;
+    gap:20px;
 }
 
 .nav-logo {
     display:flex;
     align-items:center;
     text-decoration:none;
+    min-width:250px;
 }
 
 .nav-logo img {
@@ -116,7 +117,7 @@ a {
 .nav-links {
     display:flex;
     align-items:center;
-    gap:18px;
+    gap:15px;
 }
 
 .nav-links a {
@@ -126,6 +127,7 @@ a {
     font-weight:bold;
     padding:25px 0 22px;
     border-bottom:3px solid transparent;
+    white-space:nowrap;
 }
 
 .nav-links a:hover,
@@ -624,6 +626,11 @@ footer {
     font-size:14px;
 }
 
+.footer-links a:hover {
+    color:white;
+    text-decoration:underline;
+}
+
 .footer-email {
     color:white;
     text-decoration:none;
@@ -645,19 +652,15 @@ footer {
    RESPONSIVE
 ========================================================= */
 
-@media(max-width:1050px) {
-
-    .quick-grid,
-    .resource-grid,
-    .tip-grid {
-        grid-template-columns:repeat(2,1fr);
-    }
-}
-
-@media(max-width:900px) {
+@media(max-width:1180px) {
 
     .navbar {
         flex-direction:column;
+        padding-bottom:15px;
+    }
+
+    .nav-logo {
+        min-width:auto;
     }
 
     .nav-links {
@@ -668,6 +671,18 @@ footer {
     .nav-links a {
         padding:5px 0;
     }
+}
+
+@media(max-width:1050px) {
+
+    .quick-grid,
+    .resource-grid,
+    .tip-grid {
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:900px) {
 
     .footer-grid {
         grid-template-columns:1fr;
@@ -735,21 +750,37 @@ POSSIBILITIES
 
 <div class="nav-links">
 
-<a href="index.html">Home</a>
+<a href="index.html">
+Home
+</a>
 
-<a href="events.html">Events</a>
+<a href="events.html">
+Events
+</a>
 
-<a href="businesses.html">Local Businesses</a>
+<a href="businesses.html">
+Local Businesses
+</a>
 
-<a href="things-to-do.html">Things to Do</a>
+<a href="things-to-do.html">
+Things to Do
+</a>
 
-<a href="animals.html" class="active">Animals & Pets</a>
+<a href="animals.html" class="active">
+Animals & Pets
+</a>
 
-<a href="jobs.html">Jobs</a>
+<a href="jobs.html">
+Jobs
+</a>
 
-<a href="community.html">Community</a>
+<a href="community.html">
+Community
+</a>
 
-<a href="about.html">About</a>
+<a href="sitemap.html">
+Site Map
+</a>
 
 <a href="contact.html" class="nav-contact">
 Contact
@@ -2762,7 +2793,8 @@ who need assistance.
 
 <a class="button button-primary"
 href="https://longmonthumane.org/services/emergency-resources/"
-target="_blank">
+target="_blank"
+rel="noopener">
 Pet Pantry
 </a>
 
@@ -2792,7 +2824,8 @@ with their families.
 
 <a class="button button-primary"
 href="https://longmontcolorado.gov/public-safety/public-safety-services/animals/"
-target="_blank">
+target="_blank"
+rel="noopener">
 Licensing Information
 </a>
 
@@ -2931,7 +2964,7 @@ Animals & Pets
 </a>
 
 <a href="jobs.html">
-Jobs
+Jobs & Work
 </a>
 
 <a href="community.html">
@@ -2939,11 +2972,15 @@ Community
 </a>
 
 <a href="about.html">
-About
+About Loving Longmont
 </a>
 
 <a href="contact.html">
 Contact
+</a>
+
+<a href="sitemap.html">
+<strong>Site Map →</strong>
 </a>
 
 </div>
