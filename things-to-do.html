@@ -66,19 +66,20 @@ a {
 }
 
 .navbar {
-    max-width:1380px;
+    max-width:1450px;
     margin:auto;
-    padding:9px 28px;
+    padding:9px 22px;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    gap:25px;
+    gap:20px;
 }
 
 .nav-logo {
     display:flex;
     align-items:center;
     text-decoration:none;
+    min-width:250px;
 }
 
 .nav-logo img {
@@ -115,16 +116,17 @@ a {
 .nav-links {
     display:flex;
     align-items:center;
-    gap:22px;
+    gap:15px;
 }
 
 .nav-links a {
     text-decoration:none;
     color:var(--navy);
-    font-size:13px;
+    font-size:12px;
     font-weight:bold;
     padding:25px 0 22px;
     border-bottom:3px solid transparent;
+    white-space:nowrap;
 }
 
 .nav-links a:hover,
@@ -137,7 +139,7 @@ a {
     color:white !important;
     background:var(--navy);
     border-radius:7px;
-    padding:12px 20px !important;
+    padding:12px 18px !important;
     border-bottom:none !important;
 }
 
@@ -377,10 +379,6 @@ a {
     transform:scale(1.025);
 }
 
-
-/* PLACEHOLDER IS INTENTIONAL:
-   NO LOVING LONGMONT IMAGE FALLBACK */
-
 .image-pending {
     height:100%;
     display:flex;
@@ -389,12 +387,7 @@ a {
     text-align:center;
     padding:30px;
     color:#60737e;
-    background:
-        linear-gradient(
-            135deg,
-            #edf4f3,
-            #dde8e8
-        );
+    background:linear-gradient(135deg,#edf4f3,#dde8e8);
 }
 
 .image-pending-inner {
@@ -731,6 +724,27 @@ footer {
    RESPONSIVE
 ================================================== */
 
+@media (max-width:1180px) {
+
+    .navbar {
+        flex-direction:column;
+        padding-bottom:15px;
+    }
+
+    .nav-logo {
+        min-width:auto;
+    }
+
+    .nav-links {
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .nav-links a {
+        padding:5px 0;
+    }
+}
+
 @media (max-width:1050px) {
 
     .category-grid,
@@ -744,19 +758,6 @@ footer {
 }
 
 @media (max-width:900px) {
-
-    .navbar {
-        flex-direction:column;
-    }
-
-    .nav-links {
-        flex-wrap:wrap;
-        justify-content:center;
-    }
-
-    .nav-links a {
-        padding:5px 0;
-    }
 
     .footer-grid {
         grid-template-columns:1fr;
@@ -794,32 +795,28 @@ footer {
 <body>
 
 
-<!-- ==================================================
-     LOVING LONGMONT HEADER
-================================================== -->
-
 <header class="site-header">
 
 <nav class="navbar">
 
 <a href="index.html" class="nav-logo">
 
-    <img src="1b.png"
-         alt="Loving Longmont">
+<img src="1b.png"
+     alt="Loving Longmont">
 
-    <div class="nav-brand-text">
+<div class="nav-brand-text">
 
-        <strong>Loving Longmont</strong>
+<strong>Loving Longmont</strong>
 
-        <small>
-            PEOPLE
-            <span class="heart">♥</span>
-            PLACES
-            <span class="heart">♥</span>
-            POSSIBILITIES
-        </small>
+<small>
+PEOPLE
+<span class="heart">♥</span>
+PLACES
+<span class="heart">♥</span>
+POSSIBILITIES
+</small>
 
-    </div>
+</div>
 
 </a>
 
@@ -833,20 +830,18 @@ footer {
 <a href="businesses.html">Local Businesses</a>
 
 <a href="things-to-do.html"
-   class="active">
-    Things to Do
-</a>
+   class="active">Things to Do</a>
+
+<a href="animals.html">Animals & Pets</a>
 
 <a href="jobs.html">Jobs</a>
 
 <a href="community.html">Community</a>
 
-<a href="about.html">About</a>
+<a href="sitemap.html">Site Map</a>
 
 <a href="contact.html"
-   class="nav-contact">
-    Contact
-</a>
+   class="nav-contact">Contact</a>
 
 </div>
 
@@ -855,10 +850,6 @@ footer {
 </header>
 
 
-
-<!-- ==================================================
-     LOVING LONGMONT HERO
-================================================== -->
 
 <section class="hero">
 
@@ -882,10 +873,6 @@ Free adventures, local favorites and experiences worth discovering.
 </section>
 
 
-
-<!-- ==================================================
-     INTRO
-================================================== -->
 
 <section class="intro">
 
@@ -912,83 +899,48 @@ something completely different. Start exploring below.
 
 
 
-<!-- ==================================================
-     CATEGORIES
-================================================== -->
-
 <section class="categories">
 
 <div class="category-grid">
 
 <a href="#free" class="category-card">
-
 <div class="category-icon">💚</div>
-
 <h3>Free Things to Do</h3>
-
 </a>
-
 
 <a href="#outdoors" class="category-card">
-
 <div class="category-icon">🏔️</div>
-
 <h3>Get Outdoors</h3>
-
 </a>
-
 
 <a href="#family" class="category-card">
-
 <div class="category-icon">👨‍👩‍👧</div>
-
 <h3>Family Fun</h3>
-
 </a>
-
 
 <a href="#indoor" class="category-card">
-
 <div class="category-icon">🌧️</div>
-
 <h3>Indoor Fun</h3>
-
 </a>
-
 
 <a href="#history" class="category-card">
-
 <div class="category-icon">🏛️</div>
-
 <h3>History & Culture</h3>
-
 </a>
-
 
 <a href="#water" class="category-card">
-
 <div class="category-icon">🌊</div>
-
 <h3>Water Adventures</h3>
-
 </a>
-
 
 <a href="#adventure" class="category-card">
-
 <div class="category-icon">🪂</div>
-
 <h3>Adventure</h3>
-
 </a>
 
-
 <a href="#seasonal" class="category-card">
-
 <div class="category-icon">❄️</div>
-
 <h3>Seasonal Fun</h3>
-
 </a>
 
 </div>
@@ -997,17 +949,11 @@ something completely different. Start exploring below.
 
 
 
-<!-- ==================================================
-     COST GUIDE
-================================================== -->
-
 <section class="cost-guide">
 
 <div class="cost-row">
 
-<span class="cost-chip free">
-💚 FREE
-</span>
+<span class="cost-chip free">💚 FREE</span>
 
 <span class="cost-chip low">
 $ LOW COST / FEES MAY APPLY
@@ -1022,10 +968,6 @@ $$ PAID ACTIVITY
 </section>
 
 
-
-<!-- ==================================================
-     ATTRACTIONS
-================================================== -->
 
 <section class="attractions">
 
@@ -1050,13 +992,7 @@ there is a lot more to do around Longmont than you may realize.
 <div class="grid">
 
 
-
-<!-- ==================================================
-     GOLDEN PONDS
-================================================== -->
-
-<article class="card"
-         id="free">
+<article class="card" id="free">
 
 <div class="card-image">
 
@@ -1065,12 +1001,9 @@ src="https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,f_jpg,h_639
 alt="Golden Ponds Nature Area in Longmont Colorado"
 loading="lazy">
 
-<span class="badge badge-free">
-FREE
-</span>
+<span class="badge badge-free">FREE</span>
 
 </div>
-
 
 <div class="card-body">
 
@@ -1078,9 +1011,7 @@ FREE
 Nature • Fishing • Walking
 </div>
 
-<h3>
-Golden Ponds Nature Area
-</h3>
+<h3>Golden Ponds Nature Area</h3>
 
 <p class="card-description">
 Four ponds, mountain views, wildlife and 2.6 miles of
@@ -1088,34 +1019,27 @@ trails make Golden Ponds one of Longmont's easiest places
 to spend a peaceful Colorado afternoon.
 </p>
 
-
 <div class="details">
 
 <div class="detail">
 <strong>📍 Address:</strong>
-2651 3rd Avenue,
-Longmont, CO 80503
+2651 3rd Avenue, Longmont, CO 80503
 </div>
 
 <div class="detail">
 <strong>☎ City Help Line:</strong>
-<a href="tel:3037766050">
-303-776-6050
-</a>
+<a href="tel:3037766050">303-776-6050</a>
 </div>
 
 <div class="detail">
-<strong>💵 Cost:</strong>
-Free
+<strong>💵 Cost:</strong> Free
 </div>
 
 <div class="detail">
-<strong>🐕 Dogs:</strong>
-Welcome on leash
+<strong>🐕 Dogs:</strong> Welcome on leash
 </div>
 
 </div>
-
 
 <div class="buttons">
 
@@ -1141,12 +1065,7 @@ Directions
 
 
 
-<!-- ==================================================
-     MCINTOSH LAKE
-================================================== -->
-
-<article class="card"
-         id="outdoors">
+<article class="card" id="outdoors">
 
 <div class="card-image">
 
@@ -1154,28 +1073,19 @@ Directions
 
 <div class="image-pending-inner">
 
-<div class="image-pending-icon">
-📷
-</div>
+<div class="image-pending-icon">📷</div>
 
-<strong>
-McIntosh Lake
-</strong>
+<strong>McIntosh Lake</strong>
 
-<span>
-Official attraction photo coming soon
-</span>
+<span>Official attraction photo coming soon</span>
 
 </div>
 
 </div>
 
-<span class="badge badge-free">
-FREE
-</span>
+<span class="badge badge-free">FREE</span>
 
 </div>
-
 
 <div class="card-body">
 
@@ -1183,9 +1093,7 @@ FREE
 Lake • Trails • Paddleboarding
 </div>
 
-<h3>
-McIntosh Lake Nature Area
-</h3>
+<h3>McIntosh Lake Nature Area</h3>
 
 <p class="card-description">
 Enjoy Longs Peak views while walking around the lake,
@@ -1193,25 +1101,20 @@ fishing, kayaking, canoeing or paddleboarding.
 It's one of Longmont's favorite sunset spots.
 </p>
 
-
 <div class="details">
 
 <div class="detail">
 <strong>📍 Address:</strong>
-1929 Harvard Street,
-Longmont, CO 80503
+1929 Harvard Street, Longmont, CO 80503
 </div>
 
 <div class="detail">
 <strong>☎ City Help Line:</strong>
-<a href="tel:3037766050">
-303-776-6050
-</a>
+<a href="tel:3037766050">303-776-6050</a>
 </div>
 
 <div class="detail">
-<strong>💵 Cost:</strong>
-Free
+<strong>💵 Cost:</strong> Free
 </div>
 
 <div class="detail">
@@ -1225,7 +1128,6 @@ Not permitted.
 </div>
 
 </div>
-
 
 <div class="buttons">
 
@@ -1251,12 +1153,7 @@ Directions
 
 
 
-<!-- ==================================================
-     DICKENS FARM
-================================================== -->
-
-<article class="card"
-         id="water">
+<article class="card" id="water">
 
 <div class="card-image">
 
@@ -1264,28 +1161,19 @@ Directions
 
 <div class="image-pending-inner">
 
-<div class="image-pending-icon">
-📷
-</div>
+<div class="image-pending-icon">📷</div>
 
-<strong>
-Dickens Farm
-</strong>
+<strong>Dickens Farm</strong>
 
-<span>
-Official attraction photo coming soon
-</span>
+<span>Official attraction photo coming soon</span>
 
 </div>
 
 </div>
 
-<span class="badge badge-free">
-FREE
-</span>
+<span class="badge badge-free">FREE</span>
 
 </div>
-
 
 <div class="card-body">
 
@@ -1293,16 +1181,13 @@ FREE
 Creek • Playground • Bikes
 </div>
 
-<h3>
-Dickens Farm Nature Area
-</h3>
+<h3>Dickens Farm Nature Area</h3>
 
 <p class="card-description">
 St. Vrain Creek runs directly through this 52-acre nature
 area. Explore the nature playground, beginner bike-skills
 trail, slower-moving water areas and St. Vrain Greenway.
 </p>
-
 
 <div class="details">
 
@@ -1314,14 +1199,11 @@ Longmont, CO 80501
 
 <div class="detail">
 <strong>☎ City Help Line:</strong>
-<a href="tel:3037766050">
-303-776-6050
-</a>
+<a href="tel:3037766050">303-776-6050</a>
 </div>
 
 <div class="detail">
-<strong>💵 Cost:</strong>
-Free
+<strong>💵 Cost:</strong> Free
 </div>
 
 <div class="detail">
@@ -1330,7 +1212,6 @@ Nature play, bike skills, trails, creek access and picnic areas.
 </div>
 
 </div>
-
 
 <div class="buttons">
 
@@ -1356,10 +1237,6 @@ Directions
 
 
 
-<!-- ==================================================
-     UNION RESERVOIR
-================================================== -->
-
 <article class="card">
 
 <div class="card-image">
@@ -1368,28 +1245,19 @@ Directions
 
 <div class="image-pending-inner">
 
-<div class="image-pending-icon">
-🌊
-</div>
+<div class="image-pending-icon">🌊</div>
 
-<strong>
-Union Reservoir
-</strong>
+<strong>Union Reservoir</strong>
 
-<span>
-Official attraction photo coming soon
-</span>
+<span>Official attraction photo coming soon</span>
 
 </div>
 
 </div>
 
-<span class="badge badge-low">
-ENTRY FEE
-</span>
+<span class="badge badge-low">ENTRY FEE</span>
 
 </div>
-
 
 <div class="card-body">
 
@@ -1397,9 +1265,7 @@ ENTRY FEE
 Reservoir • Beach • Kayaking
 </div>
 
-<h3>
-Union Reservoir Nature Area
-</h3>
+<h3>Union Reservoir Nature Area</h3>
 
 <p class="card-description">
 This 736-acre body of water offers boating, fishing,
@@ -1407,20 +1273,16 @@ kayaking, paddleboarding, picnicking and a dedicated
 dog beach.
 </p>
 
-
 <div class="details">
 
 <div class="detail">
 <strong>📍 Address:</strong>
-461 County Road 26,
-Longmont, CO 80504
+461 County Road 26, Longmont, CO 80504
 </div>
 
 <div class="detail">
 <strong>☎ Phone:</strong>
-<a href="tel:3037721265">
-303-772-1265
-</a>
+<a href="tel:3037721265">303-772-1265</a>
 </div>
 
 <div class="detail">
@@ -1434,7 +1296,6 @@ Dog beach available.
 </div>
 
 </div>
-
 
 <div class="buttons">
 
@@ -1460,12 +1321,7 @@ Directions
 
 
 
-<!-- ==================================================
-     AGRICULTURAL HERITAGE CENTER
-================================================== -->
-
-<article class="card"
-         id="history">
+<article class="card" id="history">
 
 <div class="card-image">
 
@@ -1474,12 +1330,9 @@ src="https://content.govdelivery.com/attachments/fancy_images/COBOULDER/2022/03/
 alt="Agricultural Heritage Center near Longmont Colorado"
 loading="lazy">
 
-<span class="badge badge-free">
-FREE
-</span>
+<span class="badge badge-free">FREE</span>
 
 </div>
-
 
 <div class="card-body">
 
@@ -1487,9 +1340,7 @@ FREE
 Farm • History • Animals
 </div>
 
-<h3>
-Agricultural Heritage Center
-</h3>
+<h3>Agricultural Heritage Center</h3>
 
 <p class="card-description">
 Discover Boulder County's agricultural history while
@@ -1497,25 +1348,20 @@ exploring the historic farm, red barn, equipment,
 rural landscape and seasonal farm animals.
 </p>
 
-
 <div class="details">
 
 <div class="detail">
 <strong>📍 Address:</strong>
-8348 Ute Highway,
-Longmont, CO 80503
+8348 Ute Highway, Longmont, CO 80503
 </div>
 
 <div class="detail">
 <strong>☎ Boulder County:</strong>
-<a href="tel:3036786200">
-303-678-6200
-</a>
+<a href="tel:3036786200">303-678-6200</a>
 </div>
 
 <div class="detail">
-<strong>💵 Admission:</strong>
-Free
+<strong>💵 Admission:</strong> Free
 </div>
 
 <div class="detail">
@@ -1524,7 +1370,6 @@ Families, history lovers and animal lovers.
 </div>
 
 </div>
-
 
 <div class="buttons">
 
@@ -1550,10 +1395,6 @@ Directions
 
 
 
-<!-- ==================================================
-     SANDSTONE RANCH
-================================================== -->
-
 <article class="card">
 
 <div class="card-image">
@@ -1563,12 +1404,9 @@ src="https://assets.simpleviewinc.com/simpleview/image/upload/c_limit,q_85,w_120
 alt="Sandstone Ranch in Longmont Colorado"
 loading="lazy">
 
-<span class="badge badge-free">
-FREE
-</span>
+<span class="badge badge-free">FREE</span>
 
 </div>
-
 
 <div class="card-body">
 
@@ -1576,9 +1414,7 @@ FREE
 History • Nature • Wildlife
 </div>
 
-<h3>
-Sandstone Ranch Visitors & Learning Center
-</h3>
+<h3>Sandstone Ranch Visitors & Learning Center</h3>
 
 <p class="card-description">
 Explore a historic homestead first settled in 1860.
@@ -1587,25 +1423,20 @@ exhibits, while outside trails pass historic buildings,
 sandstone bluffs and wildlife habitat.
 </p>
 
-
 <div class="details">
 
 <div class="detail">
 <strong>📍 Address:</strong>
-3001 Sandstone Drive,
-Longmont, CO 80504
+3001 Sandstone Drive, Longmont, CO 80504
 </div>
 
 <div class="detail">
 <strong>☎ Phone:</strong>
-<a href="tel:3037744692">
-303-774-4692
-</a>
+<a href="tel:3037744692">303-774-4692</a>
 </div>
 
 <div class="detail">
-<strong>💵 General Admission:</strong>
-Free
+<strong>💵 General Admission:</strong> Free
 </div>
 
 <div class="detail">
@@ -1614,7 +1445,6 @@ Seasonal. Check before visiting.
 </div>
 
 </div>
-
 
 <div class="buttons">
 
@@ -1640,10 +1470,6 @@ Directions
 
 
 
-<!-- ==================================================
-     LONGMONT MUSEUM
-================================================== -->
-
 <article class="card">
 
 <div class="card-image">
@@ -1659,16 +1485,13 @@ $ / SPECIAL FREE DAYS
 
 </div>
 
-
 <div class="card-body">
 
 <div class="card-type">
 Art • Culture • History
 </div>
 
-<h3>
-Longmont Museum
-</h3>
+<h3>Longmont Museum</h3>
 
 <p class="card-description">
 Explore exhibitions about Longmont's history, art and
@@ -1676,20 +1499,16 @@ culture and enjoy performances, films, talks, classes
 and special community events.
 </p>
 
-
 <div class="details">
 
 <div class="detail">
 <strong>📍 Address:</strong>
-400 Quail Road,
-Longmont, CO 80501
+400 Quail Road, Longmont, CO 80501
 </div>
 
 <div class="detail">
 <strong>☎ Phone:</strong>
-<a href="tel:3036518374">
-303-651-8374
-</a>
+<a href="tel:3036518374">303-651-8374</a>
 </div>
 
 <div class="detail">
@@ -1704,7 +1523,6 @@ October 17, 2026
 </div>
 
 </div>
-
 
 <div class="buttons">
 
@@ -1730,12 +1548,7 @@ Directions
 
 
 
-<!-- ==================================================
-     SUNFLOWER FARM
-================================================== -->
-
-<article class="card"
-         id="family">
+<article class="card" id="family">
 
 <div class="card-image">
 
@@ -1750,28 +1563,19 @@ onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'
 
 <div class="image-pending-inner">
 
-<div class="image-pending-icon">
-🌻
-</div>
+<div class="image-pending-icon">🌻</div>
 
-<strong>
-Sunflower Farm
-</strong>
+<strong>Sunflower Farm</strong>
 
-<span>
-Official farm photo
-</span>
+<span>Official farm photo</span>
 
 </div>
 
 </div>
 
-<span class="badge badge-paid">
-PAID
-</span>
+<span class="badge badge-paid">PAID</span>
 
 </div>
-
 
 <div class="card-body">
 
@@ -1779,9 +1583,7 @@ PAID
 Farm • Animals • Family
 </div>
 
-<h3>
-Sunflower Farm
-</h3>
+<h3>Sunflower Farm</h3>
 
 <p class="card-description">
 Meet farm animals and enjoy a wonderfully unstructured
@@ -1789,20 +1591,16 @@ day of tractors, hay bales, play structures, nature and
 old-fashioned farm fun.
 </p>
 
-
 <div class="details">
 
 <div class="detail">
 <strong>📍 Address:</strong>
-11150 Prospect Road,
-Longmont, CO 80504
+11150 Prospect Road, Longmont, CO 80504
 </div>
 
 <div class="detail">
 <strong>☎ Phone:</strong>
-<a href="tel:3037748001">
-303-774-8001
-</a>
+<a href="tel:3037748001">303-774-8001</a>
 </div>
 
 <div class="detail">
@@ -1817,7 +1615,6 @@ llamas and more.
 </div>
 
 </div>
-
 
 <div class="buttons">
 
@@ -1843,12 +1640,7 @@ Directions
 
 
 
-<!-- ==================================================
-     LONGMONT CLIMBING COLLECTIVE
-================================================== -->
-
-<article class="card"
-         id="indoor">
+<article class="card" id="indoor">
 
 <div class="card-image">
 
@@ -1856,28 +1648,19 @@ Directions
 
 <div class="image-pending-inner">
 
-<div class="image-pending-icon">
-🧗
-</div>
+<div class="image-pending-icon">🧗</div>
 
-<strong>
-Climbing Collective
-</strong>
+<strong>Climbing Collective</strong>
 
-<span>
-Official facility photo/logo coming soon
-</span>
+<span>Official facility photo/logo coming soon</span>
 
 </div>
 
 </div>
 
-<span class="badge badge-paid">
-PAID
-</span>
+<span class="badge badge-paid">PAID</span>
 
 </div>
-
 
 <div class="card-body">
 
@@ -1885,9 +1668,7 @@ PAID
 Climbing • Fitness • Indoor
 </div>
 
-<h3>
-Longmont Climbing Collective
-</h3>
+<h3>Longmont Climbing Collective</h3>
 
 <p class="card-description">
 Try indoor climbing, bouldering, fitness or yoga.
@@ -1895,20 +1676,16 @@ Programs are available for adults and children,
 making it a great year-round activity.
 </p>
 
-
 <div class="details">
 
 <div class="detail">
 <strong>📍 Address:</strong>
-155 Pinnacle Street,
-Longmont, CO 80504
+155 Pinnacle Street, Longmont, CO 80504
 </div>
 
 <div class="detail">
 <strong>☎ Phone:</strong>
-<a href="tel:7203403640">
-720-340-3640
-</a>
+<a href="tel:7203403640">720-340-3640</a>
 </div>
 
 <div class="detail">
@@ -1922,7 +1699,6 @@ Rental options available.
 </div>
 
 </div>
-
 
 <div class="buttons">
 
@@ -1948,10 +1724,6 @@ Directions
 
 
 
-<!-- ==================================================
-     LONGMONT RECREATION CENTER
-================================================== -->
-
 <article class="card">
 
 <div class="card-image">
@@ -1960,28 +1732,19 @@ Directions
 
 <div class="image-pending-inner">
 
-<div class="image-pending-icon">
-🏊
-</div>
+<div class="image-pending-icon">🏊</div>
 
-<strong>
-Longmont Recreation Center
-</strong>
+<strong>Longmont Recreation Center</strong>
 
-<span>
-Official facility photo coming soon
-</span>
+<span>Official facility photo coming soon</span>
 
 </div>
 
 </div>
 
-<span class="badge badge-low">
-DAY PASS
-</span>
+<span class="badge badge-low">DAY PASS</span>
 
 </div>
-
 
 <div class="card-body">
 
@@ -1989,9 +1752,7 @@ DAY PASS
 Swimming • Recreation • Indoor
 </div>
 
-<h3>
-Longmont Recreation Center
-</h3>
+<h3>Longmont Recreation Center</h3>
 
 <p class="card-description">
 Swim, climb, play basketball or work out under one roof.
@@ -1999,20 +1760,16 @@ The center includes lap and leisure pools, waterslides,
 a lazy river, climbing wall, gymnasium and fitness areas.
 </p>
 
-
 <div class="details">
 
 <div class="detail">
 <strong>📍 Address:</strong>
-310 Quail Road,
-Longmont, CO 80501
+310 Quail Road, Longmont, CO 80501
 </div>
 
 <div class="detail">
 <strong>☎ Phone:</strong>
-<a href="tel:3037744800">
-303-774-4800
-</a>
+<a href="tel:3037744800">303-774-4800</a>
 </div>
 
 <div class="detail">
@@ -2026,7 +1783,6 @@ Rainy days and winter activities.
 </div>
 
 </div>
-
 
 <div class="buttons">
 
@@ -2052,12 +1808,7 @@ Directions
 
 
 
-<!-- ==================================================
-     MILE-HI SKYDIVING
-================================================== -->
-
-<article class="card"
-         id="adventure">
+<article class="card" id="adventure">
 
 <div class="card-image">
 
@@ -2066,12 +1817,9 @@ src="https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,f_jpg,h_639
 alt="Skydiving in Longmont Colorado"
 loading="lazy">
 
-<span class="badge badge-paid">
-$$$
-</span>
+<span class="badge badge-paid">$$$</span>
 
 </div>
-
 
 <div class="card-body">
 
@@ -2079,16 +1827,13 @@ $$$
 Adventure • Bucket List
 </div>
 
-<h3>
-Mile-Hi Skydiving Center
-</h3>
+<h3>Mile-Hi Skydiving Center</h3>
 
 <p class="card-description">
 For a completely different view of Longmont, take to
 the sky. Mile-Hi offers tandem skydives for first-timers
 as well as training for experienced jumpers.
 </p>
-
 
 <div class="details">
 
@@ -2100,9 +1845,7 @@ Longmont, CO 80503
 
 <div class="detail">
 <strong>☎ Phone:</strong>
-<a href="tel:3037029911">
-303-702-9911
-</a>
+<a href="tel:3037029911">303-702-9911</a>
 </div>
 
 <div class="detail">
@@ -2116,7 +1859,6 @@ Bucket lists and serious adventure.
 </div>
 
 </div>
-
 
 <div class="buttons">
 
@@ -2142,12 +1884,7 @@ Directions
 
 
 
-<!-- ==================================================
-     ICE PAVILION
-================================================== -->
-
-<article class="card"
-         id="seasonal">
+<article class="card" id="seasonal">
 
 <div class="card-image">
 
@@ -2156,12 +1893,9 @@ src="https://assets.simpleviewinc.com/simpleview/image/fetch/c_fill,f_jpg,h_650,
 alt="Ice skating in Longmont Colorado"
 loading="lazy">
 
-<span class="badge badge-low">
-SEASONAL
-</span>
+<span class="badge badge-low">SEASONAL</span>
 
 </div>
-
 
 <div class="card-body">
 
@@ -2169,9 +1903,7 @@ SEASONAL
 Ice Skating • Winter
 </div>
 
-<h3>
-Longmont Ice Pavilion
-</h3>
+<h3>Longmont Ice Pavilion</h3>
 
 <p class="card-description">
 The open-air covered rink at Roosevelt Park offers
@@ -2179,20 +1911,16 @@ public skating, hockey and lessons during the winter
 season.
 </p>
 
-
 <div class="details">
 
 <div class="detail">
 <strong>📍 Address:</strong>
-725 Eighth Avenue,
-Longmont, CO 80501
+725 Eighth Avenue, Longmont, CO 80501
 </div>
 
 <div class="detail">
 <strong>☎ Phone:</strong>
-<a href="tel:3037744777">
-303-774-4777
-</a>
+<a href="tel:3037744777">303-774-4777</a>
 </div>
 
 <div class="detail">
@@ -2207,7 +1935,6 @@ Closed for the season as of September 2026.
 </div>
 
 </div>
-
 
 <div class="buttons">
 
@@ -2232,16 +1959,11 @@ Directions
 </article>
 
 
-
 </div>
 
 </section>
 
 
-
-<!-- ==================================================
-     PICK A DAY
-================================================== -->
 
 <section class="local-ideas">
 
@@ -2265,9 +1987,7 @@ What Kind of Day Are You Looking For?
 
 <div class="idea-icon">💚</div>
 
-<h3>
-A Completely Free Day
-</h3>
+<h3>A Completely Free Day</h3>
 
 <p>
 Walk around McIntosh Lake, explore Golden Ponds,
@@ -2282,9 +2002,7 @@ Longmont history at Sandstone Ranch.
 
 <div class="idea-icon">👨‍👩‍👧</div>
 
-<h3>
-A Family Day
-</h3>
+<h3>A Family Day</h3>
 
 <p>
 Explore Dickens Farm, meet the animals at Sunflower Farm
@@ -2298,9 +2016,7 @@ or spend the afternoon swimming at the Longmont Recreation Center.
 
 <div class="idea-icon">❤️</div>
 
-<h3>
-A Date Day
-</h3>
+<h3>A Date Day</h3>
 
 <p>
 Take a sunset walk at Golden Ponds or McIntosh Lake,
@@ -2314,9 +2030,7 @@ try climbing together or ice skate during the winter.
 
 <div class="idea-icon">🌊</div>
 
-<h3>
-A Water Day
-</h3>
+<h3>A Water Day</h3>
 
 <p>
 Kayak or paddleboard at McIntosh Lake or spend a full
@@ -2330,9 +2044,7 @@ summer day at Union Reservoir.
 
 <div class="idea-icon">🌧️</div>
 
-<h3>
-A Rainy Day
-</h3>
+<h3>A Rainy Day</h3>
 
 <p>
 Try the Longmont Climbing Collective, Recreation Center
@@ -2346,9 +2058,7 @@ or check the Longmont Museum's program schedule.
 
 <div class="idea-icon">🪂</div>
 
-<h3>
-A Bucket-List Day
-</h3>
+<h3>A Bucket-List Day</h3>
 
 <p>
 Go skydiving over the Front Range or try something
@@ -2364,17 +2074,11 @@ new like climbing, kayaking or paddleboarding.
 
 
 
-<!-- ==================================================
-     BEFORE YOU GO
-================================================== -->
-
 <section class="note-section">
 
 <div class="note">
 
-<h2>
-Before You Go
-</h2>
+<h2>Before You Go</h2>
 
 <ul>
 
@@ -2413,10 +2117,6 @@ spending anything.
 
 
 
-<!-- ==================================================
-     SUBMISSION CTA
-================================================== -->
-
 <section class="submit">
 
 <div class="eyebrow">
@@ -2445,10 +2145,6 @@ Suggest Something →
 
 
 
-<!-- ==================================================
-     FOOTER
-================================================== -->
-
 <footer>
 
 <div class="footer-grid">
@@ -2463,9 +2159,7 @@ Suggest Something →
 
 <div>
 
-<h2>
-Loving Longmont
-</h2>
+<h2>Loving Longmont</h2>
 
 <small>
 PEOPLE
@@ -2478,7 +2172,6 @@ POSSIBILITIES
 </div>
 
 </div>
-
 
 <p class="footer-about">
 Celebrating the people, businesses, events and places
@@ -2505,13 +2198,17 @@ Explore
 
 <a href="things-to-do.html">Things to Do</a>
 
-<a href="jobs.html">Jobs</a>
+<a href="animals.html">Animals & Pets</a>
+
+<a href="jobs.html">Jobs & Work</a>
 
 <a href="community.html">Community</a>
 
-<a href="about.html">About</a>
+<a href="about.html">About Loving Longmont</a>
 
 <a href="contact.html">Contact</a>
+
+<a href="sitemap.html"><strong>Site Map →</strong></a>
 
 </div>
 
@@ -2526,8 +2223,8 @@ Connect With Us
 </div>
 
 <p class="footer-contact">
-Have an event, business, photo, story or something
-happening around Longmont you'd like us to know about?
+Have an event, business, photo, story or community resource
+around Longmont you'd like us to know about?
 </p>
 
 <a
