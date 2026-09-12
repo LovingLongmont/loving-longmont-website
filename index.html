@@ -12,7 +12,7 @@ Loving Longmont | People • Places • Possibilities
 </title>
 
 <meta name="description"
-content="Discover Longmont, Colorado. Explore local businesses, events, things to do, jobs, community resources and the people and places that make Longmont special.">
+content="Discover Longmont, Colorado. Explore local businesses, events, things to do, jobs, animals and pets, community resources and the people and places that make Longmont special.">
 
 
 <style>
@@ -98,11 +98,11 @@ a {
 
 .navbar {
 
-    max-width: 1380px;
+    max-width: 1450px;
 
     margin: auto;
 
-    padding: 9px 28px;
+    padding: 9px 22px;
 
     display: flex;
 
@@ -110,7 +110,7 @@ a {
 
     justify-content: space-between;
 
-    gap: 25px;
+    gap: 20px;
 }
 
 
@@ -126,7 +126,7 @@ a {
 
     text-decoration: none;
 
-    min-width: 280px;
+    min-width: 260px;
 }
 
 
@@ -191,7 +191,7 @@ a {
 
     align-items: center;
 
-    gap: 23px;
+    gap: 16px;
 }
 
 
@@ -201,7 +201,7 @@ a {
 
     color: var(--navy);
 
-    font-size: 13px;
+    font-size: 12px;
 
     font-weight: bold;
 
@@ -209,6 +209,8 @@ a {
 
     border-bottom:
         3px solid transparent;
+
+    white-space: nowrap;
 }
 
 
@@ -230,7 +232,7 @@ a {
 
     border-radius: 7px;
 
-    padding: 12px 20px !important;
+    padding: 12px 18px !important;
 
     border-bottom: none !important;
 }
@@ -1083,6 +1085,35 @@ footer {
    RESPONSIVE
 ======================================== */
 
+@media (max-width: 1180px) {
+
+    .navbar {
+
+        flex-direction: column;
+
+        padding-bottom: 15px;
+    }
+
+    .nav-logo {
+
+        min-width: auto;
+    }
+
+    .nav-links {
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .nav-links a {
+
+        padding: 5px 0;
+    }
+
+}
+
+
 @media (max-width: 1100px) {
 
     .explore-grid {
@@ -1095,34 +1126,6 @@ footer {
 
 
 @media (max-width: 900px) {
-
-    .navbar {
-
-        flex-direction: column;
-
-        padding-bottom: 15px;
-    }
-
-
-    .nav-logo {
-
-        min-width: auto;
-    }
-
-
-    .nav-links {
-
-        flex-wrap: wrap;
-
-        justify-content: center;
-    }
-
-
-    .nav-links a {
-
-        padding: 5px 0;
-    }
-
 
     .photo-grid {
 
@@ -1251,6 +1254,10 @@ footer {
         Things to Do
     </a>
 
+    <a href="animals.html">
+        Animals & Pets
+    </a>
+
     <a href="jobs.html">
         Jobs
     </a>
@@ -1259,8 +1266,8 @@ footer {
         Community
     </a>
 
-    <a href="about.html">
-        About
+    <a href="sitemap.html">
+        Explore
     </a>
 
     <a href="contact.html"
@@ -1438,10 +1445,10 @@ footer {
 
     <p>
 
-        Discover local job
-        opportunities and
-        connect with businesses
-        that are hiring.
+        Find local job resources,
+        career help, staffing agencies,
+        side gigs and ways to
+        find work in Longmont.
 
     </p>
 
@@ -1483,30 +1490,30 @@ footer {
 
 
 
-<!-- ABOUT -->
+<!-- EXPLORE ALL -->
 
-<a href="about.html"
+<a href="sitemap.html"
    class="explore-card">
 
     <div class="card-icon">
-        ℹ️
+        🗺️
     </div>
 
     <h3>
-        About
+        Explore All
     </h3>
 
     <p>
 
-        Learn more about
-        Loving Longmont,
-        why it was created
-        and our mission.
+        Browse every Loving Longmont
+        guide and resource, including
+        animals, pets and new pages
+        as they are added.
 
     </p>
 
     <div class="card-link">
-        Our Story →
+        Explore Loving Longmont →
     </div>
 
 </a>
@@ -1974,8 +1981,12 @@ footer {
             Things to Do
         </a>
 
+        <a href="animals.html">
+            Animals & Pets
+        </a>
+
         <a href="jobs.html">
-            Jobs
+            Jobs & Work
         </a>
 
         <a href="community.html">
@@ -1983,11 +1994,15 @@ footer {
         </a>
 
         <a href="about.html">
-            About
+            About Loving Longmont
         </a>
 
         <a href="contact.html">
             Contact
+        </a>
+
+        <a href="sitemap.html">
+            <strong>Explore All Pages →</strong>
         </a>
 
     </div>
