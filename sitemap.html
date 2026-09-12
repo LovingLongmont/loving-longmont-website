@@ -6,10 +6,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Explore Loving Longmont | Site Map</title>
+<title>Site Map | Loving Longmont</title>
 
 <meta name="description"
-content="Explore all Loving Longmont pages in one place — businesses, events, things to do, jobs, animals, community resources and more.">
+content="Explore Loving Longmont. Find local businesses, events, things to do, jobs, animals and pets, community resources and more in Longmont, Colorado.">
 
 <style>
 
@@ -67,19 +67,20 @@ a {
 }
 
 .navbar {
-    max-width:1400px;
+    max-width:1450px;
     margin:auto;
     padding:9px 22px;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    gap:22px;
+    gap:20px;
 }
 
 .nav-logo {
     display:flex;
     align-items:center;
     text-decoration:none;
+    min-width:250px;
 }
 
 .nav-logo img {
@@ -109,14 +110,14 @@ a {
     letter-spacing:2px;
 }
 
-.heart {
+.red-heart {
     color:var(--red);
 }
 
 .nav-links {
     display:flex;
     align-items:center;
-    gap:18px;
+    gap:15px;
 }
 
 .nav-links a {
@@ -126,6 +127,7 @@ a {
     font-weight:bold;
     padding:25px 0 22px;
     border-bottom:3px solid transparent;
+    white-space:nowrap;
 }
 
 .nav-links a:hover,
@@ -246,7 +248,7 @@ a {
 
 
 /* =========================================================
-   QUICK CATEGORY NAV
+   QUICK CATEGORY NAVIGATION
 ========================================================= */
 
 .category-nav {
@@ -296,7 +298,7 @@ a {
 
 
 /* =========================================================
-   FEATURED DIRECTORY
+   DIRECTORY SECTIONS
 ========================================================= */
 
 .directory {
@@ -347,32 +349,27 @@ a {
 }
 
 .card-top.blue {
-    background:
-        linear-gradient(135deg,#062f52,#0c5d89);
+    background:linear-gradient(135deg,#062f52,#0c5d89);
     color:white;
 }
 
 .card-top.red {
-    background:
-        linear-gradient(135deg,#951420,#c8101e);
+    background:linear-gradient(135deg,#951420,#c8101e);
     color:white;
 }
 
 .card-top.green {
-    background:
-        linear-gradient(135deg,#2f674f,#4f8f70);
+    background:linear-gradient(135deg,#2f674f,#4f8f70);
     color:white;
 }
 
 .card-top.gold {
-    background:
-        linear-gradient(135deg,#80600e,#b48a1f);
+    background:linear-gradient(135deg,#80600e,#b48a1f);
     color:white;
 }
 
 .card-top.soft {
-    background:
-        linear-gradient(135deg,#e8f0ec,#d4e5df);
+    background:linear-gradient(135deg,#e8f0ec,#d4e5df);
     color:var(--navy);
 }
 
@@ -432,22 +429,17 @@ a {
     color:#266342;
 }
 
-.coming {
-    background:#fff1d1;
-    color:#83600b;
-}
-
 
 /* =========================================================
-   ROADMAP / FUTURE
+   FUTURE GUIDES
 ========================================================= */
 
-.roadmap {
+.future-guides {
     padding:80px 25px;
     background:linear-gradient(135deg,#eef5f4,#f9fbfb);
 }
 
-.roadmap-grid {
+.future-grid {
     max-width:1100px;
     margin:auto;
     display:grid;
@@ -455,68 +447,35 @@ a {
     gap:22px;
 }
 
-.roadmap-card {
+.future-card {
     background:white;
     border-radius:15px;
     padding:27px;
     border:1px solid #dfe8e7;
+    transition:.25s;
 }
 
-.roadmap-card h3 {
+.future-card:hover {
+    transform:translateY(-3px);
+    box-shadow:0 10px 24px rgba(0,0,0,.07);
+}
+
+.future-card h3 {
     color:var(--navy);
     font-family:Georgia,serif;
     margin:0 0 8px;
     font-size:21px;
 }
 
-.roadmap-card p {
+.future-card p {
     color:var(--gray);
     margin:0;
     font-size:14px;
 }
 
-.roadmap-icon {
+.future-icon {
     font-size:31px;
     margin-bottom:7px;
-}
-
-
-/* =========================================================
-   HELPFUL BOX
-========================================================= */
-
-.help-box-section {
-    background:#fff;
-    padding:70px 25px;
-}
-
-.help-box {
-    max-width:1000px;
-    margin:auto;
-    background:var(--cream);
-    border-left:7px solid var(--red);
-    border-radius:14px;
-    padding:35px;
-}
-
-.help-box h2 {
-    margin-top:0;
-    font-family:Georgia,serif;
-    color:var(--navy);
-}
-
-.help-box p {
-    color:var(--gray);
-}
-
-.help-box a {
-    color:var(--navy);
-    font-weight:bold;
-    text-decoration:none;
-}
-
-.help-box a:hover {
-    text-decoration:underline;
 }
 
 
@@ -555,6 +514,10 @@ a {
     font-weight:bold;
     padding:12px 19px;
     border-radius:7px;
+}
+
+.cta-button:hover {
+    background:#aa0d16;
 }
 
 
@@ -624,6 +587,7 @@ footer {
 
 .footer-links a:hover {
     text-decoration:underline;
+    color:white;
 }
 
 .footer-email {
@@ -647,6 +611,27 @@ footer {
    RESPONSIVE
 ========================================================= */
 
+@media(max-width:1180px) {
+
+    .navbar {
+        flex-direction:column;
+        padding-bottom:15px;
+    }
+
+    .nav-logo {
+        min-width:auto;
+    }
+
+    .nav-links {
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .nav-links a {
+        padding:5px 0;
+    }
+}
+
 @media(max-width:1050px) {
 
     .category-grid {
@@ -660,19 +645,6 @@ footer {
 
 @media(max-width:900px) {
 
-    .navbar {
-        flex-direction:column;
-    }
-
-    .nav-links {
-        flex-wrap:wrap;
-        justify-content:center;
-    }
-
-    .nav-links a {
-        padding:5px 0;
-    }
-
     .footer-grid {
         grid-template-columns:1fr;
     }
@@ -682,7 +654,7 @@ footer {
 
     .category-grid,
     .directory-grid,
-    .roadmap-grid {
+    .future-grid {
         grid-template-columns:1fr;
     }
 
@@ -725,9 +697,9 @@ Loving Longmont
 
 <small>
 PEOPLE
-<span class="heart">♥</span>
+<span class="red-heart">♥</span>
 PLACES
-<span class="heart">♥</span>
+<span class="red-heart">♥</span>
 POSSIBILITIES
 </small>
 
@@ -738,19 +710,37 @@ POSSIBILITIES
 
 <div class="nav-links">
 
-<a href="index.html">Home</a>
+<a href="index.html">
+Home
+</a>
 
-<a href="events.html">Events</a>
+<a href="events.html">
+Events
+</a>
 
-<a href="businesses.html">Local Businesses</a>
+<a href="businesses.html">
+Local Businesses
+</a>
 
-<a href="things-to-do.html">Things to Do</a>
+<a href="things-to-do.html">
+Things to Do
+</a>
 
-<a href="jobs.html">Jobs</a>
+<a href="animals.html">
+Animals & Pets
+</a>
 
-<a href="community.html">Community</a>
+<a href="jobs.html">
+Jobs
+</a>
 
-<a href="sitemap.html" class="active">Explore</a>
+<a href="community.html">
+Community
+</a>
+
+<a href="sitemap.html" class="active">
+Site Map
+</a>
 
 <a href="contact.html" class="nav-contact">
 Contact
@@ -782,7 +772,7 @@ Explore Loving Longmont
 </h1>
 
 <p>
-One place to discover everything we're building for the Longmont community.
+Your guide to the people, places, resources and possibilities around Longmont.
 </p>
 
 </div>
@@ -806,14 +796,13 @@ The Loving Longmont Directory
 </div>
 
 <h2 class="section-title">
-Where Would You Like to Go?
+Find Your Way Around
 </h2>
 
 <p class="section-description">
-Loving Longmont is growing into a collection of community guides,
-local resources and useful information. Instead of crowding the
-main navigation with every new page, you'll always be able to find
-everything here.
+Explore everything Loving Longmont has to offer.
+Find local businesses, events, activities, jobs,
+animal resources, community information and more.
 </p>
 
 </div>
@@ -823,7 +812,7 @@ everything here.
 
 
 <!-- =========================================================
-     CATEGORY NAV
+     QUICK CATEGORIES
 ========================================================= -->
 
 <section class="category-nav">
@@ -875,11 +864,11 @@ class="category-card">
 </div>
 
 <h3>
-About Loving Longmont
+Loving Longmont
 </h3>
 
 <p>
-Who we are and how to connect.
+Learn about the project and connect with us.
 </p>
 
 </a>
@@ -893,11 +882,11 @@ class="category-card">
 </div>
 
 <h3>
-What's Next
+Coming Soon
 </h3>
 
 <p>
-Future guides and ideas as the site grows.
+See more Longmont guides planned for the future.
 </p>
 
 </a>
@@ -923,12 +912,12 @@ Discover the Community
 </div>
 
 <h2 class="section-title">
-Things Happening Around Longmont
+Explore Longmont
 </h2>
 
 <p class="section-description">
-Start here when you're looking for somewhere to go,
-something to do or a new local business to discover.
+Find somewhere to go, something to do
+or a new local business to discover.
 </p>
 
 </div>
@@ -936,8 +925,6 @@ something to do or a new local business to discover.
 
 <div class="directory-grid">
 
-
-<!-- HOME -->
 
 <a href="index.html"
 class="page-card">
@@ -961,8 +948,8 @@ Live
 </span>
 
 <p>
-Return to the Loving Longmont homepage for featured
-community information, highlights and ways to explore.
+Visit the Loving Longmont homepage for community highlights,
+local discoveries and ways to explore Longmont.
 </p>
 
 <div class="card-link">
@@ -974,8 +961,6 @@ Visit Home →
 </a>
 
 
-
-<!-- EVENTS -->
 
 <a href="events.html"
 class="page-card">
@@ -1013,8 +998,6 @@ Explore Events →
 
 
 
-<!-- BUSINESSES -->
-
 <a href="businesses.html"
 class="page-card">
 
@@ -1051,8 +1034,6 @@ Browse Businesses →
 
 
 
-<!-- THINGS TO DO -->
-
 <a href="things-to-do.html"
 class="page-card">
 
@@ -1075,8 +1056,8 @@ Live
 </span>
 
 <p>
-Explore parks, trails, lakes, museums, farms, family
-activities, adventures and free things to do.
+Explore parks, trails, lakes, museums, farms,
+family activities, adventures and free things to do.
 </p>
 
 <div class="card-link">
@@ -1112,7 +1093,7 @@ Everyday Life in Longmont
 </h2>
 
 <p class="section-description">
-Useful local resources for work, pets, community life and more.
+Local resources for work, pets, community life and more.
 </p>
 
 </div>
@@ -1120,8 +1101,6 @@ Useful local resources for work, pets, community life and more.
 
 <div class="directory-grid">
 
-
-<!-- JOBS -->
 
 <a href="jobs.html"
 class="page-card">
@@ -1160,8 +1139,6 @@ Find Work →
 
 
 
-<!-- ANIMALS -->
-
 <a href="animals.html"
 class="page-card">
 
@@ -1199,8 +1176,6 @@ Explore Animal Resources →
 
 
 
-<!-- COMMUNITY -->
-
 <a href="community.html"
 class="page-card">
 
@@ -1224,7 +1199,7 @@ Live
 
 <p>
 Connect with local resources, community organizations
-and information designed to help Longmont residents.
+and information created to help Longmont residents.
 </p>
 
 <div class="card-link">
@@ -1243,7 +1218,7 @@ Explore Community →
 
 
 <!-- =========================================================
-     ABOUT / CONTACT
+     LOVING LONGMONT
 ========================================================= -->
 
 <section class="directory cream"
@@ -1252,7 +1227,7 @@ id="about-site">
 <div class="section-heading">
 
 <div class="eyebrow">
-About the Project
+About the Community
 </div>
 
 <h2 class="section-title">
@@ -1260,8 +1235,8 @@ Loving Longmont
 </h2>
 
 <p class="section-description">
-Learn more about the site, get in touch or help us discover
-something that should be included.
+Learn more about Loving Longmont,
+get in touch or explore every page on the site.
 </p>
 
 </div>
@@ -1269,8 +1244,6 @@ something that should be included.
 
 <div class="directory-grid">
 
-
-<!-- ABOUT -->
 
 <a href="about.html"
 class="page-card">
@@ -1294,8 +1267,8 @@ Live
 </span>
 
 <p>
-Learn why Loving Longmont was created and what we're
-building for the community.
+Learn more about Loving Longmont and the idea
+behind this growing community resource.
 </p>
 
 <div class="card-link">
@@ -1307,8 +1280,6 @@ Read Our Story →
 </a>
 
 
-
-<!-- CONTACT -->
 
 <a href="contact.html"
 class="page-card">
@@ -1332,8 +1303,8 @@ Live
 </span>
 
 <p>
-Send Loving Longmont a business, event, story,
-photograph, resource suggestion or community question.
+Share a business, event, story, photograph,
+resource suggestion or something happening in Longmont.
 </p>
 
 <div class="card-link">
@@ -1345,8 +1316,6 @@ Contact Loving Longmont →
 </a>
 
 
-
-<!-- SITE MAP -->
 
 <a href="sitemap.html"
 class="page-card">
@@ -1370,12 +1339,12 @@ You Are Here
 </span>
 
 <p>
-The complete visual directory of Loving Longmont.
-As new pages are created, they'll be added here.
+Browse the complete Loving Longmont directory
+and discover all of our current guides and resources.
 </p>
 
 <div class="card-link">
-Explore This Page
+Explore the Site
 </div>
 
 </div>
@@ -1390,10 +1359,10 @@ Explore This Page
 
 
 <!-- =========================================================
-     COMING SOON / ROADMAP
+     COMING SOON
 ========================================================= -->
 
-<section class="roadmap"
+<section class="future-guides"
 id="coming-soon">
 
 <div class="section-heading">
@@ -1403,24 +1372,23 @@ Loving Longmont Is Growing
 </div>
 
 <h2 class="section-title">
-Ideas for Future Guides
+Coming Soon
 </h2>
 
 <p class="section-description">
-These aren't required pages — they're examples of sections
-Loving Longmont can grow into over time. Keep the ones you like,
-delete the others, or replace them as you create new pages.
+More ways to discover, enjoy and connect with Longmont
+are on the way.
 </p>
 
 </div>
 
 
-<div class="roadmap-grid">
+<div class="future-grid">
 
 
-<div class="roadmap-card">
+<div class="future-card">
 
-<div class="roadmap-icon">
+<div class="future-icon">
 🍽️
 </div>
 
@@ -1437,9 +1405,9 @@ food trucks, breweries and local favorites.
 
 
 
-<div class="roadmap-card">
+<div class="future-card">
 
-<div class="roadmap-icon">
+<div class="future-icon">
 🆓
 </div>
 
@@ -1448,17 +1416,17 @@ Free in Longmont
 </h3>
 
 <p>
-A dedicated guide to free activities, attractions,
-community programs and resources.
+Free activities, attractions, community programs,
+events and resources around Longmont.
 </p>
 
 </div>
 
 
 
-<div class="roadmap-card">
+<div class="future-card">
 
-<div class="roadmap-icon">
+<div class="future-icon">
 👨‍👩‍👧
 </div>
 
@@ -1475,9 +1443,9 @@ activities and family-friendly events.
 
 
 
-<div class="roadmap-card">
+<div class="future-card">
 
-<div class="roadmap-icon">
+<div class="future-icon">
 🌲
 </div>
 
@@ -1486,17 +1454,17 @@ Parks, Trails & Outdoors
 </h3>
 
 <p>
-A deeper guide to Longmont parks, nature areas,
-walking paths, bike trails and outdoor recreation.
+Longmont parks, nature areas, walking paths,
+bike trails and outdoor recreation.
 </p>
 
 </div>
 
 
 
-<div class="roadmap-card">
+<div class="future-card">
 
-<div class="roadmap-icon">
+<div class="future-icon">
 🧓
 </div>
 
@@ -1505,17 +1473,17 @@ Seniors
 </h3>
 
 <p>
-Activities, services, transportation, support
-and community resources for older residents.
+Activities, services, transportation,
+support and community resources for older adults.
 </p>
 
 </div>
 
 
 
-<div class="roadmap-card">
+<div class="future-card">
 
-<div class="roadmap-icon">
+<div class="future-icon">
 🧰
 </div>
 
@@ -1524,7 +1492,7 @@ Local Services
 </h3>
 
 <p>
-Repair, home services, contractors, movers,
+Home services, repairs, contractors, movers,
 cleaners and other useful local businesses.
 </p>
 
@@ -1532,9 +1500,9 @@ cleaners and other useful local businesses.
 
 
 
-<div class="roadmap-card">
+<div class="future-card">
 
-<div class="roadmap-icon">
+<div class="future-icon">
 📸
 </div>
 
@@ -1543,17 +1511,17 @@ Longmont Photo Guide
 </h3>
 
 <p>
-Great places to photograph Longmont, community
-photo submissions and local scenery.
+Beautiful places to photograph Longmont,
+community photographs and local scenery.
 </p>
 
 </div>
 
 
 
-<div class="roadmap-card">
+<div class="future-card">
 
-<div class="roadmap-icon">
+<div class="future-icon">
 💚
 </div>
 
@@ -1562,8 +1530,8 @@ Community Help
 </h3>
 
 <p>
-Food assistance, housing resources, transportation,
-family support and other community services.
+Food assistance, housing resources,
+transportation, family support and other local services.
 </p>
 
 </div>
@@ -1576,68 +1544,30 @@ family support and other community services.
 
 
 <!-- =========================================================
-     HOW TO USE THIS PAGE
-========================================================= -->
-
-<section class="help-box-section">
-
-<div class="help-box">
-
-<h2>
-Why We Have a Site Map
-</h2>
-
-<p>
-As Loving Longmont grows, every useful page doesn't need to be
-placed in the main navigation bar. That would quickly make the
-website crowded and difficult to use.
-</p>
-
-<p>
-Instead, the main navigation can stay focused on the most important
-sections while this page becomes the complete directory.
-Whenever a new Loving Longmont page is created, it can be added here.
-</p>
-
-<p>
-<strong>Tip:</strong>
-You can eventually put a simple
-<a href="sitemap.html">Explore All Pages</a>
-link in the footer of every page. That gives visitors access
-to everything without making the top menu too large.
-</p>
-
-</div>
-
-</section>
-
-
-
-<!-- =========================================================
-     CTA
+     COMMUNITY CTA
 ========================================================= -->
 
 <section class="cta">
 
 <div class="eyebrow">
-Can't Find What You're Looking For?
+Help Us Discover Longmont
 </div>
 
 <h2>
-Tell Loving Longmont
+What Should We Add Next?
 </h2>
 
 <p>
-If there's a Longmont guide, resource or topic you'd like
-to see added to the website, send us an idea.
-The best pages often start with a community suggestion.
+Know a Longmont resource, business, place,
+activity or community topic that belongs on Loving Longmont?
+We'd love to hear about it.
 </p>
 
 <a
-href="mailto:hello.lovinglongmont@gmail.com?subject=Loving%20Longmont%20Page%20Suggestion&body=Hi%20Loving%20Longmont%2C%0A%0AI%27d%20love%20to%20see%20a%20page%20or%20guide%20about%3A%0A%0AMy%20idea%3A%0A%0AWhy%20I%20think%20it%20would%20be%20helpful%3A%0A"
+href="mailto:hello.lovinglongmont@gmail.com?subject=Loving%20Longmont%20Suggestion&body=Hi%20Loving%20Longmont%2C%0A%0AI%27d%20like%20to%20suggest%3A%0A%0AName%20or%20topic%3A%0AWebsite%20if%20available%3A%0ADetails%3A%0A"
 class="cta-button">
 
-Suggest a New Guide →
+Send Us a Suggestion →
 
 </a>
 
@@ -1669,9 +1599,9 @@ Loving Longmont
 
 <small>
 PEOPLE
-<span class="heart">♥</span>
+<span class="red-heart">♥</span>
 PLACES
-<span class="heart">♥</span>
+<span class="red-heart">♥</span>
 POSSIBILITIES
 </small>
 
@@ -1696,21 +1626,45 @@ Explore
 
 <div class="footer-links">
 
-<a href="index.html">Home</a>
+<a href="index.html">
+Home
+</a>
 
-<a href="events.html">Events</a>
+<a href="events.html">
+Events
+</a>
 
-<a href="businesses.html">Local Businesses</a>
+<a href="businesses.html">
+Local Businesses
+</a>
 
-<a href="things-to-do.html">Things to Do</a>
+<a href="things-to-do.html">
+Things to Do
+</a>
 
-<a href="animals.html">Animals & Pets</a>
+<a href="animals.html">
+Animals & Pets
+</a>
 
-<a href="jobs.html">Jobs</a>
+<a href="jobs.html">
+Jobs & Work
+</a>
 
-<a href="community.html">Community</a>
+<a href="community.html">
+Community
+</a>
 
-<a href="sitemap.html">Explore All Pages</a>
+<a href="about.html">
+About Loving Longmont
+</a>
+
+<a href="contact.html">
+Contact
+</a>
+
+<a href="sitemap.html">
+<strong>Site Map →</strong>
+</a>
 
 </div>
 
@@ -1751,7 +1705,7 @@ All rights reserved.
 &nbsp; | &nbsp;
 
 Made with
-<span class="heart">♥</span>
+<span class="red-heart">♥</span>
 for Longmont, Colorado.
 
 </div>
