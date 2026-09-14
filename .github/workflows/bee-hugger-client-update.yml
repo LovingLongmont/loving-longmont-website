@@ -22,19 +22,11 @@ jobs:
 
           animals = Path('animals.html')
           text = animals.read_text(encoding='utf-8')
-
-          old_desc = '''A quirky six-acre family farm with bees, horses, goats,
-pigs, chickens, peacocks and more. Visitors can feed animals,
-climb tractors and explore the property.'''
-          new_desc = '''A quirky six-acre family farm with bees, horses, goats,
-pigs, chickens, peacocks, U-Pick sunflowers, pumpkins, local honey
-and more. Visitors can feed animals, climb tractors and explore the
-property. Check the website and social media for pony rides,
-storytimes and other special events.'''
+          old_desc = "A quirky six-acre family farm with bees, horses, goats,\npigs, chickens, peacocks and more. Visitors can feed animals,\nclimb tractors and explore the property."
+          new_desc = "A quirky six-acre family farm with bees, horses, goats,\npigs, chickens, peacocks, U-Pick sunflowers, pumpkins, local honey\nand more. Visitors can feed animals, climb tractors and explore the\nproperty. Check the website and social media for pony rides,\nstorytimes and other special events."
           if old_desc not in text:
               raise SystemExit('Expected Bee Hugger description not found in animals.html')
           text = text.replace(old_desc, new_desc, 1)
-
           old_phone = '<strong>☎ Events:</strong>'
           new_phone = '<strong>☎ Phone Number:</strong>'
           if old_phone not in text:
@@ -48,12 +40,10 @@ storytimes and other special events.'''
               anchor = '<article class="card" id="indoor">'
               if anchor not in text:
                   raise SystemExit('Family Fun insertion point not found in things-to-do.html')
-
-              bee_card = '''<article class="card">\n\n<div class="card-image">\n\n<img\nsrc="https://static.wixstatic.com/media/646d3b_9df553f39bb54fd6a14a96b92d28bedd~mv2.jpg"\nalt="The Bee Hugger Farm in Longmont Colorado"\nloading="lazy">\n\n<span class="badge badge-free">FREE ENTRY</span>\n\n</div>\n\n<div class="card-body">\n\n<div class="card-type">\nFarm • Animals • Family Fun\n</div>\n\n<h3>The Bee Hugger Farm</h3>\n\n<p class="card-description">\nA quirky six-acre family farm with bees, horses, goats, pigs,\nchickens, peacocks, U-Pick sunflowers, pumpkins, local honey and\nmore. Visitors can feed animals, climb tractors and explore the\nproperty. Check the website and social media for pony rides,\nstorytimes and other special events.\n</p>\n\n<div class="details">\n\n<div class="detail">\n<strong>📍 Address:</strong>\n12590 Ute Highway, Longmont, CO 80504\n</div>\n\n<div class="detail">\n<strong>☎ Phone Number:</strong>\n<a href="tel:3033308277">303-330-8277</a>\n</div>\n\n<div class="detail">\n<strong>💵 General Farm Entry:</strong>\nFree, with optional paid experiences.\n</div>\n\n<div class="detail">\n<strong>🐐 Animal Feed:</strong>\nAvailable for purchase.\n</div>\n\n</div>\n\n<div class="buttons">\n\n<a class="card-button website"\nhref="https://www.thebeehuggerfarm.com/"\ntarget="_blank"\nrel="noopener">\nOfficial Website\n</a>\n\n<a class="card-button directions"\nhref="https://www.google.com/maps/search/?api=1&query=The+Bee+Hugger+Farm+12590+Ute+Highway+Longmont+Colorado"\ntarget="_blank"\nrel="noopener">\nDirections\n</a>\n\n</div>\n\n</div>\n\n</article>\n\n\n\n'''
+              bee_card = """<article class=\"card\">\n\n<div class=\"card-image\">\n\n<img\nsrc=\"https://static.wixstatic.com/media/646d3b_9df553f39bb54fd6a14a96b92d28bedd~mv2.jpg\"\nalt=\"The Bee Hugger Farm in Longmont Colorado\"\nloading=\"lazy\">\n\n<span class=\"badge badge-free\">FREE ENTRY</span>\n\n</div>\n\n<div class=\"card-body\">\n\n<div class=\"card-type\">\nFarm • Animals • Family Fun\n</div>\n\n<h3>The Bee Hugger Farm</h3>\n\n<p class=\"card-description\">\nA quirky six-acre family farm with bees, horses, goats, pigs,\nchickens, peacocks, U-Pick sunflowers, pumpkins, local honey and\nmore. Visitors can feed animals, climb tractors and explore the\nproperty. Check the website and social media for pony rides,\nstorytimes and other special events.\n</p>\n\n<div class=\"details\">\n\n<div class=\"detail\">\n<strong>📍 Address:</strong>\n12590 Ute Highway, Longmont, CO 80504\n</div>\n\n<div class=\"detail\">\n<strong>☎ Phone Number:</strong>\n<a href=\"tel:3033308277\">303-330-8277</a>\n</div>\n\n<div class=\"detail\">\n<strong>💵 General Farm Entry:</strong>\nFree, with optional paid experiences.\n</div>\n\n<div class=\"detail\">\n<strong>🐐 Animal Feed:</strong>\nAvailable for purchase.\n</div>\n\n</div>\n\n<div class=\"buttons\">\n\n<a class=\"card-button website\"\nhref=\"https://www.thebeehuggerfarm.com/\"\ntarget=\"_blank\"\nrel=\"noopener\">\nOfficial Website\n</a>\n\n<a class=\"card-button directions\"\nhref=\"https://www.google.com/maps/search/?api=1&query=The+Bee+Hugger+Farm+12590+Ute+Highway+Longmont+Colorado\"\ntarget=\"_blank\"\nrel=\"noopener\">\nDirections\n</a>\n\n</div>\n\n</div>\n\n</article>\n\n\n\n"""
               text = text.replace(anchor, bee_card + anchor, 1)
               things.write_text(text, encoding='utf-8')
 
-          # Remove this one-time workflow so it cannot run again.
           Path('.github/workflows/bee-hugger-client-update.yml').unlink()
           PY
 
