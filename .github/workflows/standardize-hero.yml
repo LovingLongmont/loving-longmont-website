@@ -1,4 +1,4 @@
-name: Update Loving Longmont Events
+name: Fix Longmont Restaurant Week Logo
 on:
   push:
     branches: [main]
@@ -6,18 +6,26 @@ on:
 permissions:
   contents: write
 jobs:
-  update-events:
+  fix-logo:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Update events.html only
+      - name: Update Restaurant Week image
+        shell: python
         run: |
-          echo 'ZnJvbSBwYXRobGliIGltcG9ydCBQYXRoCmltcG9ydCByZQpwPVBhdGgoImV2ZW50cy5odG1sIikKcz1wLnJlYWRfdGV4dChlbmNvZGluZz0idXRmLTgiKQpoZWFkZXI9IiIiPGhlYWRlciBjbGFzcz0ic2l0ZS1oZWFkZXIiPgo8bmF2IGNsYXNzPSJuYXZiYXIiPgo8YSBocmVmPSJpbmRleC5odG1sIiBjbGFzcz0ibmF2LWxvZ28iPgo8aW1nIHNyYz0iSW1hZ2VzL1dlYnNpdGUtSW1hZ2VzLzFiLnBuZyIgYWx0PSJMb3ZpbmcgTG9uZ21vbnQgTG9nbyI+CjxkaXYgY2xhc3M9Im5hdi1icmFuZC10ZXh0Ij4KPHN0cm9uZz5Mb3ZpbmcgPHNwYW4gY2xhc3M9InJlZC1oZWFydCI+4pmlPC9zcGFuPiBMb25nbW9udDwvc3Ryb25nPgo8c21hbGw+UEVPUExFIDxzcGFuIGNsYXNzPSJyZWQtaGVhcnQiPuKZpTwvc3Bhbj4gUExBQ0VTIDxzcGFuIGNsYXNzPSJyZWQtaGVhcnQiPuKZpTwvc3Bhbj4gUE9TU0lCSUxJVElFUzwvc21hbGw+CjwvZGl2Pgo8L2E+CjxkaXYgY2xhc3M9Im5hdi1saW5rcyI+CjxhIGhyZWY9ImluZGV4Lmh0bWwiPkhvbWU8L2E+CjxhIGhyZWY9ImV2ZW50cy5odG1sIiBjbGFzcz0iYWN0aXZlIj5FdmVudHM8L2E+CjxhIGhyZWY9ImJ1c2luZXNzZXMuaHRtbCI+TG9jYWwgQnVzaW5lc3NlczwvYT4KPGEgaHJlZj0idGhpbmdzLXRvLWRvLmh0bWwiPlRoaW5ncyB0byBEbzwvYT4KPGEgaHJlZj0iaGlzdG9yeS5odG1sIj5IaXN0b3J5PC9hPgo8YSBocmVmPSJzcG90bGlnaHQuaHRtbCI+SW4gVGhlIFNwb3RsaWdodDwvYT4KPGEgaHJlZj0iYW5pbWFscy5odG1sIj5BbmltYWxzICYgUGV0czwvYT4KPGEgaHJlZj0iam9icy5odG1sIj5Kb2JzPC9hPgo8YSBocmVmPSJjb21tdW5pdHkuaHRtbCI+Q29tbXVuaXR5PC9hPgo8YSBocmVmPSJzaXRlbWFwLmh0bWwiPlNpdGUgTWFwPC9hPgo8YSBocmVmPSJzZWFyY2guaHRtbCI+8J+UjSBTZWFyY2g8L2E+CjxhIGhyZWY9ImNvbnRhY3QuaHRtbCIgY2xhc3M9Im5hdi1jb250YWN0Ij5Db250YWN0PC9hPgo8L2Rpdj4KPC9uYXY+CjwvaGVhZGVyPiIiIgpwYXQ9cmUuY29tcGlsZShyJzxoZWFkZXJcYltePl0qY2xhc3M9WyJcJ11bXiJcJ10qc2l0ZS1oZWFkZXJbXiJcJ10qWyJcJ11bXj5dKj4uKj88L2hlYWRlcj4nLHJlLkl8cmUuUykKcyxuPXBhdC5zdWJuKGhlYWRlcixzLGNvdW50PTEpCmlmIG4gIT0gMTogcmFpc2UgU3lzdGVtRXhpdCgiSGVhZGVyIG5vdCBmb3VuZCBleGFjdGx5IG9uY2UiKQpwLndyaXRlX3RleHQocyxlbmNvZGluZz0idXRmLTgiKQo=' | base64 -d > /tmp/update_events.py
-          python3 /tmp/update_events.py
+          from pathlib import Path
+          p = Path('events.html')
+          s = p.read_text(encoding='utf-8')
+          old = 'https://static.wixstatic.com/media/7bbd27_28eafdffbabe41bd9bf0e12a2f926215~mvImages/Website-Images/2.png/v1/fill/w_261,h_294,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/7bbd27_28eafdffbabe41bd9bf0e12a2f926215~mvImages/Website-Images/2.png'
+          new = 'Images/LongmontRestaurantWeekLogo.avif'
+          if old not in s:
+              raise SystemExit('Restaurant Week image URL not found')
+          s = s.replace(old, new, 1)
+          p.write_text(s, encoding='utf-8')
       - name: Commit events.html
         run: |
           git config user.name "Loving Longmont Site Bot"
           git config user.email "actions@users.noreply.github.com"
           git add events.html
-          git commit -m "Standardize Events page navigation"
+          git commit -m "Fix Longmont Restaurant Week logo"
           git push
