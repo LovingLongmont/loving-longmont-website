@@ -424,30 +424,24 @@
         align-items: center;
       }
 
-      .business-photo-placeholder {
+      .business-photo {
         min-height: 420px;
-        background: #edf4f3;
-        border: 2px dashed #becfd0;
+        background: white;
+        border: 1px solid #e0e8e7;
         border-radius: 18px;
         display: flex;
         justify-content: center;
         align-items: center;
-        text-align: center;
-        padding: 30px;
-        color: var(--gray);
+        padding: 35px;
+        overflow: hidden;
+        box-shadow: 0 12px 30px rgba(3, 35, 62, 0.08);
       }
 
-      .business-photo-placeholder span {
-        display: block;
-        font-size: 48px;
-        margin-bottom: 10px;
-      }
-
-      .business-photo-placeholder strong {
-        display: block;
-        color: var(--navy);
-        font-family: Georgia, serif;
-        font-size: 22px;
+      .business-photo img {
+        width: 100%;
+        max-width: 430px;
+        max-height: 350px;
+        object-fit: contain;
       }
 
       .business-content h2 {
@@ -1022,15 +1016,11 @@
     <section class="business-section">
       <div class="business-grid">
 
-        <div class="business-photo-placeholder">
-          <div>
-            <span>📷</span>
-
-            <strong>Local Business Photo</strong>
-
-            Use one of your own photographs of a featured Longmont business
-            here.
-          </div>
+        <div class="business-photo">
+          <img
+            src="Images/Website-Images/MKT Visibility Logo main profile pic.png"
+            alt="MKT Visibility — We Keep Your Business Visible"
+          />
         </div>
 
         <div class="business-content">
