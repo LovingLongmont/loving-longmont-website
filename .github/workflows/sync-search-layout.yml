@@ -1,0 +1,59 @@
+name: Sync Search Layout
+
+on:
+  push:
+    paths:
+      - '.github/workflows/sync-search-layout.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Sync search layout
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          target = Path('search.html')
+          index = Path('index.html').read_text(encoding='utf-8')
+          about = Path('about.html').read_text(encoding='utf-8')
+          text = target.read_text(encoding='utf-8')
+
+          header = re.search(r'<header class="site-header">.*?</header>', index, re.S).group(0)
+          header = re.sub(r'\sclass="active"', '', header)
+          header = header.replace('href="search.html"', 'href="search.html" class="active"', 1)
+          footer = re.search(r'<footer>.*?</footer>', about, re.S).group(0)
+
+          text = re.sub(r'<header class="site-header">.*?</header>', header, text, count=1, flags=re.S)
+          text = re.sub(r'<footer>.*?</footer>', footer, text, count=1, flags=re.S)
+
+          # Add the same full-width Loving Longmont header/hero image used on index.html.
+          if not re.search(r'<section class="hero">', text):
+              hero = '''\n<section class="hero"><img src="Images/Website-Images/2.png" alt="Loving Longmont Colorado"></section>'''
+              text = text.replace('</header>', '</header>' + hero, 1)
+
+          # Ensure index header/footer/hero classes render correctly on this page.
+          extra = '''
+/* Canonical Loving Longmont header, hero and footer */
+.navbar{max-width:1450px;margin:auto;padding:9px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.nav-logo{display:flex;align-items:center;text-decoration:none;min-width:250px}.nav-logo img{width:68px;height:68px;object-fit:cover;border-radius:5px}.nav-brand-text{margin-left:13px}.nav-brand-text strong{display:block;color:var(--navy);font-size:23px;line-height:1.1}.nav-brand-text small{display:block;margin-top:6px;font-size:9px;letter-spacing:2px;font-weight:bold;color:var(--navy)}.red-heart{color:var(--red)}
+.nav-links{display:flex;align-items:center;gap:15px}.nav-links a{text-decoration:none;color:var(--navy);font-size:12px;font-weight:bold;padding:25px 0 22px;border-bottom:3px solid transparent;white-space:nowrap}.nav-links a:hover,.nav-links a.active{color:var(--red);border-bottom-color:var(--red)}.nav-contact{background:var(--navy);color:white!important;border-radius:7px;padding:12px 18px!important;border-bottom:none!important}.nav-contact:hover{background:var(--red)}
+.hero{width:100%;background:var(--cream);padding:0!important}.hero img{width:100%;height:auto;max-height:700px;object-fit:cover;object-position:center;display:block}
+footer{background:linear-gradient(135deg,#03233e,#063b62);color:white;padding:55px 25px 20px;text-align:left}.footer-grid{max-width:1150px;margin:auto;display:grid;grid-template-columns:1.5fr .8fr 1.2fr;gap:60px}.footer-logo-area{display:flex;align-items:center;gap:15px}.footer-logo-area h2{margin:0;font-size:25px}.footer-logo-area small{font-size:9px;letter-spacing:2px}.footer-about{max-width:380px;color:#d5e1e8;font-size:14px;margin-top:18px}.footer-heading{font-weight:bold;font-size:16px;margin-bottom:13px}.footer-links a{display:block;text-decoration:none;color:#e1ebf0;font-size:14px;margin:7px 0}.footer-links a:hover{text-decoration:underline;color:white}.footer-contact{color:#e1ebf0;font-size:14px}.footer-email{display:inline-block;margin-top:8px;color:white;text-decoration:none;font-weight:bold}.footer-bottom{max-width:1150px;margin:40px auto 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.2);text-align:center;color:#c5d5df;font-size:12px}
+@media(max-width:1180px){.navbar{flex-direction:column;padding-bottom:15px}.nav-logo{min-width:auto}.nav-links{flex-wrap:wrap;justify-content:center}.nav-links a{padding:5px 0}}@media(max-width:900px){.footer-grid{grid-template-columns:1fr}}@media(max-width:650px){.nav-brand-text{display:none}}
+'''
+          text = text.replace('</style>', extra + '\n</style>', 1)
+          target.write_text(text, encoding='utf-8')
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add search.html
+          if ! git diff --cached --quiet; then
+            git commit -m "Match Search page header and footer to site"
+            git push
+          fi
