@@ -1,4 +1,4 @@
-name: Fix Longmont Restaurant Week Logo
+name: Use Food Photo for Longmont Restaurant Week
 on:
   push:
     branches: [main]
@@ -6,7 +6,7 @@ on:
 permissions:
   contents: write
 jobs:
-  fix-logo:
+  update-food-photo:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -16,16 +16,23 @@ jobs:
           from pathlib import Path
           p = Path('events.html')
           s = p.read_text(encoding='utf-8')
-          old = 'https://static.wixstatic.com/media/7bbd27_28eafdffbabe41bd9bf0e12a2f926215~mvImages/Website-Images/2.png/v1/fill/w_261,h_294,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/7bbd27_28eafdffbabe41bd9bf0e12a2f926215~mvImages/Website-Images/2.png'
-          new = 'Images/LongmontRestaurantWeekLogo.avif'
-          if old not in s:
-              raise SystemExit('Restaurant Week image URL not found')
-          s = s.replace(old, new, 1)
+          candidates = [
+              'Images/LongmontRestaurantWeekLogo.avif',
+              'https://static.wixstatic.com/media/7bbd27_28eafdffbabe41bd9bf0e12a2f926215~mvImages/Website-Images/2.png/v1/fill/w_261,h_294,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/7bbd27_28eafdffbabe41bd9bf0e12a2f926215~mvImages/Website-Images/2.png'
+          ]
+          new = 'https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-157112000000000000dc54f5f2-af1d-4095-a226-037ec9b6994b.jpg'
+          for old in candidates:
+              if old in s:
+                  s = s.replace(old, new, 1)
+                  break
+          else:
+              raise SystemExit('Restaurant Week image not found')
+          s = s.replace('alt="Longmont Restaurant Week logo"', 'alt="Local food and dining in Longmont"', 1)
           p.write_text(s, encoding='utf-8')
       - name: Commit events.html
         run: |
           git config user.name "Loving Longmont Site Bot"
           git config user.email "actions@users.noreply.github.com"
           git add events.html
-          git commit -m "Fix Longmont Restaurant Week logo"
+          git commit -m "Use food photo for Longmont Restaurant Week"
           git push
