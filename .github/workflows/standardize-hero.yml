@@ -1,4 +1,4 @@
-name: Use Food Photo for Longmont Restaurant Week
+name: Add Verified Restaurant Week Food Photo and Credits
 on:
   push:
     branches: [main]
@@ -6,33 +6,36 @@ on:
 permissions:
   contents: write
 jobs:
-  update-food-photo:
+  update-restaurant-week:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Update Restaurant Week image
+      - name: Update Restaurant Week card
         shell: python
         run: |
           from pathlib import Path
           p = Path('events.html')
           s = p.read_text(encoding='utf-8')
-          candidates = [
-              'Images/LongmontRestaurantWeekLogo.avif',
-              'https://static.wixstatic.com/media/7bbd27_28eafdffbabe41bd9bf0e12a2f926215~mvImages/Website-Images/2.png/v1/fill/w_261,h_294,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/7bbd27_28eafdffbabe41bd9bf0e12a2f926215~mvImages/Website-Images/2.png'
-          ]
-          new = 'https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-157112000000000000dc54f5f2-af1d-4095-a226-037ec9b6994b.jpg'
-          for old in candidates:
-              if old in s:
-                  s = s.replace(old, new, 1)
-                  break
-          else:
-              raise SystemExit('Restaurant Week image not found')
-          s = s.replace('alt="Longmont Restaurant Week logo"', 'alt="Local food and dining in Longmont"', 1)
+
+          old = '''    <div class="event-image">\n\n        <img\n            src="https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-157112000000000000dc54f5f2-af1d-4095-a226-037ec9b6994b.jpg"\n            alt="Local food and dining in Longmont"\n            loading="lazy">\n\n    </div>'''
+
+          new = '''    <div class="event-image restaurant-week-image">\n\n        <img\n            src="https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-139201000000000000/restaurant_list_image_1729210544.jpg"\n            alt="Food from The Roost in Longmont, a 2026 Longmont Restaurant Week participant"\n            loading="lazy">\n\n        <img\n            class="restaurant-week-logo"\n            src="Images/LongmontRestaurantWeekLogo.avif"\n            alt="Longmont Restaurant Week logo">\n\n        <div class="restaurant-photo-credit">\n            Food from <strong>The Roost</strong> • 2026 participating restaurant\n        </div>\n\n    </div>'''
+
+          if old not in s:
+              raise SystemExit('Current Restaurant Week image block not found')
+          s = s.replace(old, new, 1)
+
+          css = '''\n/* Restaurant Week verified photo treatment */\n.restaurant-week-image {\n    position: relative;\n}\n\n.restaurant-week-image > img:first-child {\n    width: 100%;\n    height: 100%;\n    object-fit: cover;\n    object-position: center;\n}\n\n.restaurant-week-image .restaurant-week-logo {\n    position: absolute;\n    top: 14px;\n    right: 14px;\n    width: 82px;\n    height: 82px;\n    object-fit: contain;\n    background: rgba(0,0,0,.78);\n    border-radius: 10px;\n    padding: 7px;\n    box-shadow: 0 3px 12px rgba(0,0,0,.28);\n}\n\n.restaurant-photo-credit {\n    position: absolute;\n    left: 12px;\n    bottom: 12px;\n    background: rgba(3,35,62,.9);\n    color: white;\n    padding: 7px 11px;\n    border-radius: 6px;\n    font-size: 11px;\n    line-height: 1.25;\n    box-shadow: 0 2px 8px rgba(0,0,0,.22);\n}\n'''
+
+          marker = '</style>'
+          if css.strip() not in s:
+              s = s.replace(marker, css + '\n' + marker, 1)
+
           p.write_text(s, encoding='utf-8')
       - name: Commit events.html
         run: |
           git config user.name "Loving Longmont Site Bot"
           git config user.email "actions@users.noreply.github.com"
           git add events.html
-          git commit -m "Use food photo for Longmont Restaurant Week"
+          git commit -m "Add verified Roost photo and Restaurant Week branding"
           git push
