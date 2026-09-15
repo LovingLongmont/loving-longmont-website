@@ -1,29 +1,64 @@
-name: Update Loving Longmont HTML
+name: Update Loving Longmont Home
 on:
   push:
-    branches:
-      - main
-    paths:
-      - .github/workflows/standardize-hero.yml
+    branches: [main]
+    paths: [.github/workflows/standardize-hero.yml]
 permissions:
   contents: write
 jobs:
-  update-html:
+  update-home:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Update HTML files
+      - name: Update index.html only
+        shell: python
         run: |
-          echo 'ZnJvbSBwYXRobGliIGltcG9ydCBQYXRoCmltcG9ydCByZQpuYXZfaXRlbXM9WygnaW5kZXguaHRtbCcsJ0hvbWUnKSwoJ2V2ZW50cy5odG1sJywnRXZlbnRzJyksKCdidXNpbmVzc2VzLmh0bWwnLCdMb2NhbCBCdXNpbmVzc2VzJyksKCd0aGluZ3MtdG8tZG8uaHRtbCcsJ1RoaW5ncyB0byBEbycpLCgnaGlzdG9yeS5odG1sJywnSGlzdG9yeScpLCgnc3BvdGxpZ2h0Lmh0bWwnLCdJbiBUaGUgU3BvdGxpZ2h0JyksKCdhbmltYWxzLmh0bWwnLCdBbmltYWxzICYgUGV0cycpLCgnam9icy5odG1sJywnSm9icycpLCgnY29tbXVuaXR5Lmh0bWwnLCdDb21tdW5pdHknKSwoJ3NpdGVtYXAuaHRtbCcsJ1NpdGUgTWFwJyksKCdzZWFyY2guaHRtbCcsJ/CflI0gU2VhcmNoJyldCmZvciBwIGluIFBhdGgoJy4nKS5nbG9iKCcqLmh0bWwnKToKICAgIHM9cC5yZWFkX3RleHQoZW5jb2Rpbmc9J3V0Zi04JykKICAgIGFjdGl2ZT1wLm5hbWUKICAgIGxpbmtzPVtdCiAgICBmb3IgaHJlZixsYWJlbCBpbiBuYXZfaXRlbXM6CiAgICAgICAgY2xzPScgY2xhc3M9ImFjdGl2ZSInIGlmIGhyZWY9PWFjdGl2ZSBlbHNlICcnCiAgICAgICAgbGlua3MuYXBwZW5kKGYnPGEgaHJlZj0ie2hyZWZ9IntjbHN9PntsYWJlbH08L2E+JykKICAgIGNjbHM9J25hdi1jb250YWN0IGFjdGl2ZScgaWYgYWN0aXZlPT0nY29udGFjdC5odG1sJyBlbHNlICduYXYtY29udGFjdCcKICAgIGxpbmtzLmFwcGVuZChmJzxhIGhyZWY9ImNvbnRhY3QuaHRtbCIgY2xhc3M9IntjY2xzfSI+Q29udGFjdDwvYT4nKQogICAgaGVhZGVyPSc8aGVhZGVyIGNsYXNzPSJzaXRlLWhlYWRlciI+XG4gIDxuYXYgY2xhc3M9Im5hdmJhciI+XG4gICAgPGEgaHJlZj0iaW5kZXguaHRtbCIgY2xhc3M9Im5hdi1sb2dvIj5cbiAgICAgIDxpbWcgc3JjPSJJbWFnZXMvV2Vic2l0ZS1JbWFnZXMvMWIucG5nIiBhbHQ9IkxvdmluZyBMb25nbW9udCBMb2dvIiAvPlxuICAgICAgPGRpdiBjbGFzcz0ibmF2LWJyYW5kLXRleHQiPlxuICAgICAgICA8c3Ryb25nPkxvdmluZyA8c3BhbiBjbGFzcz0icmVkLWhlYXJ0Ij7imaU8L3NwYW4+IExvbmdtb250PC9zdHJvbmc+XG4gICAgICAgIDxzbWFsbD5QRU9QTEUgPHNwYW4gY2xhc3M9InJlZC1oZWFydCI+4pmlPC9zcGFuPiBQTEFDRVMgPHNwYW4gY2xhc3M9InJlZC1oZWFydCI+4pmlPC9zcGFuPiBQT1NTSUJJTElUSUVTPC9zbWFsbD5cbiAgICAgIDwvZGl2PlxuICAgIDwvYT5cbiAgICA8ZGl2IGNsYXNzPSJuYXYtbGlua3MiPicsJycuam9pbihsaW5rcyksJzwvZGl2PlxuICA8L25hdj5cbjwvaGVhZGVyPicKICAgIHBhdD1yZS5jb21waWxlKHInPGhlYWRlclxcYltePl0qY2xhc3M9WyJcXFwnXVteIlxcJ10qc2l0ZS1oZWFkZXJbXiJcXCddKlsiXFwnXVtePl0qPi4qPzwvaGVhZGVyPicscmUuSXxyZS5TKQogICAgaWYgcGF0LnNlYXJjaChzKToKICAgICAgICBzPXBhdC5zdWIoaGVhZGVyLHM sLGNvdW50PTEpCiAgICBwLndyaXRlX3RleHQocyxlbmNvZGluZz0ndXRmLTgnKQpwPVBhdGgoJ2luZGV4Lmh0bWwnKQpzPXAucmVhZF90ZXh0KGVuY29kaW5nPSd1dGYtOCcpCnN0YXJ0PXM uZmluZCgnICAgIDxzZWN0aW9uIGNsYXNzPSJleHBsb3JlLXNlY3Rpb24iPicpCm1hcmtlcj0nICAgIDwhLS0gPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PVxcb iAgICAgQ09NTVVOSVRZJwplbmQ9cy5maW5kKG1hcmtlcixzdGFydCkKaWYgc3RhcnQ+PTAgYW5kIGVuZD49MDoKICAgIGNhcmRzPVsoJ2luZGV4Lmh0bWwnLCfwn4+gJywnSG9tZScsJ1JldHVybiB0byB0aGUgTG92aW5nIExvbmdtb250IGhvbWVwYWdlIGFuZCBkaXNjb3ZlciB3aGF0IGlzIG5ldy4nLCdWaXNpdCBIb21lIOKGkScpLCgnZXZlbnRzLmh0bWwnLCfwn5OFJywnRXZlbnRzJywnRmluZCBsb2NhbCBldmVudHMsIGZlc3RpdmFscywgbWFya2V0cywgbGl2ZSBtdXNpYyBhbmQgY29tbXVuaXR5IGhhcHBlbmluZ3MuJywnVmlldyBFdmVudHMg4oaSJyksKCdidXNpbmVzc2VzLmh0bWwnLCfwn4qpJywnTG9jYWwgQnVzaW5lc3NlcycsJ0Rpc2NvdmVyIGFuZCBzdXBwb3J0IHRoZSBsb2NhbCBidXNpbmVzc2VzIHRoYXQgbWFrZSBMb25nbW9udCB1bmlxdWUuJywnRmluZCBCdXNpbmVzc2VzIOKGkScpLCgndGhpbmdzLXRvLWRvLmh0bWwnLCfwn4+U77iPJywnVGhpbmdzIHRvIERvJywnRXhwbG9yZSBwYXJrcywgdHJhaWxzLCBhdHRyYWN0aW9ucywgcmVjcmVhdGlvbiBhbmQgYWN0aXZpdGllcyBmb3IgYWxsIGFnZXMuJywnRXhwbG9yZSBNb3JlIOKGkScpLCgnaGlzdG9yeS5odG1sJywn8J+PoO+4jScsJ0xvbmdtb250IEhpc3RvcnknLCdEaXNjb3ZlciBoaXN0b3JpYyBob21lcywgcGlvbmVlciBidWlsZGluZ3MgYW5kIHBsYWNlcyB0aGF0IHByZXNlcnZlIExvbmdtb2504oCZcyBzdG9yeS4nLCdFeHBsb3JlIEhpc3Rvcnkg4oaSJyksKCdzcG90bGlnaHQuaHRtbCcsJ/CfjIknLCdJbiBUaGUgU3BvdGxpZ2h0JywnUmVhZCBvcmlnaW5hbCBMb3ZpbmcgTG9uZ21vbnQgZmVhdHVyZXMgYWJvdXQgbG9jYWwgcGVvcGxlLCBwbGFjZXMsIG9yZ2FuaXphdGlvbnMgYW5kIGJ1c2luZXNzZXMuJywnUmVhZCBTcG90bGlnaHRzIOKGkScpLCgnYW5pbWFscy5odG1sJywn8J+QviIsJ0FuaW1hbHMgJiBQZXRzJywnRmluZCBzaGVsdGVycywgcmVzY3VlcywgZmFybXMsIHZldGVyaW5hcmlhbnMsIHBldCBzdXBwbGllcyBhbmQgYW5pbWFsIHJlc291cmNlcy4nLCdFeHBsb3JlIEFuaW1hbHMgJiBQZXRzIOKGkScpLCgnam9icy5odG1sJywn8J+SuCcsJ0pvYnMnLCdGaW5kIGxvY2FsIGpvYiByZXNvdXJjZXMsIGNhcmVlciBoZWxwLCBzdGFmZmluZyBhZ2VuY2llcywgc2lkZSBnaWdzIGFuZCB3YXlzIHRvIGZpbmQgd29yay4nLCdGaW5kIEpvYnMg4oaSJyksKCdjb21tdW5pdHkuaHRtbCcsJ/CfkKU nLCdDb21tdW5pdHknLCdBc2sgcXVlc3Rpb25zLCBzaGFyZSByZWNvbW1lbmRhdGlvbnMgYW5kIGNvbm5lY3Qgd2l0aCBMb25nbW9udCBuZWlnaGJvcnMuJywnSm9pbiB0aGUgQ29tbXVuaXR5IOKGkScpLCgnc2l0ZW1hcC5odG1sJywn8J+Xuu+4jycsJ1NpdGUgTWFwJywnQnJvd3NlIHRoZSBjb21wbGV0ZSBMb3ZpbmcgTG9uZ21vbnQgZGlyZWN0b3J5IGFuZCBmaW5kIGV2ZXJ5IGd1aWRlLCByZXNvdXJjZSBhbmQgcGFnZS4nLCdWaWV3IFNpdGUgTWFwIOKGkScpLCgnc2VhcmNoLmh0bWwnLCfwn5CNJywnU2VhcmNoJywnU2VhcmNoIExvdmluZyBMb25nbW9udCBmb3IgYnVzaW5lc3NlcywgYWN0aXZpdGllcywgZXZlbnRzLCByZXNvdXJjZXMsIHNwb3RsaWdodHMgYW5kIG1vcmUuJywnU2VhcmNoIHRoZSBTaXRlIOKGkScpLCgnY29udGFjdC5odG1sJywn4pyJ77iPJywnQ29udGFjdCcsJ1NlbmQgTG92aW5nIExvbmdtb250IGEgYnVzaW5lc3MsIGV2ZW50LCBwaG90bywgc3RvcnksIGNvcnJlY3Rpb24gb3IgY29tbXVuaXR5IHN1Z2dlc3Rpb24uJywnQ29udGFjdCBVcyDihpInKV0KICAgIGh0bWw9JyAgICA8c2VjdGlvbiBjbGFzcz0iZXhwbG9yZS1zZWN0aW9uIj5cXG4gICAgICA8ZGl2IGNsYXNzPSJleHBsb3JlLWdyaWQiPlxcbicKICAgIGZvciBocmVmLGljb24sdGl0bGUsZGVzYyxjdGEgaW4gY2FyZHM6CiAgICAgICAgaHRtbCs9ZicgICAgICAgIDxhIGhyZWY9IntocmVmfSIgY2xhc3M9ImV4cGxvcmUtY2FyZCI+XFxuICAgICAgICAgIDxkaXYgY2xhc3M9ImNhcmQtaWNvbiI+e2ljb259PC9kaXY+XFxuICAgICAgICAgIDxoMz57dGl0bGV9PC9oMz5cXG4gICAgICAgICAgPHA+e2Rlc2N9PC9wPlxcbiAgICAgICAgICA8ZGl2IGNsYXNzPSJjYXJkLWxpbmsiPntjdGF9PC9kaXY+XFxuICAgICAgICA8L2E+XFxuJwogICAgaHRtbCs9JyAgICAgIDwvZGl2PlxcbiAgICA8L3NlY3Rpb24+XFxuXFxuJwogICAgcz1zWzpzdGFydF0raHRtbCtzW2VuZDpdCiAgICBwLndyaXRlX3RleHQocyxlbmNvZGluZz0ndXRmLTgnKQo=' | tr -d ' ' | base64 -d > /tmp/update_site.py
-          python3 /tmp/update_site.py
-      - name: Commit HTML changes
+          from pathlib import Path
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+
+          # Add Search to the existing full top navigation.
+          if 'href="search.html"' not in s[s.find('<header class="site-header">'):s.find('</header>')]:
+              s = s.replace(
+                  '          <a href="sitemap.html"> Site Map </a>\n\n          <a href="contact.html" class="nav-contact"> Contact </a>',
+                  '          <a href="sitemap.html"> Site Map </a>\n\n          <a href="search.html"> 🔍 Search </a>\n\n          <a href="contact.html" class="nav-contact"> Contact </a>',
+                  1
+              )
+
+          # Make the visible brand read Loving ♥ Longmont.
+          s = s.replace('<strong> Loving Longmont </strong>', '<strong> Loving <span class="red-heart">♥</span> Longmont </strong>', 1)
+
+          # Replace only the home-page category-card section so it mirrors the top navigation.
+          start = s.find('    <section class="explore-section">')
+          end_marker = '    <!-- ========================================\n     COMMUNITY'
+          end = s.find(end_marker, start)
+          if start == -1 or end == -1:
+              raise SystemExit('Could not locate home explore section')
+
+          cards = [
+              ('index.html','🏠','Home','Return to the Loving Longmont home page and discover what is new.','Visit Home →'),
+              ('events.html','📅','Events','Find local events, festivals, markets, live music and community happenings.','View Events →'),
+              ('businesses.html','🏪','Local Businesses','Discover and support the local businesses that make Longmont unique.','Find Businesses →'),
+              ('things-to-do.html','🏔️','Things to Do','Explore parks, trails, attractions, recreation and activities for all ages.','Explore More →'),
+              ('history.html','🏛️','History','Discover historic homes, pioneer buildings and places that preserve Longmont’s story.','Explore History →'),
+              ('spotlight.html','🌟','In The Spotlight','Read Loving Longmont features about local businesses, people, places and stories.','Read Spotlights →'),
+              ('animals.html','🐾','Animals & Pets','Find shelters, rescues, farms, veterinarians, pet supplies and animal resources.','Explore Animals & Pets →'),
+              ('jobs.html','💼','Jobs','Find local job resources, career help, staffing agencies, side gigs and ways to find work.','Find Jobs →'),
+              ('community.html','👥','Community','Ask questions, share recommendations and connect with Longmont neighbors.','Join the Community →'),
+              ('sitemap.html','🗺️','Site Map','Browse the complete Loving Longmont directory and find every guide, resource and page.','View Site Map →'),
+              ('search.html','🔍','Search','Search Loving Longmont for businesses, activities, events, resources, spotlights and more.','Search the Site →'),
+              ('contact.html','✉️','Contact','Send Loving Longmont a business, event, photo, story, correction or community suggestion.','Contact Us →'),
+          ]
+          section = '    <section class="explore-section">\n      <div class="explore-grid">\n'
+          for href, icon, title, desc, cta in cards:
+              section += f'''        <a href="{href}" class="explore-card">\n          <div class="card-icon">{icon}</div>\n          <h3>{title}</h3>\n          <p>{desc}</p>\n          <div class="card-link">{cta}</div>\n        </a>\n\n'''
+          section += '      </div>\n    </section>\n\n'
+          s = s[:start] + section + s[end:]
+          p.write_text(s, encoding='utf-8')
+      - name: Commit index.html
         run: |
           git config user.name "Loving Longmont Site Bot"
           git config user.email "actions@users.noreply.github.com"
-          git add '*.html'
-          if git diff --cached --quiet; then
-            echo "No HTML changes"
-            exit 0
-          fi
-          git commit -m "Update all Loving Longmont HTML navigation and home cards"
+          git add index.html
+          git commit -m "Update home navigation and category cards"
           git push
