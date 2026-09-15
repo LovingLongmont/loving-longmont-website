@@ -1,0 +1,40 @@
+name: Standardize Loving Longmont hero
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/standardize-hero.yml'
+permissions:
+  contents: write
+jobs:
+  update-hero:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Standardize hero on all HTML pages
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+          for p in Path('.').glob('*.html'):
+              if p.name in {'index.html'}:
+                  continue
+              s=p.read_text(encoding='utf-8')
+              pat=re.compile(r'<section\s+class=["\']hero["\'][^>]*>.*?</section>', re.I|re.S)
+              replacement='''<section class="hero">\n      <img src="Images/Website-Images/2.png" alt="Loving Longmont Colorado" />\n    </section>'''
+              if not pat.search(s):
+                  continue
+              s=pat.sub(replacement,s,count=1)
+              if 'Consistent Loving Longmont hero — matches home page' not in s:
+                  override='''\n      /* Consistent Loving Longmont hero — matches home page */\n      .hero { width: 100%; min-height: 0 !important; padding: 0 !important; display: block !important; background: var(--cream, #fffaf1) !important; position: relative; }\n      .hero img { width: 100% !important; height: auto !important; max-height: 700px !important; min-height: 0 !important; object-fit: cover !important; object-position: center !important; display: block !important; }\n'''
+                  s=s.replace('</style>',override+'    </style>',1)
+              p.write_text(s,encoding='utf-8')
+              print('updated',p)
+      - name: Commit changes
+        run: |
+          git config user.name "Loving Longmont Site Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add '*.html'
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Standardize header image across Loving Longmont pages"
+          git push
