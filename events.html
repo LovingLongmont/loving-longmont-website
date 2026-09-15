@@ -753,7 +753,46 @@ footer {
       /* Consistent Loving Longmont hero — matches home page */
       .hero { width: 100%; min-height: 0 !important; padding: 0 !important; display: block !important; background: var(--cream, #fffaf1) !important; position: relative; }
       .hero img { width: 100% !important; height: auto !important; max-height: 700px !important; min-height: 0 !important; object-fit: cover !important; object-position: center !important; display: block !important; }
-    </style>
+    
+/* Restaurant Week verified photo treatment */
+.restaurant-week-image {
+    position: relative;
+}
+
+.restaurant-week-image > img:first-child {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.restaurant-week-image .restaurant-week-logo {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 82px;
+    height: 82px;
+    object-fit: contain;
+    background: rgba(0,0,0,.78);
+    border-radius: 10px;
+    padding: 7px;
+    box-shadow: 0 3px 12px rgba(0,0,0,.28);
+}
+
+.restaurant-photo-credit {
+    position: absolute;
+    left: 12px;
+    bottom: 12px;
+    background: rgba(3,35,62,.9);
+    color: white;
+    padding: 7px 11px;
+    border-radius: 6px;
+    font-size: 11px;
+    line-height: 1.25;
+    box-shadow: 0 2px 8px rgba(0,0,0,.22);
+}
+
+</style>
 
 </head>
 
@@ -1308,12 +1347,21 @@ footer {
 
 <article class="event-card">
 
-    <div class="event-image">
+    <div class="event-image restaurant-week-image">
 
         <img
-            src="https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-157112000000000000dc54f5f2-af1d-4095-a226-037ec9b6994b.jpg"
-            alt="Local food and dining in Longmont"
+            src="https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-139201000000000000/restaurant_list_image_1729210544.jpg"
+            alt="Food from The Roost in Longmont, a 2026 Longmont Restaurant Week participant"
             loading="lazy">
+
+        <img
+            class="restaurant-week-logo"
+            src="Images/LongmontRestaurantWeekLogo.avif"
+            alt="Longmont Restaurant Week logo">
+
+        <div class="restaurant-photo-credit">
+            Food from <strong>The Roost</strong> • 2026 participating restaurant
+        </div>
 
     </div>
 
