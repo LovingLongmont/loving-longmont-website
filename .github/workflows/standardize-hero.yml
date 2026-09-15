@@ -1,4 +1,4 @@
-name: Standardize Loving Longmont header
+name: Standardize Loving Longmont site
 on:
   push:
     branches: [main]
@@ -7,101 +7,86 @@ on:
 permissions:
   contents: write
 jobs:
-  update-header:
+  update-site:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Standardize header navigation on all HTML pages
-        shell: python
+      - name: Update navigation and home cards
         run: |
+          python3 <<'PY'
           from pathlib import Path
           import re
 
           nav_items = [
-              ('index.html','Home'),
-              ('businesses.html','Businesses'),
-              ('things-to-do.html','Things to Do'),
-              ('events.html','Events'),
-              ('community.html','Community'),
-              ('spotlight.html','In The Spotlight'),
+              ('index.html','Home'), ('events.html','Events'),
+              ('businesses.html','Local Businesses'), ('things-to-do.html','Things to Do'),
+              ('history.html','History'), ('spotlight.html','In The Spotlight'),
+              ('animals.html','Animals & Pets'), ('jobs.html','Jobs'),
+              ('community.html','Community'), ('sitemap.html','Site Map'),
+              ('search.html','🔍 Search')
           ]
 
           for p in Path('.').glob('*.html'):
-              s=p.read_text(encoding='utf-8')
-              if '<header' not in s.lower():
-                  continue
-
+              s = p.read_text(encoding='utf-8')
               active = p.name
-              links=[]
+              links = []
               for href,label in nav_items:
-                  cls=' class="active"' if href == active else ''
+                  cls = ' class="active"' if href == active else ''
                   links.append(f'<a href="{href}"{cls}>{label}</a>')
-              search_cls=' class="active search-link"' if active == 'search.html' else ' class="search-link"'
-              links.append(f'<a href="search.html"{search_cls}>🔍 Search</a>')
-
-              header=f'''<header class="site-header">
+              links.append('<a href="contact.html" class="nav-contact">Contact</a>')
+              header = '''<header class="site-header">
       <nav class="navbar">
-        <a href="index.html" class="nav-logo nav-wordmark" aria-label="Loving Longmont home">
-          <span class="loving-word">Loving</span><span class="wordmark-heart">♥</span><span class="longmont-word">Longmont</span>
+        <a href="index.html" class="nav-logo">
+          <img src="Images/Website-Images/1b.png" alt="Loving Longmont Logo" />
+          <div class="nav-brand-text">
+            <strong>Loving <span class="red-heart">♥</span> Longmont</strong>
+            <small>PEOPLE <span class="red-heart">♥</span> PLACES <span class="red-heart">♥</span> POSSIBILITIES</small>
+          </div>
         </a>
-        <div class="nav-links">
-          {' '.join(links)}
-        </div>
+        <div class="nav-links">''' + ''.join(links) + '''</div>
       </nav>
     </header>'''
+              pat = re.compile(r'<header\b[^>]*class=["\'][^"\']*site-header[^"\']*["\'][^>]*>.*?</header>', re.I|re.S)
+              if pat.search(s):
+                  s = pat.sub(header, s, count=1)
+              # Keep the same hero artwork/crop everywhere a hero exists.
+              if p.name != 'search.html':
+                  hpat = re.compile(r'<section\s+class=["\']hero["\'][^>]*>.*?</section>', re.I|re.S)
+                  if hpat.search(s):
+                      s = hpat.sub('<section class="hero">\n      <img src="Images/Website-Images/2.png" alt="Loving Longmont Colorado" />\n    </section>', s, count=1)
+              p.write_text(s, encoding='utf-8')
 
-              # Replace first site header regardless of formatting.
-              pat=re.compile(r'<header\b[^>]*class=["\'][^"\']*site-header[^"\']*["\'][^>]*>.*?</header>', re.I|re.S)
-              if not pat.search(s):
-                  continue
-              s=pat.sub(header,s,count=1)
-
-              if 'Unified Loving Longmont navigation' not in s:
-                  css='''
-      /* Unified Loving Longmont navigation */
-      .nav-wordmark {
-        display: inline-flex !important;
-        align-items: center !important;
-        gap: 5px !important;
-        min-width: max-content !important;
-        text-decoration: none !important;
-        font-family: Georgia, "Times New Roman", serif !important;
-        font-size: 23px !important;
-        font-weight: 700 !important;
-        line-height: 1 !important;
-        color: var(--navy, #062f52) !important;
-      }
-      .wordmark-heart { color: var(--red, #c8101e) !important; font-size: 16px !important; }
-      .nav-links { display: flex; align-items: center; flex-wrap: wrap; justify-content: flex-end; }
-      .search-link { white-space: nowrap; }
-      @media (max-width: 1180px) {
-        .navbar { flex-direction: column; }
-        .nav-links { justify-content: center; }
-      }
-'''
-                  s=s.replace('</style>',css+'    </style>',1)
-
-              # Standardize hero image as previously requested, except search which intentionally has no hero.
-              if p.name not in {'index.html','search.html'}:
-                  hero_pat=re.compile(r'<section\s+class=["\']hero["\'][^>]*>.*?</section>', re.I|re.S)
-                  if hero_pat.search(s):
-                      s=hero_pat.sub('<section class="hero">\n      <img src="Images/Website-Images/2.png" alt="Loving Longmont Colorado" />\n    </section>',s,count=1)
-                      if 'Consistent Loving Longmont hero — matches home page' not in s:
-                          override='''
-      /* Consistent Loving Longmont hero — matches home page */
-      .hero { width: 100%; min-height: 0 !important; padding: 0 !important; display: block !important; background: var(--cream, #fffaf1) !important; position: relative; }
-      .hero img { width: 100% !important; height: auto !important; max-height: 700px !important; min-height: 0 !important; object-fit: cover !important; object-position: center !important; display: block !important; }
-'''
-                          s=s.replace('</style>',override+'    </style>',1)
-
-              p.write_text(s,encoding='utf-8')
-              print('updated',p)
-
+          # Make the home-page directory cards mirror every destination in top navigation.
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+          start = s.index('    <section class="explore-section">')
+          end = s.index('    <!-- ========================================\n     COMMUNITY', start)
+          cards = [
+            ('index.html','🏠','Home','Return to the Loving Longmont homepage and discover what is new.','Visit Home →'),
+            ('events.html','📅','Events','Find local events, festivals, markets, live music and community happenings.','View Events →'),
+            ('businesses.html','🏪','Local Businesses','Discover and support the local businesses that make Longmont unique.','Find Businesses →'),
+            ('things-to-do.html','🏔️','Things to Do','Explore parks, trails, attractions, recreation and activities for all ages.','Explore More →'),
+            ('history.html','🏛️','Longmont History','Discover historic homes, pioneer buildings and places that preserve Longmont’s story.','Explore History →'),
+            ('spotlight.html','📌','In The Spotlight','Read original Loving Longmont features about local people, places, organizations and businesses.','Read Spotlights →'),
+            ('animals.html','🐾','Animals & Pets','Find shelters, rescues, farms, veterinarians, pet supplies and animal resources.','Explore Animals & Pets →'),
+            ('jobs.html','💼','Jobs','Find local job resources, career help, staffing agencies, side gigs and ways to find work.','Find Jobs →'),
+            ('community.html','👥','Community','Ask questions, share recommendations and connect with Longmont neighbors.','Join the Community →'),
+            ('sitemap.html','🗺️','Site Map','Browse the complete Loving Longmont directory and find every guide, resource and page.','View Site Map →'),
+            ('search.html','🔍','Search','Search Loving Longmont for businesses, activities, events, resources, spotlights and more.','Search the Site →'),
+            ('contact.html','✉️','Contact','Send Loving Longmont a business, event, photo, story, correction or community suggestion.','Contact Us →')
+          ]
+          html = '    <section class="explore-section">\n      <div class="explore-grid">\n'
+          for href,icon,title,desc,cta in cards:
+              html += f'''        <a href="{href}" class="explore-card">\n          <div class="card-icon">{icon}</div>\n          <h3>{title}</h3>\n          <p>{desc}</p>\n          <div class="card-link">{cta}</div>\n        </a>\n'''
+          html += '      </div>\n    </section>\n\n'
+          s = s[:start] + html + s[end:]
+          p.write_text(s, encoding='utf-8')
+          PY
       - name: Commit changes
         run: |
           git config user.name "Loving Longmont Site Bot"
           git config user.email "actions@users.noreply.github.com"
           git add '*.html'
           if git diff --cached --quiet; then exit 0; fi
-          git commit -m "Add Loving heart Longmont and Search to site navigation"
+          git commit -m "Standardize navigation and complete home directory cards"
           git push
