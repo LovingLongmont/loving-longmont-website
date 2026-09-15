@@ -1,4 +1,4 @@
-name: Add Verified Restaurant Week Food Photo and Credits
+name: Update Loving Longmont Businesses Page
 on:
   push:
     branches: [main]
@@ -6,36 +6,36 @@ on:
 permissions:
   contents: write
 jobs:
-  update-restaurant-week:
+  update-businesses:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Update Restaurant Week card
+      - name: Update businesses page navigation and branding
         shell: python
         run: |
           from pathlib import Path
-          p = Path('events.html')
+          p = Path('businesses.html')
           s = p.read_text(encoding='utf-8')
 
-          old = '''    <div class="event-image">\n\n        <img\n            src="https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-157112000000000000dc54f5f2-af1d-4095-a226-037ec9b6994b.jpg"\n            alt="Local food and dining in Longmont"\n            loading="lazy">\n\n    </div>'''
+          # Match the standardized Loving Longmont brand used on Home/Events.
+          s = s.replace('<strong>Loving Longmont</strong', '<strong>Loving <span class="red-heart">♥</span> Longmont</strong', 1)
 
-          new = '''    <div class="event-image restaurant-week-image">\n\n        <img\n            src="https://d2s742iet3d3t1.cloudfront.net/restaurants/restaurant-139201000000000000/restaurant_list_image_1729210544.jpg"\n            alt="Food from The Roost in Longmont, a 2026 Longmont Restaurant Week participant"\n            loading="lazy">\n\n        <img\n            class="restaurant-week-logo"\n            src="Images/LongmontRestaurantWeekLogo.avif"\n            alt="Longmont Restaurant Week logo">\n\n        <div class="restaurant-photo-credit">\n            Food from <strong>The Roost</strong> • 2026 participating restaurant\n        </div>\n\n    </div>'''
-
-          if old not in s:
-              raise SystemExit('Current Restaurant Week image block not found')
-          s = s.replace(old, new, 1)
-
-          css = '''\n/* Restaurant Week verified photo treatment */\n.restaurant-week-image {\n    position: relative;\n}\n\n.restaurant-week-image > img:first-child {\n    width: 100%;\n    height: 100%;\n    object-fit: cover;\n    object-position: center;\n}\n\n.restaurant-week-image .restaurant-week-logo {\n    position: absolute;\n    top: 14px;\n    right: 14px;\n    width: 82px;\n    height: 82px;\n    object-fit: contain;\n    background: rgba(0,0,0,.78);\n    border-radius: 10px;\n    padding: 7px;\n    box-shadow: 0 3px 12px rgba(0,0,0,.28);\n}\n\n.restaurant-photo-credit {\n    position: absolute;\n    left: 12px;\n    bottom: 12px;\n    background: rgba(3,35,62,.9);\n    color: white;\n    padding: 7px 11px;\n    border-radius: 6px;\n    font-size: 11px;\n    line-height: 1.25;\n    box-shadow: 0 2px 8px rgba(0,0,0,.22);\n}\n'''
-
-          marker = '</style>'
-          if css.strip() not in s:
-              s = s.replace(marker, css + '\n' + marker, 1)
+          # Add Search to the top navigation while preserving all business content.
+          old = '''          ><a href="sitemap.html">Site Map</a
+          ><a href="contact.html" class="nav-contact">Contact</a>'''
+          new = '''          ><a href="sitemap.html">Site Map</a
+          ><a href="search.html">🔍 Search</a
+          ><a href="contact.html" class="nav-contact">Contact</a>'''
+          if old in s:
+              s = s.replace(old, new, 1)
+          elif 'href="search.html"' not in s:
+              raise SystemExit('Could not locate Site Map/Contact navigation block')
 
           p.write_text(s, encoding='utf-8')
-      - name: Commit events.html
+      - name: Commit businesses.html
         run: |
           git config user.name "Loving Longmont Site Bot"
           git config user.email "actions@users.noreply.github.com"
-          git add events.html
-          git commit -m "Add verified Roost photo and Restaurant Week branding"
+          git add businesses.html
+          git commit -m "Standardize Local Businesses page navigation"
           git push
