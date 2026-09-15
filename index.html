@@ -1164,14 +1164,39 @@ footer{background:linear-gradient(135deg,#03233e,#063b62);color:white;padding:55
 
         <form
           class="email-form"
-          action="mailto:hello.lovinglongmont@gmail.com"
-          method="post"
-          enctype="text/plain"
+          action="https://formsubmit.co/hello.lovinglongmont@gmail.com"
+          method="POST"
         >
+          <input
+            type="hidden"
+            name="_subject"
+            value="New Loving Longmont Email Subscriber"
+          />
+          <input type="hidden" name="_template" value="table" />
+          <input
+            type="hidden"
+            name="_autoresponse"
+            value="Thanks for joining the Loving Longmont email list! You signed up to receive In The Spotlight stories, local business and event highlights, and occasional community updates from Loving Longmont. No action is required. You are now on our subscriber list. Made with love for Longmont, Colorado — Loving Longmont."
+          />
+          <input
+            type="hidden"
+            name="_next"
+            value="https://lovinglongmont.github.io/loving-longmont-website/index.html?subscribed=1"
+          />
+          <input
+            type="text"
+            name="_honey"
+            tabindex="-1"
+            autocomplete="off"
+            aria-hidden="true"
+            style="display:none"
+          />
           <input
             type="email"
             name="email"
             placeholder="Your email address"
+            autocomplete="email"
+            aria-label="Your email address"
             required
           />
 
