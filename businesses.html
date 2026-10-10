@@ -1487,11 +1487,13 @@ document.addEventListener("DOMContentLoaded", function () {
     ["Food, Drink & Restaurants", /bakery|bread|cake|dessert|ice cream|restaurant|cocina|kitchen|food|grocery|market|taproom|bar|coffee|snack/i],
     ["Home, Gifts & Shopping", /gift|boutique|shopping|vintage|apparel|candle|jewelry|home|rug|thrift|vendor|specialty shop/i],
     ["Outdoor, Sports & Recreation", /bike|bicycle|skate|running|suspension|farm|garden|seasonal/i],
+    ["Marketing & Business Services", /digital marketing|social media|websites|marketing agency/i],
     ["Services & Other Local Businesses", /./]
   ];
   function typeOf(card) {
     const category = card.querySelector(".business-category")?.textContent.trim() || "";
     const name = card.querySelector("h3")?.textContent.trim() || "";
+    if (/^MKT Visibility$/i.test(name)) return "Marketing & Business Services";
     if (/^(Drifters|Quarter.s Bar)/i.test(name)) return "Food, Drink & Restaurants";
     if (/^(The Bee Hugger Farm|Rocky Mountain Pumpkin Ranch|The Flower Bin)/i.test(name)) return "Outdoor, Sports & Recreation";
     if (/^(Longmont Yarn Shoppe|Maker General|Creative Treasures|Tumbleweed Art Collective)/i.test(name)) return "Arts, Crafts & Classes";
