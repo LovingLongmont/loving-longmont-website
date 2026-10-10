@@ -723,17 +723,13 @@ footer{background:linear-gradient(135deg,#03233e,#063b62);color:white;padding:55
     </section>
     <section class="category-section">
       <div class="category-grid">
-        <a href="#gifts" class="category-card"
-          ><span>🎁</span><strong>Gifts & Curiosities</strong></a
-        ><a href="#makers" class="category-card"
-          ><span>🎨</span><strong>Art & Makers</strong></a
-        ><a href="#books" class="category-card"
-          ><span>📚</span><strong>Books & Paper</strong></a
-        ><a href="#specialty" class="category-card"
-          ><span>🧀</span><strong>Specialty Shops</strong></a
-        ><a href="#creative" class="category-card"
-          ><span>📷</span><strong>Local Creative</strong></a
-        >
+        <a href="#arts-crafts-classes" class="category-card"><span>🎨</span><strong>Arts, Crafts &amp; Classes</strong></a>
+        <a href="#books-records-media" class="category-card"><span>📚</span><strong>Books, Records &amp; Media</strong></a>
+        <a href="#food-drink-restaurants" class="category-card"><span>🍽️</span><strong>Food, Drink &amp; Restaurants</strong></a>
+        <a href="#home-gifts-shopping" class="category-card"><span>🎁</span><strong>Home, Gifts &amp; Shopping</strong></a>
+        <a href="#outdoor-sports-recreation" class="category-card"><span>🚲</span><strong>Outdoor, Sports &amp; Recreation</strong></a>
+        <a href="#marketing-business-services" class="category-card"><span>📈</span><strong>Marketing &amp; Business Services</strong></a>
+        <a href="#services-other-local-businesses" class="category-card"><span>🏪</span><strong>Services &amp; Other Local Businesses</strong></a>
       </div>
     </section>
     <section class="featured-section" id="gifts">
@@ -1510,6 +1506,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (item.type !== previous) {
       const heading = document.createElement("h3");
       heading.className = "directory-type-heading";
+      heading.id = item.type.toLowerCase().replace(/&/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
       heading.textContent = item.type;
       heading.style.cssText = "grid-column:1/-1;margin:30px 0 0;color:var(--navy);font-family:Georgia,serif;font-size:25px;border-bottom:2px solid #dce7e5;padding-bottom:9px";
       primary.appendChild(heading);
