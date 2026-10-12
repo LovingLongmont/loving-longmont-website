@@ -47,6 +47,7 @@ export function enhanceVisualCards(root,catalog){
    const chosen=selectImage(card,catalog);cleanIcons(card);card.dataset.llVisualCard='';
    if(chosen?.src&&safeImage(chosen.src)){
     const image=chosen.existing||document.createElement('img');const old=image.parentElement;
+    const oldContainer=image.closest('.business-image,.business-photo,.business-icon,.card-image,.card-photo,.resource-icon,.real-photo-image,.ll-staffing-image,.ll-connected-image');
     const oldLink=image.closest('a');const primary=card.matches('a[href]')?null:(card.querySelector('h2 a,h3 a,h4 a')||card.querySelector('a[href]:not([href^="tel:"]):not([href^="mailto:"])'));
     const wrapper=document.createElement('div');wrapper.className='ll-visual-image';wrapper.dataset.imageKind=chosen.kind||'existing';wrapper.dataset.imageTone=chosen.tone||'light';
     if(!chosen.existing){image.src=resolveAsset(chosen.src);image.alt=(chosen.kind==='art'?'Illustration for ':'')+cardTitle(card);image.loading='lazy';image.decoding='async';}
@@ -55,6 +56,9 @@ export function enhanceVisualCards(root,catalog){
     image.addEventListener('error',fallback,{once:true});
     card.prepend(wrapper);
     if(image.complete&&image.naturalWidth===0)fallback();
+    // Moving a linked image leaves its original anchor and container empty.
+    if(oldLink&&oldLink!==card&&!oldLink.textContent.trim()&&!oldLink.children.length)oldLink.remove();
+    if(oldContainer&&oldContainer!==card&&!oldContainer.textContent.trim()&&!oldContainer.querySelector('img'))oldContainer.remove();
     if(old&&old!==card&&!old.textContent.trim()&&!old.querySelector('img')&&old.matches('.business-image,.business-photo,.business-icon,.card-image,.card-photo,.resource-icon,.real-photo-image,.ll-staffing-image,.ll-connected-image'))old.remove();
    }
    count++;
