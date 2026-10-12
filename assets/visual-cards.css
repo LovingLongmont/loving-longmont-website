@@ -20,3 +20,7 @@
 [data-ll-visual-card] a:focus-visible,[data-ll-visual-card]:focus-visible{outline:3px solid #2d795f;outline-offset:4px}
 @media(max-width:1000px){[data-ll-visual-grid]{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:20px!important}}
 @media(max-width:540px){[data-ll-visual-grid]{grid-template-columns:1fr!important;gap:22px!important}}
+
+[data-ll-visual-grid]>.empty{grid-column:1/-1}
+
+.bp-logo[data-ll-image-tone="dark"]{background:#194c3e;border-radius:12px;padding:12px;box-sizing:border-box}

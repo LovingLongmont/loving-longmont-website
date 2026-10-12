@@ -1,4 +1,4 @@
-const gridClasses=['quick-grid','resource-grid','category-grid','business-grid','project-grid','photo-grid','involved-grid','site-grid','gig-grid','option-grid','help-grid','event-grid','directory-grid','future-grid','idea-grid','community-life-grid','share-grid','support-grid','tip-grid','emergency-grid','grid'];
+const gridClasses=['ll-connected-grid','quick-grid','resource-grid','category-grid','business-grid','project-grid','photo-grid','involved-grid','site-grid','gig-grid','option-grid','help-grid','event-grid','directory-grid','future-grid','idea-grid','community-life-grid','share-grid','support-grid','tip-grid','emergency-grid','grid'];
 const iconSelector='.image-pending,.image-placeholder,.business-icon,.tip-icon,.idea-icon,.project-icon,.involved-icon,.image-pending-icon,.resource-icon,.card-icon,.quick-icon,.site-icon,.gig-icon,.category-icon,.future-icon,.page-icon,.icon,.support-icon,.life-icon,.share-icon,.help-icon,.option-icon,.event-icon,.emergency-icon,.ll-category-icon';
 export const normalizeName=s=>String(s||'').toLowerCase().replace(/[^a-z0-9]/g,'');
 export function cardTitle(card){return (card.querySelector('h2,h3,h4')?.textContent||card.querySelector('strong')?.textContent||card.textContent.trim().split('\n').filter(s=>s.trim()).slice(0,2).join(' ')).trim()}
@@ -39,11 +39,11 @@ export function selectImage(card,catalog){
 function cleanIcons(card){for(const element of card.querySelectorAll('div,span,i'))if(!element.children.length&&element.textContent.trim()&&/^[\p{Extended_Pictographic}\p{Emoji_Presentation}\p{Regional_Indicator}\u200d\ufe0f\s]+$/u.test(element.textContent.trim()))element.remove();for(const icon of card.querySelectorAll(iconSelector))if(!icon.querySelector('img'))icon.remove();for(const h of card.querySelectorAll('h2,h3,h4,strong'))for(const child of h.childNodes)if(child.nodeType===3)child.textContent=child.textContent.replace(/[\p{Extended_Pictographic}\p{Emoji_Presentation}\p{Regional_Indicator}\u200d\ufe0f]/gu,'').trim()}
 export function enhanceVisualCards(root,catalog){
  const document=root.ownerDocument||root;let count=0;
- for(const grid of root.querySelectorAll(gridClasses.map(c=>'.'+c).join(','))){
+ for(const grid of root.querySelectorAll(gridClasses.map(c=>'.'+c).join(',')+',#results')){
   if(grid.classList.contains('business-grid')&&document.location?.pathname.endsWith('/index.html'))continue;
   const cards=[...grid.children];if(cards.length<1)continue;
   grid.dataset.llVisualGrid='';
-  for(const card of cards){if(card.dataset.llVisualCard!==undefined)continue;if(!cardTitle(card)||card.querySelector('[role="status"]'))continue;
+  for(const card of cards){if(card.classList.contains('empty'))continue;if(card.dataset.llVisualCard!==undefined)continue;if(!cardTitle(card)||card.querySelector('[role="status"]'))continue;
    const chosen=selectImage(card,catalog);cleanIcons(card);card.dataset.llVisualCard='';
    if(chosen?.src&&safeImage(chosen.src)){
     const image=chosen.existing||document.createElement('img');const old=image.parentElement;
@@ -51,13 +51,18 @@ export function enhanceVisualCards(root,catalog){
     const wrapper=document.createElement('div');wrapper.className='ll-visual-image';wrapper.dataset.imageKind=chosen.kind||'existing';wrapper.dataset.imageTone=chosen.tone||'light';
     if(!chosen.existing){image.src=resolveAsset(chosen.src);image.alt=(chosen.kind==='art'?'Illustration for ':'')+cardTitle(card);image.loading='lazy';image.decoding='async';}
     if(!card.matches('a')&&(oldLink||primary)){const anchor=document.createElement('a');for(const a of (oldLink||primary).attributes)anchor.setAttribute(a.name,a.value);anchor.setAttribute('aria-label',cardTitle(card));anchor.append(image);wrapper.append(anchor)}else wrapper.append(image);
+    const fallback=()=>{if(image.dataset.llFallbackUsed)return;const src=resolveAsset(catalog.art[artFamily(cardTitle(card),card.textContent)]);if(image.src===src)return;image.dataset.llFallbackUsed='true';image.hidden=false;image.src=src;image.alt='Illustration for '+cardTitle(card);wrapper.dataset.imageKind='art';wrapper.dataset.imageTone='light'};
+    image.addEventListener('error',fallback,{once:true});
     card.prepend(wrapper);
+    if(image.complete&&image.naturalWidth===0)fallback();
     if(old&&old!==card&&!old.textContent.trim()&&!old.querySelector('img')&&old.matches('.business-image,.business-photo,.business-icon,.card-image,.card-photo,.resource-icon,.real-photo-image,.ll-staffing-image,.ll-connected-image'))old.remove();
    }
    count++;
   }
  }
  for(const icon of root.querySelectorAll('.ll-category-icon'))icon.remove();
+ const profile=document.getElementById('business-profile'),primary=profile?.querySelector('.bp-logo'),primaryImage=primary?.querySelector('img'),info=catalog.byId?.[profile?.dataset.llProfile];
+ if(primary&&primaryImage&&info?.kind==='logo'&&resolveAsset(info.src)===primaryImage.src)primary.dataset.llImageTone=info.tone||'light';
  return count;
 }
 if(typeof window!=='undefined'&&typeof document!=='undefined'){
