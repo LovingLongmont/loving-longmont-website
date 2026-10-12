@@ -668,3 +668,4 @@ footer{background:linear-gradient(135deg,#03233e,#063b62);color:white;padding:55
 @media(max-width:599px){.business-grid{grid-template-columns:minmax(0,1fr);gap:18px}.business-image{height:190px}}
 
 .bp-main{max-width:1000px;margin:40px auto;padding:0 24px}.bp-profile .bp-identity{align-items:start}.bp-profile .bp-logo{max-width:280px}.bp-profile .bp-logo img{object-fit:contain}.bp-profile h1{overflow-wrap:anywhere}.business-body h3 a{text-decoration:none}.business-body h3 a:hover{text-decoration:underline}.business-detail:has(>a){display:block}.business-detail>div{min-width:0}@media(max-width:650px){.bp-main{margin:24px auto;padding:0 18px}}
+.business-card[data-cc-business] .business-detail,.ll-connected-card .business-detail{display:block;overflow-wrap:anywhere}
