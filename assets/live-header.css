@@ -12,3 +12,21 @@
 @media(max-width:620px){.llh-mast{width:calc(100% - 32px);min-height:105px;padding:8px 0}.ll-live-header .llh-brand img{width:215px}.llh-tools{display:none}.llh-mobile summary{padding:6px}.ll-live-header .llh-mobile-search{display:flex;width:calc(100% - 32px);margin:0 auto 14px}.ll-live-header .llh-mobile-search input{min-height:46px;font-size:13px;padding:10px 15px}.ll-live-header .llh-mobile-search button{min-height:46px}.ll-live-header{padding-bottom:1px}}
 @media(max-width:360px){.ll-live-header .llh-brand img{width:185px}}
 @media(prefers-reduced-motion:reduce){.ll-live-header *{transition:none!important;scroll-behavior:auto!important}}
+
+/* Compact shared footer: brand information above horizontal navigation. */
+footer.ll-compact-footer{padding:24px 24px 14px}
+.ll-compact-footer .ll-footer-top{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:1fr 1.1fr 1fr;gap:32px;align-items:start}
+.ll-compact-footer .footer-logo-area,.ll-compact-footer .ll-footer-top>div:nth-child(2)>div:first-child{display:flex;align-items:center;gap:12px}
+.ll-compact-footer img{width:48px!important;height:48px!important;max-width:48px!important;min-width:48px!important;object-fit:cover;border-radius:5px}
+.ll-compact-footer h2{font-size:21px;margin:0;line-height:1.2}
+.ll-compact-footer small,.ll-compact-footer .ll-footer-top>div:nth-child(2)>div:first-child>div>div{font-size:9px;letter-spacing:1px}
+.ll-compact-footer .ll-footer-top>div:nth-child(2)>div:first-child>div>a{font-size:21px;font-weight:bold}
+.ll-compact-footer p{font-size:13px;line-height:1.5;margin:10px 0;max-width:none;color:#d6e2e9}
+.ll-compact-footer a{color:white;font-size:13px;overflow-wrap:anywhere}
+.ll-compact-footer .footer-heading{font-size:16px;margin:0 0 10px}
+.ll-compact-footer .footer-email{margin:0 0 8px}
+.ll-compact-footer .footer-links{max-width:1440px;margin:20px auto 0;padding:14px 0 0;border-top:1px solid #ffffff30;display:flex;flex-wrap:wrap;justify-content:center;gap:8px 18px}
+.ll-compact-footer .footer-links a{display:inline-block;margin:0;font-size:12px;white-space:nowrap;line-height:1.5}
+.ll-compact-footer .footer-bottom{max-width:1440px;margin:12px auto 0;padding:0;border:0;font-size:11px}
+@media(max-width:800px){.ll-compact-footer .ll-footer-top{grid-template-columns:1fr 1fr;gap:20px}.ll-compact-footer .ll-footer-top>div:last-child{grid-column:1/-1}}
+@media(max-width:520px){footer.ll-compact-footer{padding:20px 16px 14px}.ll-compact-footer .ll-footer-top{grid-template-columns:1fr}.ll-compact-footer .footer-links{gap:8px 14px}}
